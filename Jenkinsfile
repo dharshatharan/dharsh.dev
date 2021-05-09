@@ -17,7 +17,7 @@ pipeline {
     // }
 
     tools {
-        dockerTool "my_docker"
+        nodejs "my_npm"
     }
 
     stages {
