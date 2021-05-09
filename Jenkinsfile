@@ -17,7 +17,7 @@ pipeline {
     // }
 
     tools {
-        docker "my_docker"
+        dockerTool "my_docker"
     }
 
     stages {
