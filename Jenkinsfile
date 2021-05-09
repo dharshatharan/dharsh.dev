@@ -2,7 +2,7 @@ pipeline {
     // agent any
     agent {
         docker {
-            image 'node:lts-buster-slim' 
+            image 'node:16-alpine' 
             args '-p 3000:3000' 
         }
     }
