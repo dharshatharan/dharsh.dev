@@ -1,21 +1,6 @@
 pipeline {
     agent any
 
-    // stage('Initialize'){
-    //     def dockerHome = tool 'my_docker'
-    //     env.PATH = "${dockerHome}/bin:${env.PATH}"
-    // }
-    // agent {
-    //     docker {
-    //         image 'node:16-alpine' 
-    //         args '-p 3000:3000' 
-    //     }
-    // }
-
-    // environment {
-    //     CI = 'true' 
-    // }
-
     tools {
         nodejs "my_npm"
     }
