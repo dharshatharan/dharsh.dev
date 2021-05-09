@@ -7,9 +7,9 @@ pipeline {
         }
     }
 
-    // environment {
-    //     CI = 'true' 
-    // }
+    environment {
+        CI = 'true' 
+    }
 
     // tools {
     //     nodejs "nodejs"
