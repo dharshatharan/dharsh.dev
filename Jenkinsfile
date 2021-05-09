@@ -11,6 +11,10 @@ pipeline {
     //     CI = 'true' 
     // }
 
+    tools {
+        nodejs "nodejs"
+    }
+
     stages {
         stage('Build') {
             steps {
