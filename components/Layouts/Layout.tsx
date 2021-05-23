@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
+import utilStyles from '../../styles/utils.module.css'
 import Link from 'next/link'
+import React from 'react'
+import NavigationBar from '../Navigation/NavBar'
 
 const name = 'Hey! I\'m Dharsh'
 export const siteTitle = 'Hey! I\'m Dharsh'
@@ -31,6 +33,7 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
+      <NavigationBar/>
       <header className={styles.header}>
         {home ? (
           <>
