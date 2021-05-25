@@ -2,7 +2,6 @@ import Layout from '../../components/Layouts/Layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head'
 import Date from '../../components/Date/Date'
-import utilStyles from '../../styles/utils.module.css'
 import { GetStaticProps, GetStaticPaths, GetStaticPathsContext } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 import { PostData } from '../../types/posts'
@@ -14,8 +13,8 @@ export default function Post({ post }: Props) {
         <title>{post.title}</title>
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>{post.title}</h1>
-        <div className={utilStyles.lightText}>
+        <h1 className=''>{post.title}</h1>
+        <div className=''>
           <Date dateString={post.date} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />

@@ -1,25 +1,23 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from './layout.module.css'
-import utilStyles from '../../styles/utils.module.css'
 import Link from 'next/link'
 import React from 'react'
-import NavigationBar from '../Navigation/NavBar'
+import Body from './Body'
+import Footer from './Footer'
+import Header from './Header'
 
 const name = 'Hey! I\'m Dharsh'
 export const siteTitle = 'Hey! I\'m Dharsh'
 
-export default function Layout({
-  children,
-  home
-}: {
+interface Props {
   children: React.ReactNode
-  home?: boolean
-}) {
+}
+
+export default function Layout({ children }: Props) {
   return (
-    <div className={styles.container}>
+    <div className=''>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icons/favicon.ico" />
         <meta
           name="description"
           content="I share things that I consider \'cool\' on here"
@@ -33,48 +31,9 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <NavigationBar/>
-      <header className={styles.header}>
-        {home ? (
-          <>
-            <Image
-              priority
-              src="/images/profile.png"
-              height={144}
-              width={144}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <a>
-                <Image
-                  priority
-                  src="/images/profile.png"
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
-            </h2>
-          </>
-        )}
-      </header>
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
+      <Header/>
+      <Body>{children}</Body>
+      <Footer/>
     </div>
   )
 }
