@@ -15,9 +15,9 @@ interface Props {
 
 export default function Layout({ children }: Props) {
   return (
-    <div className=''>
+    <div className='h-screen m-0 font-main'>
       <Head>
-        <link rel="icon" href="/icons/favicon.ico" />
+        <link rel="icon" href="/icons/favicon.png" />
         <meta
           name="description"
           content="I share things that I consider \'cool\' on here"
