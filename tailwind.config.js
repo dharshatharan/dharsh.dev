@@ -5,13 +5,17 @@ module.exports = {
     extend: {
       colors: {
         'teal-grey': '#729D9E',
-        'off-white': '#FBEEE6',
-        'dark-grey': '#61726F',
-        'pale-yellow': '#FEDBB1'
+        'off-white': '#FBFBFB',
+        'dark-grey': '#323635',
+        'pale-yellow': '#FEDBB1',
+        'dark-yellow': '#E9AE8C'
       },
       fontFamily: {
         main: 'Hind'
       },
+      stroke: theme => ({
+        'dark-yellow': theme('#E9AE8C'),
+      })
     },
   },
   variants: {

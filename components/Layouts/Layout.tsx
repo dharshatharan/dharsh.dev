@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { ReactElement } from 'react'
 import Body from './Body'
 import Footer from './Footer'
 import Header from './Header'
@@ -10,12 +10,13 @@ const name = 'Hey! I\'m Dharsh'
 export const siteTitle = 'Hey! I\'m Dharsh'
 
 interface Props {
+  headerContent?: ReactElement
   children: React.ReactNode
 }
 
-export default function Layout({ children }: Props) {
+export default function Layout({ headerContent, children }: Props) {
   return (
-    <div className='h-screen m-0 font-main'>
+    <div className='h-screen m-0 font-main bg-off-white'>
       <Head>
         <link rel="icon" href="/icons/favicon.png" />
         <meta
@@ -31,7 +32,7 @@ export default function Layout({ children }: Props) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Header/>
+      <Header content={headerContent}/>
       <Body>{children}</Body>
       <Footer/>
     </div>
