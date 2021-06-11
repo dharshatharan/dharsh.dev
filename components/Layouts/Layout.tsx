@@ -32,7 +32,10 @@ export default function Layout({ headerContent, children }: Props) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Header content={headerContent}/>
+      {headerContent ? 
+        <Header content={headerContent}/>
+        : <Header />
+      }
       <Body>{children}</Body>
       <Footer/>
     </div>
