@@ -29,12 +29,15 @@ img {
   display: block;
 }
 
-* {
-  box-sizing: border-box;
+article p {
+  margin-bottom: 1.5rem;
 }
 
-article p {
-  margin-bottom: 1.5rem
+article p img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: contain;
 }
 
 article ul {

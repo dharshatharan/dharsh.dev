@@ -11,7 +11,7 @@ export default function HeaderContent({}: Props): ReactElement {
   return (
     <section className='w-full flex flex-col flex-grow justify-between'>
         <div className='w-full flex flex-1 justify-center relative bottom-5 md:bottom-20'>
-          <div className='flex flex-1 flex-col md:flex-row-reverse items-center md:justify-between max-w-7xl'>
+          <div className='flex flex-1 flex-col md:flex-row-reverse portrait:flex-col portrait:justify-around items-center md:justify-between max-w-7xl'>
             <div className='max-w-xs md:max-w-xl p-5'>
               <OwnImage src='/images/profile.png' layout='fill'/>
             </div>

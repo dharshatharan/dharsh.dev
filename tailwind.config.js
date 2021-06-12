@@ -16,7 +16,10 @@ module.exports = {
       },
       stroke: theme => ({
         'dark-yellow': theme('#E9AE8C'),
-      })
+      }),
+      screens: {
+        'portrait': {'raw': '(orientation: portrait)'},
+      }
     },
   },
   variants: {

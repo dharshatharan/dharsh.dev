@@ -10,7 +10,7 @@ interface Props {
 
 export default function Header({content}: Props): ReactElement {
   return (
-    <div className={`flex flex-col m-0 text-dark-grey ${content ? 'h-screen' : ''}`}>
+    <div className={`flex flex-col m-0 text-black ${content ? 'h-screen' : ''}`}>
       <NavBar/>
       {content}
     </div>

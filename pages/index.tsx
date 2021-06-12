@@ -30,11 +30,11 @@ export default function Home({
         <div className='w-full flex flex-1 justify-center z-10 py-10 px-5'>
           <div className='max-w-7xl'>
             <div id='blog' className='flex flex-col'>
-              <h2 className='font-semibold text-4xl'>Blog</h2>
+              <h1>Blog</h1>
               <div className='flex w-full flex-1 justify-center'>
                 <ul className='grid md:grid-cols-2 xl:grid-cols-3'>
                   {allPostsData.map(({ id, date, title, image }) => (
-                    <li className='m-5' key={id}>
+                    <li className='p-5' key={id}>
                       <BlogItem id={id} date={date} title={title} image={image} />
                     </li>
                   ))}
