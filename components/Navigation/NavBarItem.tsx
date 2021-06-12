@@ -9,7 +9,7 @@ interface Props {
 export default function NavBarItem({label, link}: Props): ReactElement {
   return (
     <Link href={link}>
-      <a className='text-md md:text-2xl font-normal p-2 md:p-5 hover:border-medium-grey border-b-4 border-transparent transition duration-500 transform'>
+      <a className='text-md md:text-2xl font-normal p-2 md:px-5 hover:border-medium-grey border-b-4 border-transparent transition duration-500 transform bg-transparent'>
         {label}
       </a>
     </Link>

@@ -22,8 +22,8 @@ export default function Post({ post }: Props) {
       <div className='w-full flex bg-off-white justify-center'>
         <div className='md:max-w-3xl mx-5 md:mx-10 mb-10 md:mb-20'>
           <article className='text-md md:text-xl'>
-            <h1 className='text-dark-grey my-10'>{post.title}</h1>
-            <div className='text-teal-grey my-10 mb-5'>
+            <h1 className='text-dark-grey'>{post.title}</h1>
+            <div className='text-teal-grey my-5'>
               <Date dateString={post.date} />
             </div>
             <div className='w-full h-96 relative mb-10'>

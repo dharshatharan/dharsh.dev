@@ -15,7 +15,7 @@ export default function NavBar({}: Props): ReactElement {
         <div className='flex flex-1 justify-between items-center flex-row max-w-screen-xl'>
           <div className='p-5 w-36 md:w-72'>
             <OwnImage 
-              src='/icons/logo.png'
+              src='/icons/logo.svg'
               layout='fill'
             />
           </div>
