@@ -22,8 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    // TODO: Introduce types
-    "components/Image/Image.js"],
+  ],
   "exclude": [
     "node_modules"
   ]

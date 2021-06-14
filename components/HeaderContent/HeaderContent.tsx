@@ -1,6 +1,5 @@
 import React, { ReactElement } from 'react'
-// @ts-ignore
-import OwnImage from '../../components/Image/Image'
+import Image from 'next/image'
 import SolidText from '../../components/Text/SolidText'
 
 interface Props {
@@ -10,10 +9,10 @@ interface Props {
 export default function HeaderContent({}: Props): ReactElement {
   return (
     <section className='w-full flex flex-col flex-grow justify-between'>
-        <div className='w-full flex flex-1 justify-center relative bottom-5 md:bottom-20'>
-          <div className='flex flex-1 flex-col md:flex-row-reverse portrait:flex-col portrait:justify-around items-center md:justify-between max-w-7xl'>
-            <div className='max-w-xs md:max-w-xl p-5'>
-              <OwnImage src='/images/profile.png' layout='fill'/>
+        <div className='w-full flex flex-1 justify-center relative bottom-5 md:bottom-20 potrait:bottom-5'>
+          <div className='flex flex-1 flex-col md:flex-row-reverse justify-around portrait:flex-col portrait:justify-around items-center md:justify-between max-w-7xl'>
+            <div className='max-w-xs md:max-w-xl w-full h-full relative p-5'>
+              <Image src='/images/profile.png' layout='fill' objectFit='contain' />
             </div>
             <div className='max-w-xl p-5 pt-2 pb-2 md:p-5'>
               <div className='text-3xl md:text-5xl font-semibold mt-2 mb-2 md:mt-5 md:mb-5 flex flex-row items-center'>
@@ -28,7 +27,7 @@ export default function HeaderContent({}: Props): ReactElement {
                 One of the best ways to learn is to think aloud, and that what I’m going to try to do with this website. 
               </p>
               <p className='text-md md:text-xl font-normal mt-2 mb-2 md:mt-5 md:mb-5'>
-                On this site I will be sharing thoughts and tools that I think are <b className='font-semibold'>‘cool’ </b> 
+                On this site I will be sharing thoughts, tool and content that I think are <b className='font-semibold'>‘cool’ </b> 
                 with the goal of <b className='font-semibold'> potentially helping and inspiring people on a similar path. </b>
               </p>
               <p className='text-md md:text-xl font-normal mt-2 mb-2 md:mt-5 md:mb-5'>

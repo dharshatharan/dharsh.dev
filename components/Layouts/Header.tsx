@@ -1,8 +1,6 @@
 import React, { ReactElement } from 'react'
 import Image from 'next/image'
 import NavBar from '../Navigation/NavBar'
-// @ts-ignore
-import OwnImage from '../../components/Image/Image'
 
 interface Props {
   content?: ReactElement

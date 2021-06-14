@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import React, { ReactElement } from 'react'
 import Date from '../../components/Date/Date'
-// @ts-ignore
-import OwnImage from '../../components/Image/Image'
 import Image from 'next/image'
 
 interface Props {
