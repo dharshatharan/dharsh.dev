@@ -1,10 +1,11 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
+import Image from 'next/image'
+import Layout, { siteTitle } from '../components/Layouts/Layout'
 import { getSortedPostsData } from '../lib/posts'
-import Link from 'next/link'
-import Date from '../components/date'
 import { GetStaticProps } from 'next'
+import React from 'react'
+import BlogItem from '../components/Blog/BlogItem'
+import HeaderContent from '../components/HeaderContent/HeaderContent'
 
 export default function Home({
   allPostsData
@@ -13,38 +14,31 @@ export default function Home({
     date: string
     title: string
     id: string
+    image: string
   }[]
 }) {
   return (
-    <Layout home>
+    <Layout headerContent={<HeaderContent />}>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>
-          I’m a 21 year old Software Engineering student at Carleton University 
-          that enjoys being a part of the startup life.
-        </p>
-        <p>
-          On this site I will be sharing thoughts and tools that I think are <b>‘cool’</b> 
-          with the goal of potentially helping and inspiring people on a similar path.
-        </p>
-      </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
+      <section className='w-full bg-off-white'>
+        <div className='w-full flex flex-1 justify-center z-10 py-10 px-5'>
+          <div className='max-w-7xl'>
+            <div id='blog' className='flex flex-col'>
+              <h1>Blog</h1>
+              <div className='flex w-full flex-1 justify-center'>
+                <ul className='grid md:grid-cols-2 xl:grid-cols-3'>
+                  {allPostsData.map(({ id, date, title, image }) => (
+                    <li className='p-5' key={id}>
+                      <BlogItem id={id} date={date} title={title} image={image} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </Layout>
   )
