@@ -20,7 +20,7 @@ export default function Layout({ headerContent, children }: Props) {
         <link rel="icon" href="/icons/favicon.png" />
         <meta
           name="description"
-          content="I share things that I consider \'cool\' on here"
+          content="I share things that I consider 'cool' on here"
         />
         <meta
           property="og:image"
