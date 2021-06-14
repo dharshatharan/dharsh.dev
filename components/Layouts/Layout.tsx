@@ -6,7 +6,6 @@ import Body from './Body'
 import Footer from './Footer'
 import Header from './Header'
 
-const name = 'Hey! I\'m Dharsh'
 export const siteTitle = 'Hey! I\'m Dharsh'
 
 interface Props {
@@ -25,12 +24,12 @@ export default function Layout({ headerContent, children }: Props) {
         />
         <meta
           property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
+          content="/images/open-graph-image.png"
         />
         <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content={siteTitle} />
+        <meta name="twitter:site" content="@dharshatharan" />
+        <meta name="twitter:creator" content="@dharshatharan" />
       </Head>
       {headerContent ? 
         <Header content={headerContent}/>
