@@ -15,9 +15,9 @@ export default function NavBar({}: Props): ReactElement {
       <header className='flex justify-center w-full'>
         <div className='flex flex-1 justify-between items-center flex-row max-w-screen-xl'>
             <Link href='/'>
-              <div className='w-36 h-24 md:w-52 md:h-36 relative'>
+              <a className='w-36 h-24 md:w-52 md:h-36 relative'>
                 <Image src='/icons/logo.svg' layout='fill' objectFit='contain' />
-              </div> 
+              </a> 
             </Link>
           <div className='flex flex-row pr-5 md:bottom-5'>
             <NavBarItem label='About' link='/'/>

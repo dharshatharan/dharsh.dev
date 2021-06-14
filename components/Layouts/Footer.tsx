@@ -32,7 +32,7 @@ interface footerIconProps {
 }
 
 const FooterIcon = ({link, icon}: footerIconProps) => (
-  <a href={link} className='h-12 w-12 md:h-14 md:w-14 relative mx-2 md:mx-7'>
+  <a href={link} target='_blank' className='h-12 w-12 md:h-14 md:w-14 relative mx-2 md:mx-7'>
     <Image src={icon} layout='fill' objectFit='contain'/>
   </a>
 )

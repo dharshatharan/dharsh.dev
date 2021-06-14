@@ -1,4 +1,5 @@
 import fs from 'fs'
+import externalLinks from 'remark-external-links'
 import path from 'path'
 import matter from 'gray-matter'
 import remark from 'remark'
@@ -63,6 +64,7 @@ export async function getPostData(id: string) {
 
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
+    .use(externalLinks, {target: '_blank'})
     .use(html)
     .process(matterResult.content)
   const contentHtml = processedContent.toString()
