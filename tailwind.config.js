@@ -1,6 +1,6 @@
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -9,10 +9,11 @@ module.exports = {
         'off-white': '#FBFBFB',
         'dark-grey': '#323635',
         'pale-yellow': '#FEDBB1',
-        'dark-yellow': '#E9AE8C'
+        'dark-yellow': '#E9AE8C',
+        'smooth-black': '#040404'
       },
       fontFamily: {
-        main: 'Hind'
+        main: 'Inter'
       },
       stroke: theme => ({
         'dark-yellow': theme('#E9AE8C'),
