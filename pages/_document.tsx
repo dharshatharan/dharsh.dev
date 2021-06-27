@@ -28,7 +28,7 @@ class MyDocument extends Document {
           <meta name="twitter:site" content="@dharshatharan" />
           <meta name="twitter:creator" content="@dharshatharan" />
         </Head>
-        <body className="bg-off-white dark:bg-smooth-black text-smooth-black dark:text-smooth-black">
+        <body className="bg-off-white dark:bg-smooth-black text-off-white dark:text-smooth-black">
           <Main />
           <NextScript />
         </body>

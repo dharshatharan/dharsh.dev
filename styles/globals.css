@@ -31,9 +31,16 @@
   h4 {
     @apply text-xl md:text-2xl leading-normal font-semibold tracking-tight my-4;
   }
+  article blockquote {
+    @apply dark:text-off-white dark:bg-dark-grey
+  }
 }
 
-html,
+html {
+  min-width: 360px;
+  scroll-behavior: smooth;
+}
+
 body {
   line-height: 1.6;
 }

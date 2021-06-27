@@ -7,10 +7,10 @@ module.exports = {
         'teal-grey': '#729D9E',
         'medium-grey': '#535D5C',
         'off-white': '#FBFBFB',
-        'dark-grey': '#323635',
+        'dark-grey': '#040404',
         'pale-yellow': '#FEDBB1',
         'dark-yellow': '#E9AE8C',
-        'smooth-black': '#040404'
+        'smooth-black': '#111927'
       },
       fontFamily: {
         main: 'Inter'

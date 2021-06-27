@@ -9,7 +9,7 @@ interface Props {
 export default function Footer({}: Props): ReactElement {
   return (
     <div>
-      <div className='bg-off-white w-full flex justify-center py-10'>
+      <div className='w-full flex justify-center py-10'>
         <div id='socials' className='w-full max-w-7xl flex justify-center'>
           <FooterIcon link='https://www.lisnclips.app/' icon='/icons/lisn.svg' />
           <FooterIcon link='https://www.scesoc.ca/' icon='/icons/scesoc.svg' />
@@ -19,8 +19,9 @@ export default function Footer({}: Props): ReactElement {
           <FooterIcon link='https://twitter.com/dharshatharan' icon='/icons/twitter.svg' />
         </div>
       </div>
-      <div className='bg-dark-grey w-full flex justify-end p-5 text-off-white font-extralight'>
-        This website might look simple, but it involved a lot of overthinking
+      <div className='bg-dark-grey w-full flex justify-between p-5 text-off-white font-extralight'>
+        <span>Built with <a href='https://nextjs.org/'>Next.js</a></span>
+        <span>This website might look simple, but it involved a lot of overthinking</span>
       </div>
     </div>
   )
