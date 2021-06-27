@@ -31,6 +31,9 @@
   h4 {
     @apply text-xl md:text-2xl leading-normal font-semibold tracking-tight my-4;
   }
+  b {
+    @apply font-bold;
+  }
   article blockquote {
     @apply dark:text-off-white dark:bg-dark-grey;
   }
@@ -55,6 +58,7 @@ img {
 
 article p {
   margin-bottom: 1.5rem;
+  font-weight: 300;
 }
 
 article p img {
@@ -68,14 +72,16 @@ article ul {
   list-style: disc;
   list-style-position: outside;
   margin-left: 2.5rem;
-  margin-bottom: 1.5rem
+  margin-bottom: 1.5rem;
+  font-weight: 300;
 }
 
 article ol {
   list-style: lower-roman;
   list-style-position: outside;
   margin-left: 2.5rem;
-  margin-bottom: 1.5rem
+  margin-bottom: 1.5rem;
+  font-weight: 300;
 }
 
 article blockquote {
