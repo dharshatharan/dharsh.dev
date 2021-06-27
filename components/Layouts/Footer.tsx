@@ -19,9 +19,9 @@ export default function Footer({}: Props): ReactElement {
           <FooterIcon link='https://twitter.com/dharshatharan' icon='/icons/twitter.svg' />
         </div>
       </div>
-      <div className='bg-dark-grey w-full flex justify-between p-5 text-off-white font-extralight'>
-        <span>Built with <a href='https://nextjs.org/'>Next.js</a></span>
-        <span>This website might look simple, but it involved a lot of overthinking</span>
+      <div className='bg-dark-grey w-full flex justify-between p-5 text-off-white font-extralight text-xs md:text-base'>
+        <span>Built with <a className="underline" href='https://nextjs.org/'>Next.js</a></span>
+        <p className='text-right pl-10'><span className='inline-block'>This website might look simple,</span><span className='inline-block'> but it involved a lot of overthinking</span></p>
       </div>
     </div>
   )

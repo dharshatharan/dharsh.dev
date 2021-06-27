@@ -32,7 +32,10 @@
     @apply text-xl md:text-2xl leading-normal font-semibold tracking-tight my-4;
   }
   article blockquote {
-    @apply dark:text-off-white dark:bg-dark-grey
+    @apply dark:text-off-white dark:bg-dark-grey;
+  }
+  article a {
+    @apply text-teal-grey dark:text-dark-yellow hover:underline;
   }
 }
 
@@ -75,17 +78,9 @@ article ol {
   margin-bottom: 1.5rem
 }
 
-article a {
-  color: #729D9E
-}
-
-article a:hover {
-  text-decoration: underline;
-}
-
 article blockquote {
   background: #F5F5F5;
-  border-left: 5px solid #729D9E;
+  border-left: 5px solid #5e7f80;
   margin: 1.5em 0;
   padding: 0.5em 10px;
 }
