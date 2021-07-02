@@ -14,7 +14,9 @@ export default function NavBar({}: Props): ReactElement {
   const { resolvedTheme } = useTheme();
   useEffect(() => setMounted(true), []);
   return (
-    <nav className='sticky top-0 md:mt-10 w-full flex item bg-off-white dark:bg-smooth-black backdrop-filter backdrop-blur-xl bg-opacity-75 dark:bg-opacity-80 z-20' style={{height: '8vh', minHeight:'5rem'}}>
+    <>
+    <div className="w-full h-10 bg-off-white dark:bg-smooth-black backdrop-filter backdrop-blur-xl bg-opacity-75 dark:bg-opacity-80 z-20 hidden md:block"></div>
+    <nav className='sticky top-0 w-full flex item bg-off-white dark:bg-smooth-black backdrop-filter backdrop-blur-xl bg-opacity-75 dark:bg-opacity-80 z-20' style={{height: '8vh', minHeight:'5rem', maxHeight:'5rem'}}>
       <header className='flex justify-center w-full'>
         <div className='flex flex-1 justify-between items-center flex-row max-w-screen-xl pl-5'>
             <Link href='/'>
@@ -35,7 +37,7 @@ export default function NavBar({}: Props): ReactElement {
                 </svg>)}
               </a> 
             </Link>
-          <div className='flex flex-row pr-5 md:bottom-5'>
+          <div className='flex flex-row pr-5 md:bottom-5 items-center'>
             <NavBarItem label='About' link='/'/>
             <NavBarItem label='Blog' link='/#blog'/>
             <NavBarItem label='Socials' link='/#socials'/>
@@ -44,6 +46,7 @@ export default function NavBar({}: Props): ReactElement {
         </div>
       </header>
     </nav>
+    </>
   )
 }
 

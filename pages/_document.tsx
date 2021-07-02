@@ -9,7 +9,28 @@ class MyDocument extends Document {
         <Head>
           <link
             rel="preload"
-            href="/fonts/Inter.var.woff2"
+            href="/fonts/iAWriterQuattroS-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/iAWriterQuattroS-Bold.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/iAWriterQuattroS-Italic.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preload"
+            href="/fonts/iAWriterQuattroS-BoldItalic.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"

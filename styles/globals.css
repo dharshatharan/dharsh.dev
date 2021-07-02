@@ -3,19 +3,35 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Inter';
+  font-family: 'iA Writer Quattro V';
   font-style: normal;
-  font-weight: 100 900;
+  font-weight: normal;
   font-display: optional;
-  src: url(/fonts/Inter.var.woff2) format('woff2');
+  src: url(/fonts/iAWriterQuattroS-Regular.woff2) format('woff2');
 }
 
 @font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 100 900;
+  font-family: 'iA Writer Quattro V';
+  font-style: normal;
+  font-weight: bold;
   font-display: optional;
-  src: url(/fonts/Inter.var.woff2) format('woff2');
+  src: url(/fonts/iAWriterQuattroS-Bold.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'iA Writer Quattro V';
+  font-style: italic;
+  font-weight: normal;
+  font-display: optional;
+  src: url(/fonts/iAWriterQuattroS-Italic.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'iA Writer Quattro V';
+  font-style: italic;
+  font-weight: bold;
+  font-display: optional;
+  src: url(/fonts/iAWriterQuattroS-BoldItalic.woff2) format('woff2');
 }
 
 @layer base {
@@ -26,10 +42,10 @@
     @apply text-3xl md:text-4xl leading-tight font-bold tracking-tight my-4;
   }
   h3 {
-    @apply text-2xl md:text-3xl leading-snug font-semibold tracking-tight my-4;
+    @apply text-2xl md:text-3xl leading-snug font-bold tracking-tight my-4;
   }
   h4 {
-    @apply text-xl md:text-2xl leading-normal font-semibold tracking-tight my-4;
+    @apply text-xl md:text-2xl leading-normal font-bold tracking-tight my-4;
   }
   b {
     @apply font-bold;
@@ -58,7 +74,7 @@ img {
 
 article p {
   margin-bottom: 1.5rem;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 article p img {
