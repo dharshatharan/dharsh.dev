@@ -20,7 +20,7 @@ export default function Post({ post }: Props) {
         <title>{post.title}</title>
       </Head>
       <div className='w-full flex justify-center'>
-        <div className='md:max-w-3xl mx-5 md:mx-10 mb-10 md:mb-20'>
+        <div className='max-w-full p-5 md:max-w-3xl mx-5 md:mx-10 mb-10 md:mb-20'>
           <article className='text-md md:text-xl text-smooth-black dark:text-off-white'>
             <h1>{post.title}</h1>
             <div className='text-teal-grey my-5'>

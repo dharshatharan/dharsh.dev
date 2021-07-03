@@ -9,33 +9,18 @@ class MyDocument extends Document {
         <Head>
           <link
             rel="preload"
-            href="/fonts/iAWriterQuattroS-Regular.woff2"
+            href="/fonts/iAWriterQuattroV.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
           />
           <link
             rel="preload"
-            href="/fonts/iAWriterQuattroS-Bold.woff2"
+            href="/fonts/iAWriterQuattroV-Italic.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
           />
-          <link
-            rel="preload"
-            href="/fonts/iAWriterQuattroS-Italic.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/fonts/iAWriterQuattroS-BoldItalic.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link rel="icon" href="/icons/favicon.png" />
           <meta
             name="description"
             content="I share things that I consider 'cool' on here"
@@ -48,6 +33,10 @@ class MyDocument extends Document {
           <meta name="twitter:card" content={siteTitle} />
           <meta name="twitter:site" content="@dharshatharan" />
           <meta name="twitter:creator" content="@dharshatharan" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/icons/favicons/apple-touch-icon.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicons/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicons/favicon-16x16.png" />
+          <link rel="manifest" href="/icons/favicons/site.webmanifest" />
         </Head>
         <body className="bg-off-white dark:bg-smooth-black text-off-white dark:text-smooth-black">
           <Main />

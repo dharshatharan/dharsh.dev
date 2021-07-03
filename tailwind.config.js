@@ -10,10 +10,12 @@ module.exports = {
         'teal-grey': '#5e7f80',
         'medium-grey': '#535D5C',
         'off-white': '#FBFBFB',
+        'light-grey': '#F5F5F5',
         'dark-grey': '#101010',
         'pale-yellow': '#FEDBB1',
         'dark-yellow': '#E9AE8C',
-        'smooth-black': '#151515'
+        'smooth-black': '#151515',
+        'code-block': '#111927',
       },
       fontFamily: {
         sans: ['iA Writer Quattro V', ...fontFamily.sans]
