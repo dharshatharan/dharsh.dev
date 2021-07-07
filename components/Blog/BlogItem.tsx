@@ -12,7 +12,7 @@ interface Props {
 
 export default function BlogItem(props: Props): ReactElement {
   return (
-    <Link href={`/posts/${props.id}`}>
+    <Link href={`/blog/${props.id}`}>
       <div className='group h-80 w-80 md:h-96 md:w-96 relative rounded-xl md:rounded-2xl'>
         <div className='h-80 w-80 md:h-96 md:w-96 absolute z-0 rounded-xl md:rounded-2xl group-hover:opacity-20'>
           <Image src={props.image} layout='fill' objectFit='cover' className='rounded-xl md:rounded-2xl'/>
