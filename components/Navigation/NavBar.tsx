@@ -15,7 +15,7 @@ export default function NavBar({}: Props): ReactElement {
   useEffect(() => setMounted(true), []);
   return (
     <>
-    <div className="w-full h-10 bg-off-white dark:bg-smooth-black backdrop-filter backdrop-blur-xl bg-opacity-75 dark:bg-opacity-80 z-20 hidden md:block"></div>
+    <div className="w-full h-10 bg-off-white dark:bg-smooth-black backdrop-filter backdrop-blur-xl bg-opacity-75 dark:bg-opacity-80 firefox:bg-opacity-100 z-20 hidden md:block"></div>
     <nav className='sticky top-0 w-full flex item bg-off-white dark:bg-smooth-black backdrop-filter backdrop-blur-xl bg-opacity-75 dark:bg-opacity-80 z-20' style={{height: '8vh', minHeight:'5rem', maxHeight:'5rem'}}>
       <header className='flex justify-center w-full'>
         <div className='flex flex-1 justify-between items-center flex-row max-w-screen-xl pl-5'>

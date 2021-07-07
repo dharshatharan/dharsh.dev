@@ -1,6 +1,12 @@
 import Link from 'next/link'
 import React, { ReactElement } from 'react'
 import Image from 'next/image'
+import LISNImage from '../../public/icons/lisn.svg'
+import SCESocImage from '../../public/icons/scesoc.svg'
+import GithubImage from '../../public/icons/github.svg'
+import LinkedinImage from '../../public/icons/linkedin.svg'
+import InstagramImage from '../../public/icons/instagram.svg'
+import TwitterImage from '../../public/icons/twitter.svg'
 
 interface Props {
   
@@ -11,12 +17,12 @@ export default function Footer({}: Props): ReactElement {
     <div>
       <div className='w-full flex justify-center py-10'>
         <div id='socials' className='w-full max-w-7xl flex justify-center'>
-          <FooterIcon link='https://www.lisnclips.app/' icon='/icons/lisn.svg' />
-          <FooterIcon link='https://www.scesoc.ca/' icon='/icons/scesoc.svg' />
-          <FooterIcon link='https://github.com/dharshatharan' icon='/icons/github.svg' />
-          <FooterIcon link='https://www.linkedin.com/in/dharshatharan/' icon='/icons/linkedin.svg' />
-          <FooterIcon link='https://www.instagram.com/dharshatharan/' icon='/icons/instagram.svg' />
-          <FooterIcon link='https://twitter.com/dharshatharan' icon='/icons/twitter.svg' />
+          <FooterIcon link='https://www.lisnclips.app/' icon={LISNImage} />
+          <FooterIcon link='https://www.scesoc.ca/' icon={SCESocImage} />
+          <FooterIcon link='https://github.com/dharshatharan' icon={GithubImage} />
+          <FooterIcon link='https://www.linkedin.com/in/dharshatharan/' icon={LinkedinImage} />
+          <FooterIcon link='https://www.instagram.com/dharshatharan/' icon={InstagramImage} />
+          <FooterIcon link='https://twitter.com/dharshatharan' icon={TwitterImage} />
         </div>
       </div>
       <div className='bg-dark-grey w-full flex justify-between p-5 text-off-white font-normal text-xs md:text-base'>

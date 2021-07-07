@@ -11,8 +11,8 @@ export default function HeaderContent({}: Props): ReactElement {
   return (
     <section className='w-full flex flex-col flex-grow justify-between' style={{height: '92vh'}}>
         <div className='w-full flex flex-1 justify-center'>
-          <div className='flex flex-1 flex-col md:flex-row-reverse justify-around portrait:flex-col portrait:justify-around items-center md:justify-between max-w-7xl'>
-            <div className='max-w-xs md:max-w-xl w-full h-3/4 relative m-5 md:bottom-16 potrait:bottom-5'>
+          <div className='flex flex-1 flex-col md:flex-row-reverse justify-around portrait:flex-col portrait:justify-center items-center md:justify-between max-w-7xl'>
+            <div className='max-w-xs md:max-w-xl w-full h-3/4 portrait:h-1/2 relative m-5 md:bottom-16'>
               <Image 
                 src={profileImg}
                 alt='Profile'
@@ -20,9 +20,10 @@ export default function HeaderContent({}: Props): ReactElement {
                 objectFit='contain'
                 placeholder='blur'
                 className='rounded-full'
+                quality={100}
                 priority={true}/>
             </div>
-            <div className='max-w-xl p-5 pt-2 pb-2 md:p-5 relative bottom-5 md:bottom-16 potrait:bottom-5 text-smooth-black dark:text-off-white'>
+            <div className='max-w-xl p-5 pt-2 pb-2 md:p-5 relative bottom-5 md:bottom-16 text-smooth-black dark:text-off-white'>
               <div className='text-3xl md:text-5xl font-bold mt-2 mb-2 md:mt-5 md:mb-5 flex flex-row items-center'>
                 Hi, I'm{' '}
                 <SolidText>dharsh_</SolidText>
