@@ -5,23 +5,23 @@ import matter from 'gray-matter'
 import remark from 'remark'
 import html from 'remark-html'
 
-const postsDirectory = path.join(process.cwd(), 'posts')
+const blogsDirectory = path.join(process.cwd(), 'blogs')
 
-export function getSortedPostsData() {
-  // Get file names under /posts
-  const fileNames = fs.readdirSync(postsDirectory)
+export function getSortedBlogsData() {
+  // Get file names under /blogs
+  const fileNames = fs.readdirSync(blogsDirectory)
   const targetFiles = fileNames.filter(fileName => {
     return path.extname(fileName).toLowerCase() === '.md';
   });
-  const allPostsData = targetFiles.map(fileName => {
+  const allBlogData = targetFiles.map(fileName => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, '')
 
     // Read markdown file as string
-    const fullPath = path.join(postsDirectory, fileName)
+    const fullPath = path.join(blogsDirectory, fileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
 
-    // Use gray-matter to parse the post metadata section
+    // Use gray-matter to parse the blog metadata section
     const matterResult = matter(fileContents)
 
     // Combine the data with the id
@@ -30,8 +30,8 @@ export function getSortedPostsData() {
       ...(matterResult.data as { date: string; title: string , image: string })
     }
   })
-  // Sort posts by date
-  return allPostsData.sort((a, b) => {
+  // Sort blogs by date
+  return allBlogData.sort((a, b) => {
     if (a.date < b.date) {
       return 1
     } else {
@@ -40,8 +40,8 @@ export function getSortedPostsData() {
   })
 }
 
-export function getAllPostIds() {
-  const fileNames = fs.readdirSync(postsDirectory)
+export function getAllBlogIds() {
+  const fileNames = fs.readdirSync(blogsDirectory)
   if (fileNames) {
     return fileNames.map(fileName => {
       return {
@@ -58,11 +58,11 @@ export function getAllPostIds() {
   }]
 }
 
-export async function getPostData(id: string) {
-  const fullPath = path.join(postsDirectory, `${id}.md`)
+export async function getBlogData(id: string) {
+  const fullPath = path.join(blogsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
-  // Use gray-matter to parse the post metadata section
+  // Use gray-matter to parse the blog metadata section
   const matterResult = matter(fileContents)
 
   // Use remark to convert markdown into HTML string

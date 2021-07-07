@@ -1,25 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'iA Writer Quattro V';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: optional;
+  src: url(/fonts/iAWriterQuattroV.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'iA Writer Quattro V';
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: optional;
+  src: url(/fonts/iAWriterQuattroV-Italic.woff2) format('woff2');
+}
+
 @layer base {
   h1 {
-    @apply text-4xl md:text-5xl leading-tight font-bold tracking-tight my-4;
+    @apply text-4xl md:text-5xl font-bold my-4;
   }
   h2 {
-    @apply text-3xl md:text-4xl leading-tight font-bold tracking-tight my-4;
+    @apply text-3xl md:text-4xl font-bold my-4;
   }
   h3 {
-    @apply text-2xl md:text-3xl leading-snug font-semibold tracking-tight my-4;
+    @apply text-2xl md:text-3xl font-bold my-4;
   }
   h4 {
-    @apply text-xl md:text-2xl leading-normal font-semibold tracking-tight my-4;
+    @apply text-xl md:text-2xl font-bold my-4;
+  }
+  b {
+    @apply font-bold;
+  }
+  article p {
+    @apply mb-6 font-normal;
+  }
+  article p img {
+    @apply block ml-auto mr-auto object-contain;
+  }
+  article a {
+    @apply text-teal-grey dark:text-dark-yellow hover:underline;
+  }
+  article code {
+    @apply border text-sm md:text-base text-off-white border-off-white bg-code-block font-mono rounded-md p-1;
+  }
+  article pre code {
+    @apply block overflow-x-scroll bg-code-block w-full border border-off-white mb-6 p-4;
+  }
+  article ul {
+    @apply list-disc list-outside ml-6 md:ml-10 mb-6;
+  }
+  article ul li {
+    @apply pl-4 md:pl-6 mb-3;
+  }
+  article ol {
+    @apply list-decimal list-outside ml-6 md:ml-10 mb-6;
+  }
+  article ol li {
+    @apply pl-4 md:pl-6 mb-3;
+  }
+  article blockquote {
+    @apply bg-light-grey border-l-4 border-teal-grey dark:text-off-white dark:bg-dark-grey my-6 p-2;
+  }
+  article blockquote p {
+    @apply inline;
   }
 }
 
-html,
+html {
+  min-width: 360px;
+  scroll-behavior: smooth;
+}
+
 body {
   line-height: 1.6;
 }
@@ -27,48 +81,4 @@ body {
 img {
   max-width: 100%;
   display: block;
-}
-
-article p {
-  margin-bottom: 1.5rem;
-}
-
-article p img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  object-fit: contain;
-}
-
-article ul {
-  list-style: disc;
-  list-style-position: outside;
-  margin-left: 2.5rem;
-  margin-bottom: 1.5rem
-}
-
-article ol {
-  list-style: lower-roman;
-  list-style-position: outside;
-  margin-left: 2.5rem;
-  margin-bottom: 1.5rem
-}
-
-article a {
-  color: #729D9E
-}
-
-article a:hover {
-  text-decoration: underline;
-}
-
-article blockquote {
-  background: #F5F5F5;
-  border-left: 5px solid #729D9E;
-  margin: 1.5em 0;
-  padding: 0.5em 10px;
-}
-
-article blockquote p {
-  display: inline;
 }

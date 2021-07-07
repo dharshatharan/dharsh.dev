@@ -1,18 +1,24 @@
+const { fontFamily } = require('tailwindcss/defaultTheme');
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        'teal-grey': '#729D9E',
+        'teal-grey': '#5e7f80',
         'medium-grey': '#535D5C',
         'off-white': '#FBFBFB',
-        'dark-grey': '#323635',
+        'light-grey': '#F5F5F5',
+        'dark-grey': '#101010',
         'pale-yellow': '#FEDBB1',
-        'dark-yellow': '#E9AE8C'
+        'dark-yellow': '#E9AE8C',
+        'smooth-black': '#151515',
+        'code-block': '#111927',
       },
       fontFamily: {
-        main: 'Hind'
+        sans: ['iA Writer Quattro V', ...fontFamily.sans]
       },
       stroke: theme => ({
         'dark-yellow': theme('#E9AE8C'),
@@ -25,5 +31,21 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addVariant, e, postcss }) {
+      addVariant('firefox', ({ container, separator }) => {
+        const isFirefoxRule = postcss.atRule({
+          name: '-moz-document',
+          params: 'url-prefix()',
+        });
+        isFirefoxRule.append(container.nodes);
+        container.append(isFirefoxRule);
+        isFirefoxRule.walkRules((rule) => {
+          rule.selector = `.${e(
+            `firefox${separator}${rule.selector.slice(1)}`
+          )}`;
+        });
+      });
+    }),
+  ],
 }
