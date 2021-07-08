@@ -44,10 +44,10 @@
     @apply text-teal-grey dark:text-dark-yellow hover:underline;
   }
   article code {
-    @apply border text-sm md:text-base text-off-white border-off-white bg-code-block font-mono rounded-md p-1;
+    @apply text-sm md:text-base text-off-white bg-code-block font-mono rounded-md p-1;
   }
   article pre code {
-    @apply block overflow-x-scroll bg-code-block w-full border border-off-white mb-6 p-4;
+    @apply block overflow-x-scroll bg-code-block w-full mb-6 p-4 shadow-md;
   }
   article ul {
     @apply list-disc list-outside ml-6 md:ml-10 mb-6;

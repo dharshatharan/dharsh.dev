@@ -1,22 +1,18 @@
 import Head from 'next/head'
 import Layout from '../components/Layouts/Layout'
 import { siteTitle } from './_document'
-import { getSortedPostsData } from '../lib/posts'
+import { getSortedBlogsData } from '../lib/blogs'
 import { GetStaticProps } from 'next'
 import React from 'react'
 import BlogItem from '../components/Blog/BlogItem'
 import HeaderContent from '../components/HeaderContent/HeaderContent'
+import { PostData } from '../types/posts'
 
-export default function Home({
-  allPostsData
-}: {
-  allPostsData: {
-    date: string
-    title: string
-    id: string
-    image: string
-  }[]
-}) {
+interface Props {
+  allBlogsData: PostData[]
+}
+
+export default function Home({ allBlogsData }: Props) {
   return (
     <Layout headerContent={<HeaderContent />}>
       <Head>
@@ -28,10 +24,10 @@ export default function Home({
             <div id='blog' className='flex flex-col'>
               <h1 className='text-smooth-black dark:text-off-white'>Blog</h1>
               <div className='flex w-full flex-1 justify-center'>
-                <ul className='grid md:grid-cols-2 xl:grid-cols-3'>
-                  {allPostsData.map(({ id, date, title, image }) => (
-                    <li className='p-5' key={id}>
-                      <BlogItem id={id} date={date} title={title} image={image} />
+                <ul className='grid lg:grid-cols-2 xl:grid-cols-3'>
+                  {allBlogsData.map((blogData) => (
+                    <li className='p-5' key={blogData.id}>
+                      <BlogItem blogId={blogData.id} blogData={blogData} />
                     </li>
                   ))}
                 </ul>
@@ -45,10 +41,10 @@ export default function Home({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData()
+  const allBlogsData = getSortedBlogsData()
   return {
     props: {
-      allPostsData
+      allBlogsData
     }
   }
 }

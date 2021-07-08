@@ -1,6 +1,7 @@
 ---
 title: 'Show your work! Launching my website'
 date: '2021-06-13'
+readTime: 6
 image: 'https://images.unsplash.com/photo-1623528740865-c0d60ddf31be?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
 ---
 
