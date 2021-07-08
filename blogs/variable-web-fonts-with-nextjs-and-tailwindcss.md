@@ -1,6 +1,6 @@
 ---
 title: 'Variable Web Fonts with NextJS and TailwindCSS'
-date: '2021-07-02'
+date: '2021-07-08'
 readTime: 10
 image: 'https://images.unsplash.com/photo-1525972292986-69295aebf4cc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'
 ---
@@ -192,4 +192,4 @@ Here is the ultimate recipe to use custom web fonts with [Next.js](https://nextj
 I recommend checking out [Lee Robinson](https://leerob.io/) for more content related to Next.js, UI/UX and best practices for web applications. He is currently the Head of Developer Relations at [Vercel](https://vercel.com/), a position I would love to hold someday. He's been a great inspiration in getting this website and blog up and running. 
 
 > Don't think of your website as a self-promotion machine, think of it as a self-invention machine.  
-> \- Austin Kleon
+> [\- Austin Kleon](https://austinkleon.com/)
