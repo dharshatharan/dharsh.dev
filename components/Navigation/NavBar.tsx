@@ -28,11 +28,11 @@ export default function NavBar({}: Props): ReactElement {
                   </mask>
                   <g mask="url(#mask0)">
                     <path d="M36 24.6506L4 28L61 78.6506L36 24.6506Z" fill="#E9AE8C"/>
-                    <path d="M64 4V85.5L4.5 32" stroke={`${resolvedTheme === 'dark' ? "#FBFBFB" : "#151515"}`} stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M64 4V85.5L4.5 32" stroke={`${resolvedTheme === 'dark' ? "#FBFBFB" : "#151515"}`} strokeWidth="8" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M115.095 73.982L145.526 84.4306L115.181 14.4757L115.095 73.982Z" fill="#E9AE8C"/>
-                    <path d="M81 80.909L115.347 7.00019L146.758 80.5926" stroke={`${resolvedTheme === 'dark' ? "#FBFBFB" : "#151515"}`} stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M81 80.909L115.347 7.00019L146.758 80.5926" stroke={`${resolvedTheme === 'dark' ? "#FBFBFB" : "#151515"}`} strokeWidth="8" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M168.131 43.0664L157.806 73.5396L227.637 42.9107L168.131 43.0664Z" fill="#E9AE8C"/>
-                    <path d="M161.065 8.99985L235.113 43.0464L161.649 74.7563" stroke={`${resolvedTheme === 'dark' ? "#FBFBFB" : "#151515"}`} stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M161.065 8.99985L235.113 43.0464L161.649 74.7563" stroke={`${resolvedTheme === 'dark' ? "#FBFBFB" : "#151515"}`} strokeWidth="8" strokeLinecap="round" strokeLinejoin="round"/>
                   </g>
                 </svg>
                 )}

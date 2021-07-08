@@ -15,7 +15,7 @@ module.exports = {
         'pale-yellow': '#FEDBB1',
         'dark-yellow': '#E9AE8C',
         'smooth-black': '#151515',
-        'code-block': '#111927',
+        'code-block': '#313540',
       },
       fontFamily: {
         sans: ['iA Writer Quattro V', ...fontFamily.sans]
