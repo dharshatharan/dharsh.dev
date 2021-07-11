@@ -88,6 +88,15 @@ export default function NavBar(): ReactElement {
               <NavBarItem label="Blog" link="/#blog" />
               <NavBarItem label="Socials" link="/#socials" />
               <ThemeToggle />
+              <button
+                type="button"
+                className="text-indigo-600"
+                onClick={() => {
+                  throw new Error("Sentry Frontend Error");
+                }}
+              >
+                Throw error
+              </button>
             </div>
           </div>
         </header>
