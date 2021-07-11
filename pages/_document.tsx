@@ -1,9 +1,9 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 export const siteTitle = 'Dharsh'
 
 class MyDocument extends Document {
-  render() {
+  render () {
     return (
       <Html lang="en">
         <Head>
@@ -43,8 +43,8 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }
 
-export default MyDocument;
+export default MyDocument

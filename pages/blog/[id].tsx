@@ -4,16 +4,15 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import Date from '../../components/Formatters/Date'
-import { GetStaticProps, GetStaticPaths, GetStaticPathsContext } from 'next'
+import { GetStaticProps, GetStaticPaths } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 import { PostData } from '../../types/posts'
-import React, { CSSProperties } from 'react'
 
-const contentStyle:CSSProperties = {
-  listStyleType: 'disc',
+interface Props {
+  blog: PostData
 }
 
-export default function Post({ blog }: Props) {
+export default function Post ({ blog }: Props) {
   return (
     <Layout>
       <Head>
@@ -25,12 +24,12 @@ export default function Post({ blog }: Props) {
             <h1>{blog.title}</h1>
             <div className='text-teal-grey my-5'>
               <Date dateString={blog.date} />
-              &nbsp;&bull;&nbsp;{ blog.readTime + " min read"}
+              &nbsp;&bull;&nbsp;{ blog.readTime + ' min read'}
             </div>
             <div className='w-full h-96 relative mb-10'>
-              <Image src={blog.image} layout='fill' objectFit='cover' />
-            </div> 
-            <div className={`my-10 leading-relaxed`} dangerouslySetInnerHTML={{ __html: blog.contentHtml }} />
+              <Image src={blog.image} alt={`${blog.title} Cover`} layout='fill' objectFit='cover' />
+            </div>
+            <div className={'my-10 leading-relaxed'} dangerouslySetInnerHTML={{ __html: blog.contentHtml }} />
           </article>
           <div className='text-teal-grey hover:underline text-md md:text-xl'>
             <Link href="/#blog">
@@ -41,6 +40,10 @@ export default function Post({ blog }: Props) {
       </div>
     </Layout>
   )
+}
+
+interface Params extends ParsedUrlQuery {
+  id: string,
 }
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
@@ -58,12 +61,4 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) 
       blog: blogData
     }
   }
-}
-
-type Props = {
-  blog: PostData
-}
-
-interface Params extends ParsedUrlQuery {
-  id: string,
 }

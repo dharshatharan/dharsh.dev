@@ -7,12 +7,12 @@ import html from 'remark-html'
 
 const blogsDirectory = path.join(process.cwd(), 'blogs')
 
-export function getSortedBlogsData() {
+export function getSortedBlogsData () {
   // Get file names under /blogs
   const fileNames = fs.readdirSync(blogsDirectory)
   const targetFiles = fileNames.filter(fileName => {
-    return path.extname(fileName).toLowerCase() === '.md';
-  });
+    return path.extname(fileName).toLowerCase() === '.md'
+  })
   const allBlogData = targetFiles.map(fileName => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, '')
@@ -27,7 +27,7 @@ export function getSortedBlogsData() {
     // Combine the data with the id
     return {
       id,
-      ...(matterResult.data as { date: string; title: string , image: string, readTime: number })
+      ...(matterResult.data as { date: string; title: string, image: string, readTime: number })
     }
   })
   // Sort blogs by date
@@ -40,7 +40,7 @@ export function getSortedBlogsData() {
   })
 }
 
-export function getAllBlogIds() {
+export function getAllBlogIds () {
   const fileNames = fs.readdirSync(blogsDirectory)
   if (fileNames) {
     return fileNames.map(fileName => {
@@ -58,7 +58,7 @@ export function getAllBlogIds() {
   }]
 }
 
-export async function getBlogData(id: string) {
+export async function getBlogData (id: string) {
   const fullPath = path.join(blogsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
@@ -67,7 +67,7 @@ export async function getBlogData(id: string) {
 
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
-    .use(externalLinks, {target: '_blank'})
+    .use(externalLinks, { target: '_blank' })
     .use(html)
     .process(matterResult.content)
   const contentHtml = processedContent.toString()

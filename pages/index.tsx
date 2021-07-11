@@ -3,7 +3,6 @@ import Layout from '../components/Layouts/Layout'
 import { siteTitle } from './_document'
 import { getSortedBlogsData } from '../lib/blogs'
 import { GetStaticProps } from 'next'
-import React from 'react'
 import BlogItem from '../components/Blog/BlogItem'
 import HeaderContent from '../components/HeaderContent/HeaderContent'
 import { PostData } from '../types/posts'
@@ -12,7 +11,7 @@ interface Props {
   allBlogsData: PostData[]
 }
 
-export default function Home({ allBlogsData }: Props) {
+export default function Home ({ allBlogsData }: Props) {
   return (
     <Layout headerContent={<HeaderContent />}>
       <Head>

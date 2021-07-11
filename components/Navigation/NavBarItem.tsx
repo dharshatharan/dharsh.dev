@@ -1,12 +1,12 @@
 import Link from 'next/link'
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 
 interface Props {
   label: string,
   link: string
 }
 
-export default function NavBarItem({label, link}: Props): ReactElement {
+export default function NavBarItem ({ label, link }: Props): ReactElement {
   return (
     <Link href={link}>
       <a className='p-2 md:px-5 hover:border-medium-grey bg-transparent border-b-4 border-transparent transition duration-500'>

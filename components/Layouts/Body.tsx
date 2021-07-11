@@ -1,10 +1,10 @@
-import React, { ReactElement } from 'react'
+import { ReactElement, ReactNode } from 'react'
 
 interface Props {
-  children: React.ReactNode
+  children: ReactNode
 }
 
-export default function Body({ children }: Props): ReactElement {
+export default function Body ({ children }: Props): ReactElement {
   return (
     <main>{children}</main>
   )
