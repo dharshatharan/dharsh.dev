@@ -1,11 +1,7 @@
-import { useState, useEffect, ReactElement } from 'react';
-import { useTheme } from 'next-themes';
+import { useState, useEffect, ReactElement } from "react";
+import { useTheme } from "next-themes";
 
-interface Props {
-  
-}
-
-export default function ThemeToggle({}: Props): ReactElement {
+export default function ThemeToggle(): ReactElement {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
   useEffect(() => setMounted(true), []);
@@ -14,7 +10,7 @@ export default function ThemeToggle({}: Props): ReactElement {
       aria-label="Toggle Dark Mode"
       type="button"
       className="w-10 h-10 p-3 md:mx-5 bg-gray-200 rounded-full dark:bg-gray-800 focus:outline-none"
-      onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
       {mounted && (
         <svg
@@ -24,7 +20,7 @@ export default function ThemeToggle({}: Props): ReactElement {
           stroke="currentColor"
           className="w-4 h-4 text-smooth-black dark:text-dark-yellow"
         >
-          {resolvedTheme === 'dark' ? (
+          {resolvedTheme === "dark" ? (
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -45,5 +41,5 @@ export default function ThemeToggle({}: Props): ReactElement {
         // </svg>
       )}
     </button>
-  )
+  );
 }

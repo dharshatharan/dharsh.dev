@@ -1,5 +1,8 @@
-import { NextApiRequest, NextApiResponse } from 'next'
+import { NextApiRequest, NextApiResponse } from "next";
+import { withSentry } from "@sentry/nextjs";
 
-export default (_: NextApiRequest, res: NextApiResponse) => {
-  res.status(200).json({ text: 'Hello' })
-}
+const Hello = (_: NextApiRequest, res: NextApiResponse) => {
+  res.status(200).json({ text: "Hello" });
+};
+
+export default withSentry(Hello);

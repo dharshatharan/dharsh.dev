@@ -1,25 +1,19 @@
-import React, { ReactElement } from 'react'
-import NavBar from '../Navigation/NavBar'
-import Body from './Body'
-import Footer from './Footer'
-import Header from './Header'
-
+import { ReactElement, ReactNode } from "react";
+import NavBar from "@components/Navigation/NavBar";
+import Body from "@components/Layouts/Body";
+import Footer from "@components/Layouts/Footer";
 interface Props {
-  headerContent?: ReactElement
-  children: React.ReactNode
+  headerContent?: ReactElement;
+  children: ReactNode;
 }
 
 export default function Layout({ headerContent, children }: Props) {
   return (
-    <div className='m-0'>
-      <NavBar/>
+    <div className="m-0">
+      <NavBar />
       {headerContent}
-      {/* {headerContent ? 
-        <Header content={headerContent}/>
-        : <Header />
-      } */}
       <Body>{children}</Body>
-      <Footer/>
+      <Footer />
     </div>
-  )
+  );
 }
