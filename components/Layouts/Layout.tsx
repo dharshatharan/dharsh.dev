@@ -1,7 +1,7 @@
 import { ReactElement, ReactNode } from "react";
-import NavBar from "../Navigation/NavBar";
-import Body from "./Body";
-import Footer from "./Footer";
+import NavBar from "@components/Navigation/NavBar";
+import Body from "@components/Layouts/Body";
+import Footer from "@components/Layouts/Footer";
 interface Props {
   headerContent?: ReactElement;
   children: ReactNode;

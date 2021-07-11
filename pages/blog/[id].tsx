@@ -1,12 +1,12 @@
-import Layout from "../../components/Layouts/Layout";
-import { getAllBlogIds, getBlogData } from "../../lib/blogs";
+import Layout from "@components/Layouts/Layout";
+import { getAllBlogIds, getBlogData } from "@lib/blogs";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import Date from "../../components/Formatters/Date";
+import Date from "@components/Formatters/Date";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { ParsedUrlQuery } from "querystring";
-import { PostData } from "../../types/posts";
+import { PostData } from "@localTypes/posts";
 
 interface Props {
   blog: PostData;

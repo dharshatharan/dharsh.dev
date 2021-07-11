@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { ReactElement } from "react";
-import Date from "../Formatters/Date";
+import Date from "@components/Formatters/Date";
 import Image from "next/image";
-import { PostData } from "../../types/posts";
+import { PostData } from "@localTypes/posts";
 
 interface Props {
   blogId: string;

@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import Image from "next/image";
-import SolidText from "../../components/Text/SolidText";
-import profileImg from "../../public/images/profile.png";
+import SolidText from "@components/Text/SolidText";
+import profileImg from "@images/profile.png";
 
 export default function HeaderContent(): ReactElement {
   return (

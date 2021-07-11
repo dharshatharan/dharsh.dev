@@ -1,11 +1,11 @@
 import { ReactElement } from "react";
 import Image from "next/image";
-import LISNImage from "../../public/icons/lisn.svg";
-import SCESocImage from "../../public/icons/scesoc.svg";
-import GithubImage from "../../public/icons/github.svg";
-import LinkedinImage from "../../public/icons/linkedin.svg";
-import InstagramImage from "../../public/icons/instagram.svg";
-import TwitterImage from "../../public/icons/twitter.svg";
+import LISNImage from "@icons/lisn.svg";
+import SCESocImage from "@icons/scesoc.svg";
+import GithubImage from "@icons/github.svg";
+import LinkedinImage from "@icons/linkedin.svg";
+import InstagramImage from "@icons/instagram.svg";
+import TwitterImage from "@icons/twitter.svg";
 
 export default function Footer(): ReactElement {
   return (

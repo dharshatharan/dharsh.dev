@@ -2,7 +2,7 @@ import { useState, useEffect, ReactElement } from "react";
 import NavBarItem from "./NavBarItem";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import ThemeToggle from "../Toggle/ThemeToggle";
+import ThemeToggle from "@components/Toggle/ThemeToggle";
 
 export default function NavBar(): ReactElement {
   const [mounted, setMounted] = useState(false);

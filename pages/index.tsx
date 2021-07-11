@@ -1,11 +1,11 @@
 import Head from "next/head";
-import Layout from "../components/Layouts/Layout";
+import Layout from "@components/Layouts/Layout";
 import { siteTitle } from "./_document";
-import { getSortedBlogsData } from "../lib/blogs";
+import { getSortedBlogsData } from "@lib/blogs";
 import { GetStaticProps } from "next";
-import BlogItem from "../components/Blog/BlogItem";
-import HeaderContent from "../components/HeaderContent/HeaderContent";
-import { PostData } from "../types/posts";
+import BlogItem from "@components/Blog/BlogItem";
+import HeaderContent from "@components/HeaderContent/HeaderContent";
+import { PostData } from "@localTypes/posts";
 
 interface Props {
   allBlogsData: PostData[];

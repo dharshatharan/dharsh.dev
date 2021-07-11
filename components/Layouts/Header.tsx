@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import NavBar from "../Navigation/NavBar";
+import NavBar from "@components/Navigation/NavBar";
 
 interface Props {
   content?: ReactElement;
