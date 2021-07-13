@@ -18,7 +18,10 @@ export default function NavBar(): ReactElement {
         <header className="flex justify-center w-full">
           <div className="flex flex-1 justify-between items-center flex-row max-w-screen-xl pl-5">
             <Link href="/">
-              <a className="w-24 h-16 md:w-32 md:h-20 flex items-center">
+              <a
+                aria-label="Home Page"
+                className="w-24 h-16 md:w-32 md:h-20 flex items-center"
+              >
                 {mounted && (
                   <svg
                     width="240"

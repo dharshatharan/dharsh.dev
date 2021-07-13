@@ -21,6 +21,28 @@ class MyDocument extends Document {
             type="font/woff2"
             crossOrigin="anonymous"
           />
+          {process.env.NODE_ENV === "production" && (
+            <link
+              rel="dns-prefetch"
+              href={process.env.NEXT_PUBLIC_FATHOM_CUSTOM_DOMAIN}
+            ></link>
+          )}
+          {process.env.NODE_ENV === "production" && (
+            <link
+              rel="preconnect"
+              href={process.env.NEXT_PUBLIC_FATHOM_CUSTOM_DOMAIN}
+              crossOrigin=""
+            />
+          )}
+          <link
+            rel="dns-prefetch"
+            href={process.env.NEXT_PUBLIC_SENTRY_DOMAIN}
+          ></link>
+          <link
+            rel="preconnect"
+            href={process.env.NEXT_PUBLIC_SENTRY_DOMAIN}
+            crossOrigin=""
+          />
           <meta
             name="description"
             content="I share things that I consider 'cool' on here"
