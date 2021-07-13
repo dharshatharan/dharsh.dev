@@ -9,6 +9,7 @@ export const useAnalytics = () => {
     if (process.env.NODE_ENV === "production") {
       Fathom.load(process.env.NEXT_PUBLIC_FATHOM_SITE_ID!, {
         includedDomains: ["www.dharsh.dev"],
+        url: process.env.NEXT_PUBLIC_FATHOM_CUSTOM_DOMAIN,
       });
     }
 
