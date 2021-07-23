@@ -30,17 +30,17 @@ export default function HeaderContent(): ReactElement {
               I’m a{" "}
               <b>
                 {" "}
-                21 year old Software Engineering student at Carleton University{" "}
+                21-year-old Software Engineering student at Carleton University{" "}
               </b>
-              that enjoys being a part of the startup life.
+              that enjoys being a part of startup life.
             </p>
             <p className="mt-2 mb-2 md:mt-5 md:mb-5">
-              One of the best ways to learn is to think aloud, and that what I’m
+              One of the best ways to learn is to think aloud, and that is what I’m
               going to try to do with this website.
             </p>
             <p className="mt-2 mb-2 md:mt-5 md:mb-5">
-              On this site I will be sharing thoughts, tool and content that I
-              think are <b>‘cool’ </b>
+              On this site, I will be sharing thoughts, tools and content that I
+              think is <b>‘cool’ </b>
               with the goal of{" "}
               <b>
                 {" "}
@@ -49,10 +49,10 @@ export default function HeaderContent(): ReactElement {
             </p>
             <p className="mt-2 mb-2 md:mt-5 md:mb-5">
               Some categories that interest me are{" "}
-              <b> tech, productivity, photography and fpv drones. </b>
+              <b> tech, productivity, photography and FPV drones. </b>
             </p>
             <p className="mt-2 mb-2 md:mt-5 md:mb-5">
-              <b>Disclaimer: </b> I’m an amature in all these topics, but aren’t
+              <b>Disclaimer: </b> I’m an amateur in all these topics, but aren’t
               we all?
             </p>
           </div>
