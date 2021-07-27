@@ -14,6 +14,7 @@
     "@sentry/nextjs": "^6.8.0",
     "date-fns": "^2.21.3",
     "fathom-client": "^3.0.0",
+    "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
     "next": "^11.0.1",
     "next-themes": "^0.0.15",

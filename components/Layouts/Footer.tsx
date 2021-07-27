@@ -4,7 +4,7 @@ import LISNImage from "@icons/lisn.svg";
 import SCESocImage from "@icons/scesoc.svg";
 import GithubImage from "@icons/github.svg";
 import LinkedinImage from "@icons/linkedin.svg";
-import InstagramImage from "@icons/instagram.svg";
+import RSSImage from "@icons/rss.svg";
 import TwitterImage from "@icons/twitter.svg";
 
 export default function Footer(): ReactElement {
@@ -33,14 +33,14 @@ export default function Footer(): ReactElement {
             label="Link to my LinkedIn"
           />
           <FooterIcon
-            link="https://www.instagram.com/dharshatharan/"
-            icon={InstagramImage}
-            label="Link to my Instagram"
-          />
-          <FooterIcon
             link="https://twitter.com/dharshatharan"
             icon={TwitterImage}
             label="Link to my Twitter"
+          />
+          <FooterIcon
+            link="/rss/feed.xml"
+            icon={RSSImage}
+            label="Link to my RSS Feed"
           />
         </div>
       </div>

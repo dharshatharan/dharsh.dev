@@ -21,7 +21,8 @@
       "@blogs/*": ["blogs/*"],
       "@lib/*": ["lib/*"],
       "@images/*": ["public/images/*"],
-      "@icons/*": ["public/icons/*"]
+      "@icons/*": ["public/icons/*"],
+      "@scripts/*": ["scripts/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_error.js"],

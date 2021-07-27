@@ -6,6 +6,7 @@ import { GetStaticProps } from "next";
 import BlogItem from "@components/Blog/BlogItem";
 import HeaderContent from "@components/HeaderContent/HeaderContent";
 import { PostData } from "@localTypes/posts";
+import { generateRssFeed } from "@scripts/generate-rss";
 
 interface Props {
   allBlogsData: PostData[];
@@ -41,6 +42,7 @@ export default function Home({ allBlogsData }: Props) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const allBlogsData = getSortedBlogsData();
+  generateRssFeed();
   return {
     props: {
       allBlogsData,
