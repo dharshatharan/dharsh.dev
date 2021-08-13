@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@sentry/nextjs": "^6.8.0",
-    "date-fns": "^2.21.3",
+    "date-fns": "^2.23.0",
     "fathom-client": "^3.0.0",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
