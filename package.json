@@ -11,7 +11,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@sentry/nextjs": "^6.8.0",
+    "@sentry/nextjs": "^6.10.0",
     "date-fns": "^2.23.0",
     "fathom-client": "^3.0.0",
     "feed": "^4.2.2",
