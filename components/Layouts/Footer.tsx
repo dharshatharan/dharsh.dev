@@ -6,43 +6,46 @@ import GithubImage from "@icons/github.svg";
 import LinkedinImage from "@icons/linkedin.svg";
 import RSSImage from "@icons/rss.svg";
 import TwitterImage from "@icons/twitter.svg";
+import FadeInWhenVisible from "@components/Animations/FadeInWhenVisible";
 
 export default function Footer(): ReactElement {
   return (
     <div>
       <div className="w-full flex justify-center py-10">
-        <div id="socials" className="w-full max-w-7xl flex justify-center">
-          <FooterIcon
-            link="https://www.lisnclips.app/"
-            icon={LISNImage}
-            label="Link to LISN"
-          />
-          <FooterIcon
-            link="https://www.scesoc.ca/"
-            icon={SCESocImage}
-            label="Link to SCESoc"
-          />
-          <FooterIcon
-            link="https://github.com/dharshatharan"
-            icon={GithubImage}
-            label="Link to my GitHub"
-          />
-          <FooterIcon
-            link="https://www.linkedin.com/in/dharshatharan/"
-            icon={LinkedinImage}
-            label="Link to my LinkedIn"
-          />
-          <FooterIcon
-            link="https://twitter.com/dharshatharan"
-            icon={TwitterImage}
-            label="Link to my Twitter"
-          />
-          <FooterIcon
-            link="/rss/feed.xml"
-            icon={RSSImage}
-            label="Link to my RSS Feed"
-          />
-        </div>
+        <FadeInWhenVisible>
+          <div id="socials" className="w-full max-w-7xl flex justify-center">
+            <FooterIcon
+              link="https://www.lisnclips.app/"
+              icon={LISNImage}
+              label="Link to LISN"
+            />
+            <FooterIcon
+              link="https://www.scesoc.ca/"
+              icon={SCESocImage}
+              label="Link to SCESoc"
+            />
+            <FooterIcon
+              link="https://github.com/dharshatharan"
+              icon={GithubImage}
+              label="Link to my GitHub"
+            />
+            <FooterIcon
+              link="https://www.linkedin.com/in/dharshatharan/"
+              icon={LinkedinImage}
+              label="Link to my LinkedIn"
+            />
+            <FooterIcon
+              link="https://twitter.com/dharshatharan"
+              icon={TwitterImage}
+              label="Link to my Twitter"
+            />
+            <FooterIcon
+              link="/rss/feed.xml"
+              icon={RSSImage}
+              label="Link to my RSS Feed"
+            />
+          </div>
+        </FadeInWhenVisible>
       </div>
       <div className="bg-dark-grey w-full flex justify-between p-5 text-off-white font-normal text-xs md:text-base">
         <span>
