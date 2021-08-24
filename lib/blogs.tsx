@@ -7,12 +7,13 @@ import html from "remark-html";
 
 const blogsDirectory = path.join(process.cwd(), "blogs");
 
-export function getSortedBlogsData() {
+export function getSortedBlogsData(limit: number = -1) {
   // Get file names under /blogs
   const fileNames = fs.readdirSync(blogsDirectory);
-  const targetFiles = fileNames.filter((fileName) => {
+  let targetFiles = fileNames.filter((fileName) => {
     return path.extname(fileName).toLowerCase() === ".md";
   });
+  if (limit !== -1) targetFiles = targetFiles.slice(0, limit);
   const allBlogData = targetFiles.map((fileName) => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, "");

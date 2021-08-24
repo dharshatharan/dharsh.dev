@@ -9,7 +9,7 @@ interface Props {
 
 export default function Layout({ headerContent, children }: Props) {
   return (
-    <div className="m-0">
+    <div className="m-0 flex flex-col min-h-screen">
       <NavBar />
       {headerContent}
       <Body>{children}</Body>

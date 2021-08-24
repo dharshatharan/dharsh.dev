@@ -10,45 +10,43 @@ import { generateRssFeed } from "@scripts/generate-rss";
 import FadeInWhenVisible from "@components/Animations/FadeInWhenVisible";
 
 interface Props {
-  allBlogsData: PostData[];
+  latestBlogData: PostData[];
 }
 
-export default function Home({ allBlogsData }: Props) {
+export default function Home({ latestBlogData }: Props) {
   return (
     <Layout headerContent={<HeaderContent />}>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <section className="w-full">
-        <div className="w-full flex flex-1 justify-center py-10 px-5">
-          <div className="max-w-7xl">
-            <FadeInWhenVisible>
-              <div id="blog" className="flex flex-col">
-                <h1 className="text-smooth-black dark:text-off-white">Blog</h1>
-                <div className="flex w-full flex-1 justify-center">
-                  <ul className="grid lg:grid-cols-2 xl:grid-cols-3">
-                    {allBlogsData.map((blogData) => (
-                      <li className="p-5" key={blogData.id}>
-                        <BlogItem blogId={blogData.id} blogData={blogData} />
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </FadeInWhenVisible>
+        <FadeInWhenVisible>
+          <div id="blog" className="flex flex-col">
+            <h1 className="text-smooth-black dark:text-off-white">
+              Latest Blogs
+            </h1>
+            <div className="flex w-full flex-1 justify-center">
+              <ul className="grid lg:grid-cols-2 xl:grid-cols-3">
+                {latestBlogData.map((blogData) => (
+                  <li className="p-5" key={blogData.id}>
+                    <BlogItem blogId={blogData.id} blogData={blogData} />
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
+        </FadeInWhenVisible>
       </section>
     </Layout>
   );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allBlogsData = getSortedBlogsData();
+  const latestBlogData = getSortedBlogsData(3);
   generateRssFeed();
   return {
     props: {
-      allBlogsData,
+      latestBlogData,
     },
   };
 };

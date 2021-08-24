@@ -24,7 +24,7 @@ export default function NavBar(): ReactElement {
             </Link>
             <div className="flex flex-row pr-3 md:p-0 md:bottom-5 items-center">
               <NavBarItem label="About" link="/" />
-              <NavBarItem label="Blog" link="/#blog" />
+              <NavBarItem label="Blog" link="/blog" />
               <NavBarItem label="Socials" link="/#socials" />
               <ThemeToggle />
             </div>
