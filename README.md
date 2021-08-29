@@ -9,7 +9,7 @@ Feel free to use this code to help build your own web applications. I'm trying t
 - [ReactJS with NextJS](https://nextjs.org/) as the application framework
 - [TypeScript](https://www.typescriptlang.org/) to stay away from stupid bugs
 - [Tailwind CSS](https://tailwindcss.com/) to prevent needing to write and duplicate CSS class names
-- [Remark](https://github.com/remarkjs/remark) as the markdown processer
+- [MDX Bundler](https://github.com/kentcdodds/mdx-bundler) as the markdown bundler
 - [Vercel](https://vercel.com/) to continuously build and deploy the application
 - [Notion](https://www.notion.so/) to keep me sane while overthinking this website
 - [Sentry](https://sentry.io/) to track production errors

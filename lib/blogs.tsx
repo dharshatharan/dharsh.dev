@@ -1,9 +1,14 @@
 import fs from "fs";
-import externalLinks from "remark-external-links";
 import path from "path";
 import matter from "gray-matter";
-import remark from "remark";
-import html from "remark-html";
+import { bundleMDX } from "mdx-bundler";
+import readingTime from "reading-time";
+
+import remarkGfm from "remark-gfm";
+import rehypeSlug from "rehype-slug";
+import rehypeCodeTitles from "rehype-code-titles";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypePrism from "rehype-prism-plus";
 
 const blogsDirectory = path.join(process.cwd(), "blogs");
 
@@ -11,12 +16,12 @@ export function getSortedBlogsData(limit: number = -1) {
   // Get file names under /blogs
   const fileNames = fs.readdirSync(blogsDirectory);
   let targetFiles = fileNames.filter((fileName) => {
-    return path.extname(fileName).toLowerCase() === ".md";
+    return path.extname(fileName).toLowerCase() === ".mdx";
   });
   if (limit !== -1) targetFiles = targetFiles.slice(0, limit);
   const allBlogData = targetFiles.map((fileName) => {
-    // Remove ".md" from file name to get id
-    const id = fileName.replace(/\.md$/, "");
+    // Remove ".mdx" from file name to get id
+    const id = fileName.replace(/\.mdx$/, "");
 
     // Read markdown file as string
     const fullPath = path.join(blogsDirectory, fileName);
@@ -32,8 +37,8 @@ export function getSortedBlogsData(limit: number = -1) {
         date: string;
         title: string;
         image: string;
-        readTime: number;
       }),
+      readTime: readingTime(fileContents),
     };
   });
   // Sort blogs by date
@@ -52,7 +57,7 @@ export function getAllBlogIds() {
     return fileNames.map((fileName) => {
       return {
         params: {
-          id: fileName.replace(/\.md$/, ""),
+          id: fileName.replace(/\.mdx$/, ""),
         },
       };
     });
@@ -67,28 +72,38 @@ export function getAllBlogIds() {
 }
 
 export async function getBlogData(id: string) {
-  const fullPath = path.join(blogsDirectory, `${id}.md`);
+  const fullPath = path.join(blogsDirectory, `${id}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
-  // Use gray-matter to parse the blog metadata section
-  const matterResult = matter(fileContents);
+  const { code, frontmatter } = await bundleMDX(fileContents, {
+    xdmOptions(options) {
+      options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkGfm];
+      options.rehypePlugins = [
+        ...(options?.rehypePlugins ?? []),
+        rehypeSlug,
+        rehypeCodeTitles,
+        rehypePrism,
+        [
+          rehypeAutolinkHeadings,
+          {
+            properties: {
+              className: ["anchor"],
+            },
+          },
+        ],
+      ];
+      return options;
+    },
+  });
 
-  // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-    .use(externalLinks, { target: "_blank" })
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
-
-  // Combine the data with the id and contentHtml
   return {
     id,
-    contentHtml,
-    ...(matterResult.data as {
+    contentHtml: code,
+    readTime: readingTime(fileContents),
+    ...(frontmatter as {
       date: string;
       title: string;
       image: string;
-      readTime: number;
     }),
   };
 }

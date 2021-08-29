@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "teal-grey": "#5e7f80",
+        "teal-grey": "#1aa8ad",
         "medium-grey": "#535D5C",
         "off-white": "#FBFBFB",
         "light-grey": "#F5F5F5",
@@ -16,7 +16,7 @@ module.exports = {
         "pale-yellow": "#FEDBB1",
         "dark-yellow": "#E9AE8C",
         "smooth-black": "#151515",
-        "code-block": "#313540",
+        "code-block": "#161B22",
       },
       fontFamily: {
         sans: ["iA Writer Quattro V", ...fontFamily.sans],

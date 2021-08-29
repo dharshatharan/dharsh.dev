@@ -28,7 +28,7 @@ export default function BlogItem({ blogData }: Props): ReactElement {
           </h2>
           <div className="text-off-white text-lg group-hover:text-dark-grey dark:group-hover:text-off-white">
             <Date dateString={blogData.date} />
-            &nbsp;&bull;&nbsp;{blogData.readTime + " min read"}
+            &nbsp;&bull;&nbsp;{blogData.readTime.text}
           </div>
         </div>
       </div>

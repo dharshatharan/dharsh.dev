@@ -35,7 +35,7 @@
     @apply font-bold;
   }
   article p {
-    @apply mb-6 font-normal;
+    @apply mb-6 font-normal dark:text-gray-400;
   }
   article p img {
     @apply block ml-auto mr-auto object-contain;
@@ -47,7 +47,7 @@
     @apply text-sm md:text-base text-off-white bg-code-block font-mono rounded-md p-1;
   }
   article pre code {
-    @apply block overflow-x-scroll bg-code-block w-full mb-6 p-4 shadow-md;
+    @apply block overflow-x-scroll text-[#dce4ec] bg-code-block w-full mb-6 p-4 shadow-md;
   }
   article ul {
     @apply list-disc list-outside ml-6 md:ml-10 mb-6;
@@ -67,6 +67,84 @@
   article blockquote p {
     @apply inline;
   }
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #8b949e;
+}
+
+.token.punctuation {
+  color: #c9d1d9;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #79c0ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #a5d6ff;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #ff8527;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #ff7b72;
+}
+
+.token.function,
+.token.class-name {
+  color: #d2a8ff;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #c9d1d9;
+}
+
+.anchor {
+  @apply absolute invisible;
+
+  margin-left: -1em;
+  padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
+  cursor: pointer;
+}
+
+.anchor:hover {
+  @apply visible no-underline;
+}
+
+.anchor:after {
+  @apply text-gray-300 dark:text-gray-700;
+  content: "#";
+}
+
+*:hover > .anchor {
+  @apply visible no-underline;
 }
 
 html {
