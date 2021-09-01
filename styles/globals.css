@@ -135,7 +135,7 @@
 }
 
 .anchor:hover {
-  @apply visible no-underline;
+  @apply md:visible no-underline;
 }
 
 .anchor:after {
@@ -144,7 +144,7 @@
 }
 
 *:hover > .anchor {
-  @apply visible no-underline;
+  @apply md:visible no-underline;
 }
 
 html {
@@ -159,4 +159,8 @@ body {
 img {
   max-width: 100%;
   display: block;
+}
+
+[id] {
+  scroll-margin-top: 5rem;
 }

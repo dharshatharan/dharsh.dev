@@ -27,7 +27,7 @@ export default function Post({ blog }: Props) {
         <title>{blog.title}</title>
       </Head>
       <div className="w-full flex justify-center">
-        <div className="max-w-full p-5 md:max-w-3xl md:mx-10 mb-10 md:mb-20">
+        <div className="max-w-full md:max-w-3xl md:mx-10 mb-10 md:mb-20">
           <article className="text-md md:text-xl text-smooth-black dark:text-off-white">
             <h1>{blog.title}</h1>
             <div className="text-teal-grey dark:text-dark-yellow my-5">
