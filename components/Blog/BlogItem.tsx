@@ -3,6 +3,7 @@ import { ReactElement } from "react";
 import Date from "@components/Formatters/Date";
 import Image from "next/image";
 import { PostData } from "@localTypes/posts";
+import { motion } from "framer-motion";
 
 interface Props {
   blogId: string;
@@ -13,18 +14,20 @@ export default function BlogItem({ blogData }: Props): ReactElement {
   return (
     <Link href={`/blog/${blogData.id}`} passHref>
       <a>
-        <div className="group h-80 w-80 md:h-96 md:w-96 relative rounded-xl md:rounded-2xl">
-          <div className="h-80 w-80 md:h-96 md:w-96 absolute z-0 rounded-xl md:rounded-2xl group-hover:opacity-20">
-            <Image
-              src={blogData.image}
-              alt={blogData.title}
-              layout="fill"
-              objectFit="cover"
-              className="rounded-xl md:rounded-2xl"
-            />
-          </div>
-          <div className="relative z-10 h-full bg-black bg-opacity-60 rounded-xl md:rounded-2xl p-5 flex flex-col justify-between group-hover:bg-transparent">
-            <h2 className="text-3xl text-off-white group-hover:text-dark-grey dark:group-hover:text-off-white m-0">
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 1 }}
+          className="text-off-white bg-black square relative rounded-xl md:rounded-2xl shadow-md hover:shadow-lg"
+        >
+          <Image
+            src={blogData.image}
+            alt={blogData.title}
+            layout="fill"
+            objectFit="cover"
+            className="rounded-xl md:rounded-2xl"
+          />
+          <div className="relative z-10 h-full bg-black bg-opacity-50 rounded-xl md:rounded-2xl p-5 flex flex-col justify-between">
+            <h2 className="text-3xl text-off-white font-bold">
               {blogData.title}
             </h2>
             <div className="text-off-white text-lg group-hover:text-dark-grey dark:group-hover:text-off-white">
@@ -32,7 +35,7 @@ export default function BlogItem({ blogData }: Props): ReactElement {
               &nbsp;&bull;&nbsp;{blogData.readTime.text}
             </div>
           </div>
-        </div>
+        </motion.div>
       </a>
     </Link>
   );

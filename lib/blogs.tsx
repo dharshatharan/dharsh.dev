@@ -37,6 +37,7 @@ export function getSortedBlogsData(limit: number = -1) {
         date: string;
         title: string;
         image: string;
+        description: string;
       }),
       readTime: readingTime(fileContents),
     };
@@ -104,6 +105,7 @@ export async function getBlogData(id: string) {
       date: string;
       title: string;
       image: string;
+      description: string;
     }),
   };
 }

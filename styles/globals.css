@@ -19,53 +19,17 @@
 }
 
 @layer base {
-  h1 {
-    @apply text-4xl md:text-5xl font-bold my-4;
-  }
-  h2 {
-    @apply text-3xl md:text-4xl font-bold my-4;
-  }
-  h3 {
-    @apply text-2xl md:text-3xl font-bold my-4;
-  }
-  h4 {
-    @apply text-xl md:text-2xl font-bold my-4;
-  }
-  b {
-    @apply font-bold;
-  }
-  article p {
-    @apply mb-6 font-normal dark:text-gray-400;
-  }
   article p img {
-    @apply block ml-auto mr-auto object-contain;
-  }
-  article a {
-    @apply text-teal-grey dark:text-dark-yellow hover:underline;
-  }
-  article code {
-    @apply text-sm md:text-base text-off-white bg-code-block font-mono rounded-md p-1;
-  }
-  article pre code {
-    @apply block overflow-x-scroll text-[#dce4ec] bg-code-block w-full mb-6 p-4 shadow-md;
-  }
-  article ul {
-    @apply list-disc list-outside ml-6 md:ml-10 mb-6;
-  }
-  article ul li {
-    @apply pl-4 md:pl-6 mb-3;
-  }
-  article ol {
-    @apply list-decimal list-outside ml-6 md:ml-10 mb-6;
-  }
-  article ol li {
-    @apply pl-4 md:pl-6 mb-3;
+    @apply block ml-auto mr-auto object-contain rounded-xl shadow-lg;
   }
   article blockquote {
-    @apply bg-light-grey border-l-4 border-teal-grey dark:text-off-white dark:bg-dark-grey my-6 p-2;
+    @apply bg-light-grey border-teal-grey dark:text-off-white dark:bg-dark-grey rounded-xl shadow-lg;
   }
-  article blockquote p {
-    @apply inline;
+}
+
+@layer utilities {
+  .square {
+    aspect-ratio: 1 / 1;
   }
 }
 

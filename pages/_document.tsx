@@ -71,7 +71,7 @@ class MyDocument extends Document {
           />
           <link rel="manifest" href="/icons/favicons/site.webmanifest" />
         </Head>
-        <body className="bg-off-white dark:bg-smooth-black text-off-white dark:text-smooth-black">
+        <body className="bg-off-white dark:bg-smooth-black text-off-white dark:text-smooth-black transition duration-300">
           <Main />
           <NextScript />
         </body>

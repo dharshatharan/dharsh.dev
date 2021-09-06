@@ -5,7 +5,6 @@ import { getSortedBlogsData } from "@lib/blogs";
 import { PostData } from "@localTypes/posts";
 import { GetStaticProps } from "next";
 import { ReactElement } from "react";
-import FadeInWhenVisible from "@components/Animations/FadeInWhenVisible";
 
 interface Props {
   allBlogsData: PostData[];
@@ -17,18 +16,24 @@ export default function index({ allBlogsData }: Props): ReactElement {
       <Head>
         <title> ✍️ My Blog</title>
       </Head>
-      <FadeInWhenVisible>
-        <section id="Blog" className="">
-          <h1 className="text-smooth-black dark:text-off-white">Blog</h1>
-          <ul className="grid lg:grid-cols-2 xl:grid-cols-3">
-            {allBlogsData.map((blogData) => (
-              <li className="p-5" key={blogData.id}>
-                <BlogItem blogId={blogData.id} blogData={blogData} />
-              </li>
-            ))}
-          </ul>
-        </section>
-      </FadeInWhenVisible>
+      <section id="Blog" className="w-full">
+        <div id="recentBlogs" className="flex flex-col">
+          <div className="prose md:prose-xl">
+            <p />
+            <h1 className="text-smooth-black dark:text-off-white">Blog</h1>
+            <p />
+          </div>
+          <div className="grid place-items-center">
+            <ul className="w-full grid sm:grid-cols-2 lg:grid-cols-3 gap-8 p-5">
+              {allBlogsData.map((blogData) => (
+                <li className="" key={blogData.id}>
+                  <BlogItem blogId={blogData.id} blogData={blogData} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }

@@ -19,14 +19,18 @@ export default function Home({ latestBlogData }: Props) {
         <title>{siteTitle}</title>
       </Head>
       <section className="w-full">
-        <div id="blog" className="flex flex-col">
-          <h1 className="text-smooth-black dark:text-off-white">
-            Latest Blogs
-          </h1>
-          <div className="flex w-full flex-1 justify-center">
-            <ul className="grid lg:grid-cols-2 xl:grid-cols-3">
+        <div id="recentBlogs" className="flex flex-col">
+          <div className="prose md:prose-xl">
+            <p />
+            <h1 className="text-smooth-black dark:text-off-white">
+              Latest Blogs
+            </h1>
+            <p />
+          </div>
+          <div className="grid place-items-center">
+            <ul className="w-full grid sm:grid-cols-2 lg:grid-cols-3 gap-8 p-5">
               {latestBlogData.map((blogData) => (
-                <li className="p-5" key={blogData.id}>
+                <li className="" key={blogData.id}>
                   <BlogItem blogId={blogData.id} blogData={blogData} />
                 </li>
               ))}

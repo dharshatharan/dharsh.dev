@@ -6,5 +6,6 @@ export type PostData = {
   date: string;
   readTime: readingTime.IReadTimeResults;
   image: string;
+  description: string;
   contentHtml: string;
 };

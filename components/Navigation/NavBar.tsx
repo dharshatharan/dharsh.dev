@@ -7,9 +7,9 @@ import PathAnimatedLogo from "@components/Image/PathAnimatedLogo";
 export default function NavBar(): ReactElement {
   return (
     <>
-      <div className="w-full h-10 bg-off-white dark:bg-smooth-black backdrop-filter backdrop-blur-xl bg-opacity-75 dark:bg-opacity-80 firefox:bg-opacity-100 z-20 hidden md:block"></div>
+      <div className="w-full h-10 bg-off-white dark:bg-smooth-black backdrop-filter backdrop-blur-xl bg-opacity-75 dark:bg-opacity-80 firefox:bg-opacity-100 z-20 hidden md:block transition duration-300"></div>
       <nav
-        className="sticky top-0 w-full flex item bg-off-white dark:bg-smooth-black backdrop-filter backdrop-blur-xl bg-opacity-75 dark:bg-opacity-80 z-20"
+        className="sticky top-0 w-full flex item bg-off-white dark:bg-smooth-black backdrop-filter backdrop-blur-xl bg-opacity-75 dark:bg-opacity-80 z-20 transition duration-300"
         style={{ height: "5rem" }}
       >
         <header className="flex justify-center w-full">
