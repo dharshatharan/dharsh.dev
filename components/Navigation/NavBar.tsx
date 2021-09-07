@@ -3,13 +3,17 @@ import NavBarItem from "./NavBarItem";
 import Link from "next/link";
 import ThemeToggle from "@components/Toggle/ThemeToggle";
 import PathAnimatedLogo from "@components/Image/PathAnimatedLogo";
+import { useScrollHandler } from "@components/hooks/scrollHandler";
 
 export default function NavBar(): ReactElement {
+  const scroll = useScrollHandler();
   return (
     <>
       <div className="w-full h-10 bg-off-white dark:bg-smooth-black backdrop-filter backdrop-blur-xl bg-opacity-75 dark:bg-opacity-80 firefox:bg-opacity-100 z-20 hidden md:block transition duration-300"></div>
       <nav
-        className="sticky top-0 w-full flex item bg-off-white dark:bg-smooth-black backdrop-filter backdrop-blur-xl bg-opacity-75 dark:bg-opacity-80 z-20 transition duration-300"
+        className={`sticky top-0 w-full flex item bg-off-white dark:bg-smooth-black backdrop-filter backdrop-blur-xl bg-opacity-75 dark:bg-opacity-80 z-20 transition duration-300 ${
+          scroll > 10 ? "shadow-md" : ""
+        }`}
         style={{ height: "5rem" }}
       >
         <header className="flex justify-center w-full">

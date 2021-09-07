@@ -20,10 +20,13 @@
 
 @layer base {
   article p img {
-    @apply block ml-auto mr-auto object-contain rounded-xl shadow-lg;
+    @apply block ml-auto mr-auto object-contain rounded-lg shadow-lg;
+  }
+  article pre {
+    @apply shadow-lg;
   }
   article blockquote {
-    @apply bg-light-grey border-teal-grey dark:text-off-white dark:bg-dark-grey rounded-xl shadow-lg;
+    @apply bg-light-grey border-teal-grey dark:text-off-white dark:bg-dark-grey rounded-lg shadow-lg;
   }
 }
 
