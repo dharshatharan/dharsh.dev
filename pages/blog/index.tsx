@@ -1,35 +1,31 @@
 import Head from "next/head";
 import Layout from "@components/Layouts/Layout";
-import { siteTitle } from "./_document";
-import { getSortedBlogsData } from "@lib/blogs";
-import { GetStaticProps } from "next";
 import BlogItem from "@components/Blog/BlogItem";
-import HeaderContent from "@components/HeaderContent/HeaderContent";
+import { getSortedBlogsData } from "@lib/blogs";
 import { PostData } from "@localTypes/posts";
-import { generateRssFeed } from "@scripts/generate-rss";
+import { GetStaticProps } from "next";
+import { ReactElement } from "react";
 
 interface Props {
-  latestBlogData: PostData[];
+  allBlogsData: PostData[];
 }
 
-export default function Home({ latestBlogData }: Props) {
+export default function index({ allBlogsData }: Props): ReactElement {
   return (
-    <Layout headerContent={<HeaderContent />}>
+    <Layout>
       <Head>
-        <title>{siteTitle}</title>
+        <title> ✍️ My Blog</title>
       </Head>
-      <section className="w-full">
+      <section id="Blog" className="w-full">
         <div id="recentBlogs" className="flex flex-col">
           <div className="prose md:prose-xl">
             <p />
-            <h1 className="text-smooth-black dark:text-off-white">
-              Latest Blogs
-            </h1>
+            <h1 className="text-smooth-black dark:text-off-white">Blog</h1>
             <p />
           </div>
           <div className="grid place-items-center">
             <ul className="w-full grid sm:grid-cols-2 lg:grid-cols-3 gap-8 p-5">
-              {latestBlogData.map((blogData) => (
+              {allBlogsData.map((blogData) => (
                 <li className="" key={blogData.id}>
                   <BlogItem blogId={blogData.id} blogData={blogData} />
                 </li>
@@ -43,11 +39,10 @@ export default function Home({ latestBlogData }: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const latestBlogData = getSortedBlogsData(3);
-  generateRssFeed();
+  const allBlogsData = getSortedBlogsData();
   return {
     props: {
-      latestBlogData,
+      allBlogsData,
     },
   };
 };
