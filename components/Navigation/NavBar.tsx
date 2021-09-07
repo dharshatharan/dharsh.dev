@@ -3,7 +3,7 @@ import NavBarItem from "./NavBarItem";
 import Link from "next/link";
 import ThemeToggle from "@components/Toggle/ThemeToggle";
 import PathAnimatedLogo from "@components/Image/PathAnimatedLogo";
-import { useScrollHandler } from "@components/hooks/scrollHandler";
+import { useScrollHandler } from "@components/hooks/ScrollHandler";
 
 export default function NavBar(): ReactElement {
   const scroll = useScrollHandler();
