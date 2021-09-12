@@ -23,8 +23,8 @@ export default function FadeInWhenVisible({ children }: Props): ReactElement {
       initial="hidden"
       transition={{ duration: 0.5 }}
       variants={{
-        visible: { opacity: 1, y: 0 },
-        hidden: { opacity: 0, y: 100 },
+        visible: { opacity: 1 },
+        hidden: { opacity: 0 },
       }}
     >
       {children}
