@@ -58,6 +58,7 @@ export default function Post({ blog }: Props) {
               alt={`${blog.title} Cover`}
               width={800}
               height={400}
+              priority={true}
               objectFit="cover"
             />
             <Component
