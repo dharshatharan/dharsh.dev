@@ -10,6 +10,7 @@ import { ParsedUrlQuery } from "querystring";
 import { PostData } from "@localTypes/posts";
 import { useMemo } from "react";
 import { getMDXComponent } from "mdx-bundler/client";
+import { ArticleImage } from "@components/Image/ArticleImage";
 
 interface Props {
   blog: PostData;
@@ -28,7 +29,7 @@ export default function Post({ blog }: Props) {
       </Head>
       <div className="w-full flex justify-center">
         <div className="max-w-full md:max-w-3xl md:mx-10 mb-10 md:mb-20">
-          <article className="prose lg:prose-xl dark:prose-light pt-5">
+          <article className="prose lg:prose-xl dark:prose-light py-5">
             <small className="flex justify-center align-middle text-teal-grey dark:text-dark-yellow my-5">
               <span>
                 <Image
@@ -45,18 +46,21 @@ export default function Post({ blog }: Props) {
               <span>&nbsp;&bull;&nbsp;</span>
               <span>{blog.readTime.text}</span>
             </small>
-            <h1 className="text-center">{blog.title}</h1>
-            <p className="text-center italic">{blog.description}</p>
-            <div className="w-full h-56 md:h-96 rounded-xl shadow-lg">
-              <Image
-                src={blog.image}
-                alt={`${blog.title} Cover`}
-                width={800}
-                height={400}
-                objectFit="cover"
-                className="rounded-xl"
-              />
-            </div>
+            <h1 className="text-center">
+              <div className="mb-4">{blog.title}</div>
+              <div className="text-xl text-gray-600 dark:text-gray-400 font-normal italic">
+                {blog.description}
+              </div>
+            </h1>
+            <p className=""></p>
+            <ArticleImage
+              src={blog.image}
+              alt={`${blog.title} Cover`}
+              width={800}
+              height={400}
+              priority={true}
+              objectFit="cover"
+            />
             <Component
               className="my-10 leading-relaxed"
               components={components}

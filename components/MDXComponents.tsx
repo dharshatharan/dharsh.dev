@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ClassAttributes, AnchorHTMLAttributes } from "react";
 import { ComponentMap } from "mdx-bundler/client";
+import { ArticleImage } from "./Image/ArticleImage";
 
 const CustomLink = (
   props: ClassAttributes<HTMLAnchorElement> &
@@ -23,7 +23,7 @@ const CustomLink = (
 
 const MDXComponents: ComponentMap = {
   // @ts-ignore
-  Image,
+  Image: ArticleImage,
   a: CustomLink,
 };
 

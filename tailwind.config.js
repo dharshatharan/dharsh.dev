@@ -28,6 +28,13 @@ module.exports = {
         portrait: { raw: "(orientation: portrait)" },
       },
       typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            blockquote: {
+              borderLeftColor: "#1aa8ad",
+            },
+          },
+        },
         light: {
           css: {
             color: theme("colors.gray.400"),
