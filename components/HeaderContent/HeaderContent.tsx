@@ -1,65 +1,33 @@
 import { ReactElement } from "react";
-import Image from "next/image";
-import SolidText from "@components/Text/SolidText";
-import profileImg from "@images/profile.png";
 import FadeInWhenVisible from "@components/Animations/FadeInWhenVisible";
 
 export default function HeaderContent(): ReactElement {
   return (
     <FadeInWhenVisible>
       <section
-        className="w-full flex flex-col flex-grow justify-between"
+        className="w-full flex flex-grow justify-center"
         style={{ height: "92vh" }}
       >
-        <div className="w-full flex flex-1 justify-center">
-          <div className="flex flex-1 flex-col md:flex-row-reverse justify-around portrait:flex-col portrait:justify-center items-center md:justify-between max-w-7xl">
-            <div className="max-w-xs md:max-w-xl w-full h-3/4 portrait:h-1/2 relative m-5 portrait:bottom-0 md:bottom-16">
-              <Image
-                src={profileImg}
-                alt="Profile"
-                layout="fill"
-                objectFit="contain"
-                placeholder="blur"
-                quality={50}
-                priority={true}
-              />
-            </div>
-            <div className="max-w-xl p-5 pt-2 pb-2 md:p-5 portrait:bottom-0 md:bottom-16 relative text-smooth-black dark:text-off-white text-sm portrait:text-md md:text-xl">
-              <div className="text-3xl md:text-5xl font-bold mt-2 mb-2 md:mt-5 md:mb-5 flex flex-row items-center">
-                Hi, I&apos;m <SolidText>dharsh_</SolidText>
-              </div>
-              <p className="mt-2 mb-2 md:mt-5 md:mb-5">
-                I’m a{" "}
-                <b>
-                  {" "}
-                  21-year-old Software Engineering student at Carleton
-                  University{" "}
-                </b>
-                that enjoys being a part of startup life.
-              </p>
-              <p className="mt-2 mb-2 md:mt-5 md:mb-5">
-                One of the best ways to learn is to think aloud, and that is
-                what I’m going to try to do with this website.
-              </p>
-              <p className="mt-2 mb-2 md:mt-5 md:mb-5">
-                On this site, I will be sharing thoughts, tools and content that
-                I think is <b>‘cool’ </b>
-                with the goal of{" "}
-                <b>
-                  {" "}
-                  potentially helping and inspiring people on a similar path.{" "}
-                </b>
-              </p>
-              <p className="mt-2 mb-2 md:mt-5 md:mb-5">
-                Some categories that interest me are{" "}
-                <b> tech, productivity, photography and FPV drones. </b>
-              </p>
-              <p className="mt-2 mb-2 md:mt-5 md:mb-5">
-                <b>Disclaimer: </b> I’m an amateur in all these topics, but
-                aren’t we all?
-              </p>
-            </div>
-          </div>
+        <div className="mt-10 md:mt-20 max-w-6xl p-10">
+          <h1 className="text-5xl md:text-8xl text-smooth-black dark:text-off-white font-light">
+            Hi, I&apos;m{" "}
+            <strong className="font-bold">
+              Dharshatharan
+              <br /> Jayatharan Aronan
+            </strong>
+          </h1>
+          <p className="text-gray-500 text-2xl md:text-4xl font-light py-5">
+            Devloper, Writer, Student
+          </p>
+          <p className="text-gray-500 text-2xl md:text-4xl font-light py-5">
+            You can call me{" "}
+            <strong className="font-bold text-6xl text-smooth-black dark:text-off-white">
+              dharsh
+            </strong>
+          </p>
+          <p className="text-gray-500 text-2xl md:text-4xl font-light py-5">
+            Welcome to my corner of the internet!
+          </p>
         </div>
       </section>
     </FadeInWhenVisible>
