@@ -17,10 +17,11 @@ export const featuredProjects: Project[] = [
       "https://drive.google.com/uc?export=view&id=1o-vgvShUXper18SwGHoIEY11iUWOTmfX",
     url: "https://makers.scesoc.ca/",
   },
-  // {
-  // 	name: "The Knowledgebase",
-  // 	description: "A web platform for students to create, store and spread knowledge among the commnity.",
-  // 	image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2052&q=80",
-  // 	url: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2052&q=80"
-  // }
+  {
+    name: "KnowHub",
+    description:
+      "A web platform for students to create, store and spread knowledge among the community.",
+    image:
+      "https://images.unsplash.com/photo-1532012197267-da84d127e765?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=987&q=80",
+  },
 ];

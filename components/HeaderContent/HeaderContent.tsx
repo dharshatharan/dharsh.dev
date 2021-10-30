@@ -5,7 +5,7 @@ export default function HeaderContent(): ReactElement {
   return (
     <FadeInWhenVisible>
       <section
-        className="w-full flex flex-grow justify-center"
+        className="w-full flex flex-grow justify-center transition duration-300"
         style={{ height: "92vh" }}
       >
         <div className="mt-10 md:mt-20 max-w-6xl p-10">
