@@ -17,7 +17,7 @@ export default function NavBar(): ReactElement {
         style={{ height: "5rem" }}
       >
         <header className="flex justify-center w-full">
-          <div className="flex flex-1 justify-between items-center flex-row max-w-screen-xl pl-5">
+          <div className="flex flex-1 justify-between items-center flex-row max-w-6xl pl-5">
             <Link href="/">
               <a
                 aria-label="Home Page"
@@ -30,8 +30,8 @@ export default function NavBar(): ReactElement {
               <NavBarItem label="About" link="/" />
               <NavBarItem label="Blog" link="/blog" />
               <NavBarItem label="Socials" link="/#socials" />
-              <ThemeToggle />
             </div>
+            <ThemeToggle />
           </div>
         </header>
       </nav>

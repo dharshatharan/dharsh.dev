@@ -15,7 +15,7 @@ export default function BlogItem({ blogData }: Props): ReactElement {
     <Link href={`/blog/${blogData.id}`} passHref>
       <a>
         <motion.div
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.025 }}
           whileTap={{ scale: 1 }}
           className="text-off-white bg-black square relative rounded-xl md:rounded-2xl shadow-md hover:shadow-lg"
         >

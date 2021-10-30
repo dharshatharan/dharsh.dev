@@ -15,10 +15,9 @@ const blogsDirectory = path.join(process.cwd(), "blogs");
 export function getSortedBlogsData(limit: number = -1) {
   // Get file names under /blogs
   const fileNames = fs.readdirSync(blogsDirectory);
-  let targetFiles = fileNames.filter((fileName) => {
+  const targetFiles = fileNames.filter((fileName) => {
     return path.extname(fileName).toLowerCase() === ".mdx";
   });
-  if (limit !== -1) targetFiles = targetFiles.slice(0, limit);
   const allBlogData = targetFiles.map((fileName) => {
     // Remove ".mdx" from file name to get id
     const id = fileName.replace(/\.mdx$/, "");
@@ -43,13 +42,15 @@ export function getSortedBlogsData(limit: number = -1) {
     };
   });
   // Sort blogs by date
-  return allBlogData.sort((a, b) => {
+  allBlogData.sort((a, b) => {
     if (a.date < b.date) {
       return 1;
     } else {
       return -1;
     }
   });
+  if (limit !== -1) return allBlogData.slice(0, limit);
+  return allBlogData;
 }
 
 export function getAllBlogIds() {

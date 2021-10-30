@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Layout from "@components/Layouts/Layout";
-import BlogItem from "@components/Blog/BlogItem";
+import BlogItem from "@components/Items/BlogItem";
 import { getSortedBlogsData } from "@lib/blogs";
 import { PostData } from "@localTypes/posts";
 import { GetStaticProps } from "next";
@@ -18,13 +18,9 @@ export default function index({ allBlogsData }: Props): ReactElement {
       </Head>
       <section id="Blog" className="w-full">
         <div id="recentBlogs" className="flex flex-col">
-          <div className="prose md:prose-xl">
-            <p />
-            <h1 className="text-smooth-black dark:text-off-white">Blog</h1>
-            <p />
-          </div>
+          <h1 className="text-5xl font-extrabold my-5">Blog</h1>
           <div className="grid place-items-center">
-            <ul className="w-full grid sm:grid-cols-2 lg:grid-cols-3 gap-8 p-5">
+            <ul className="w-full grid sm:grid-cols-2 gap-8 p-5">
               {allBlogsData.map((blogData) => (
                 <li className="" key={blogData.id}>
                   <BlogItem blogId={blogData.id} blogData={blogData} />
