@@ -7,7 +7,7 @@ const { withSentryConfig } = require("@sentry/nextjs");
 
 const moduleExports = {
   images: {
-    domains: ["images.unsplash.com", "drive.google.com"],
+    domains: ["images.unsplash.com"],
   },
 };
 

@@ -13,8 +13,7 @@ export const featuredProjects: Project[] = [
     name: "Makers Club",
     description:
       "A club withing SCESoc that learns by making. Trying to build a community around projects to help students learn and grow skills.",
-    image:
-      "https://drive.google.com/uc?export=view&id=1o-vgvShUXper18SwGHoIEY11iUWOTmfX",
+    image: "/images/makers-club-open-graph.png",
     url: "https://makers.scesoc.ca/",
   },
   {
