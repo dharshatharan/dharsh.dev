@@ -31,7 +31,9 @@ export default function NavBar(): ReactElement {
               <NavBarItem label="Blog" link="/blog" />
               <NavBarItem label="Socials" link="/#socials" />
             </div>
-            <ThemeToggle />
+            <div className="pr-5">
+              <ThemeToggle />
+            </div>
           </div>
         </header>
       </nav>

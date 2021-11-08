@@ -9,7 +9,7 @@ export default function HeaderContent(): ReactElement {
         style={{ height: "92vh" }}
       >
         <div className="mt-10 md:mt-20 max-w-6xl p-10">
-          <h1 className="text-5xl md:text-8xl text-smooth-black dark:text-off-white font-light">
+          <h1 className="text-4xl md:text-8xl text-smooth-black dark:text-off-white font-light">
             Hi, I&apos;m{" "}
             <strong className="font-bold">
               Dharshatharan
@@ -21,7 +21,7 @@ export default function HeaderContent(): ReactElement {
           </p>
           <p className="text-gray-500 text-2xl md:text-4xl font-light py-5">
             You can call me{" "}
-            <strong className="font-bold text-6xl text-smooth-black dark:text-off-white">
+            <strong className="font-bold text-4xl md:text-8xl text-smooth-black dark:text-off-white">
               dharsh
             </strong>
           </p>

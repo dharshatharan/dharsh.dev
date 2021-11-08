@@ -23,7 +23,9 @@ export default function Home({ latestBlogData }: Props) {
       </Head>
       <section className="w-full">
         <div id="recentBlogs" className="flex flex-col mb-24">
-          <h1 className="text-5xl font-extrabold mb-5">Latest Blogs</h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-5">
+            Latest Blogs
+          </h1>
           <div className="grid place-items-center mb-5">
             <ul className="w-full grid sm:grid-cols-2 gap-8 p-5">
               {latestBlogData.map((blogData) => (
@@ -38,7 +40,7 @@ export default function Home({ latestBlogData }: Props) {
           </Link>
         </div>
         <div id="projects" className="flex flex-col mb-24">
-          <h1 className="text-5xl font-extrabold mb-5">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-5">
             Some Projects I&apos;m Working On
           </h1>
           <div className="grid place-items-center">

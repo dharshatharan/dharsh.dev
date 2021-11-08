@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": false,
     "skipLibCheck": true,
     "strict": true,
@@ -15,16 +19,41 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["components/*"],
-      "@localTypes/*": ["types/*"],
-      "@styles/*": ["styles/*"],
-      "@blogs/*": ["blogs/*"],
-      "@lib/*": ["lib/*"],
-      "@images/*": ["public/images/*"],
-      "@icons/*": ["public/icons/*"],
-      "@scripts/*": ["scripts/*"]
-    }
+      "@components/*": [
+        "components/*"
+      ],
+      "@localTypes/*": [
+        "types/*"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ],
+      "@blogs/*": [
+        "blogs/*"
+      ],
+      "@lib/*": [
+        "lib/*"
+      ],
+      "@images/*": [
+        "public/images/*"
+      ],
+      "@icons/*": [
+        "public/icons/*"
+      ],
+      "@scripts/*": [
+        "scripts/*"
+      ]
+    },
+    "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_error.js"],
-  "exclude": ["node_modules", ".next"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/_error.js"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next"
+  ]
 }
