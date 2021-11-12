@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Layout from "@components/Layouts/Layout";
+import PageLayout from "@components/Layouts/Layout";
 import BlogItem from "@components/Items/BlogItem";
 import { getSortedBlogsData } from "@lib/blogs";
 import { PostData } from "@localTypes/posts";
@@ -12,7 +12,7 @@ interface Props {
 
 export default function index({ allBlogsData }: Props): ReactElement {
   return (
-    <Layout>
+    <PageLayout>
       <Head>
         <title> ✍️ My Blog</title>
       </Head>
@@ -30,7 +30,7 @@ export default function index({ allBlogsData }: Props): ReactElement {
           </div>
         </div>
       </section>
-    </Layout>
+    </PageLayout>
   );
 }
 

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Layout from "@components/Layouts/Layout";
+import PageLayout from "@components/Layouts/Layout";
 import { siteTitle } from "./_document";
 import { getSortedBlogsData } from "@lib/blogs";
 import { GetStaticProps } from "next";
@@ -17,7 +17,7 @@ interface Props {
 
 export default function Home({ latestBlogData }: Props) {
   return (
-    <Layout headerContent={<HeaderContent />}>
+    <PageLayout headerContent={<HeaderContent />}>
       <Head>
         <title>{siteTitle}</title>
       </Head>
@@ -57,7 +57,7 @@ export default function Home({ latestBlogData }: Props) {
           </div>
         </div>
       </section>
-    </Layout>
+    </PageLayout>
   );
 }
 

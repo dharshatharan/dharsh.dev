@@ -1,19 +1,23 @@
 import { ReactElement, ReactNode } from "react";
-import NavBar from "@components/Navigation/NavBar";
-import Body from "@components/Layouts/Body";
-import Footer from "@components/Layouts/Footer";
+import { Sidebar } from "../Sidebar/Sidebar";
 interface Props {
   headerContent?: ReactElement;
   children: ReactNode;
 }
 
-export default function Layout({ headerContent, children }: Props) {
+export default function PageLayout({ headerContent, children }: Props) {
   return (
-    <div className="m-0 flex flex-col min-h-screen">
-      <NavBar />
-      {headerContent}
-      <Body>{children}</Body>
-      <Footer />
+    <main className="w-full flex justify-center max-h-screen overflow-y-auto">
+      <div className="px-5 max-w-4xl">{children}</div>
+    </main>
+  );
+}
+
+export function SiteLayout({ children }: Props) {
+  return (
+    <div className="relative flex w-full h-full min-h-screen">
+      <Sidebar />
+      <div className="flex flex-1">{children}</div>
     </div>
   );
 }

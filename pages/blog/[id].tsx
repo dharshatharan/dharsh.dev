@@ -1,4 +1,4 @@
-import Layout from "@components/Layouts/Layout";
+import PageLayout from "@components/Layouts/Layout";
 import { getAllBlogIds, getBlogData } from "@lib/blogs";
 import Head from "next/head";
 import Image from "next/image";
@@ -23,7 +23,7 @@ export default function Post({ blog }: Props) {
   );
 
   return (
-    <Layout>
+    <PageLayout>
       <Head>
         <title>{blog.title}</title>
       </Head>
@@ -73,7 +73,7 @@ export default function Post({ blog }: Props) {
           </div>
         </div>
       </div>
-    </Layout>
+    </PageLayout>
   );
 }
 

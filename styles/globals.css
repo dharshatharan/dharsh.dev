@@ -19,6 +19,21 @@
 }
 
 @layer base {
+  html {
+    @apply max-h-screen overflow-hidden text-base antialiased;
+  }
+
+  /* body:after {
+    content: '';
+    position: fixed;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    z-index: -1;
+    @apply bg-white dark:bg-black;
+  } */
+
   article p img {
     @apply block ml-auto mr-auto object-contain rounded-lg shadow-lg;
   }
