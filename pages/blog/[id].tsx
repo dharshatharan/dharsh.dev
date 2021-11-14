@@ -1,4 +1,4 @@
-import PageLayout from "@components/Layouts/Layout";
+import PageLayout from "@components/Layout";
 import { getAllBlogIds, getBlogData } from "@lib/blogs";
 import Head from "next/head";
 import Image from "next/image";

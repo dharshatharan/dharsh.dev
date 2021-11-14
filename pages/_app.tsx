@@ -1,7 +1,7 @@
 import "@styles/globals.css";
 
 import { AppProps } from "next/app";
-import { SiteLayout } from "@components/Layouts/Layout";
+import { SiteLayout } from "@components/Layout";
 import { Providers } from "@components/Providers";
 
 export default function App({ Component, pageProps }: AppProps) {

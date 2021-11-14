@@ -1,5 +1,5 @@
 import Head from "next/head";
-import PageLayout from "@components/Layouts/Layout";
+import PageLayout from "@components/Layout";
 import { siteTitle } from "./_document";
 import { getSortedBlogsData } from "@lib/blogs";
 import { GetStaticProps } from "next";
@@ -21,7 +21,7 @@ export default function Home({ latestBlogData }: Props) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <div className="pt-10 pb-24">
+      <div className="pb-24">
         <section className="w-full transform duration-300 my-10">
           <div className="max-w-6xl">
             <h1 className="text-3xl md:text-5xl text-smooth-black dark:text-off-white font-light">

@@ -72,8 +72,10 @@ export const Sidebar = (props: Props) => {
 
   return (
     <nav
-      className={`w-72 min-w-[18rem] h-screen flex flex-col px-3 sticky top-0 left-0 transform duration-300 bg-[#f9f9f9] dark:bg-smooth-black border-r border-gray-200 dark:border-gray-800
-      ${isOpen ? "translate-x-0 shadow-lg" : "-translate-x-full hidden"}
+      className={`w-72 min-w-[18rem] h-screen flex flex-col px-3 absolute lg:static z-30 top-0 left-0 transform duration-300 bg-[#f9f9f9] dark:bg-smooth-black border-r border-gray-200 dark:border-gray-800
+      ${
+        isOpen ? "translate-x-0 shadow-lg" : "-translate-x-full hidden"
+      } backdrop-filter backdrop-blur-xl bg-opacity-90 dark:bg-opacity-80
     `}
     >
       <div className="flex justify-between items-center mb-10">

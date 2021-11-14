@@ -10,20 +10,19 @@ interface Props {
 }
 
 const globalNavigationContext = {
-  isOpen: false,
+  isOpen: true,
   setIsOpen: (val: boolean) => {},
 };
 
 export const GlobalNavigationContext = createContext(globalNavigationContext);
 
 export function Providers({ children, pageProps }: Props) {
+  const [initSidebarState, setInitSidebarState] = useState(false);
   const size = useWindowSize();
   useAnalytics();
 
-  console.log(size);
-
   const initialState = {
-    isOpen: (size.width !== undefined && size.width > 1024) || false,
+    isOpen: true,
     setIsOpen,
   };
 
@@ -31,6 +30,11 @@ export function Providers({ children, pageProps }: Props) {
 
   function setIsOpen(isOpen: boolean) {
     return setState({ ...state, isOpen });
+  }
+
+  if (typeof window !== "undefined" && !initSidebarState && size.width) {
+    setIsOpen(size.width > 1024);
+    setInitSidebarState(true);
   }
 
   return (
