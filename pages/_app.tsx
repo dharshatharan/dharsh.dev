@@ -1,18 +1,15 @@
 import "@styles/globals.css";
 
 import { AppProps } from "next/app";
-import { ThemeProvider } from "next-themes";
-import { useAnalytics } from "@lib/analytics";
 import { SiteLayout } from "@components/Layouts/Layout";
+import { Providers } from "@components/Providers";
 
 export default function App({ Component, pageProps }: AppProps) {
-  useAnalytics();
-
   return (
-    <ThemeProvider attribute="class">
+    <Providers pageProps={pageProps}>
       <SiteLayout>
         <Component {...pageProps} />
       </SiteLayout>
-    </ThemeProvider>
+    </Providers>
   );
 }

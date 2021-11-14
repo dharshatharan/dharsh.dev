@@ -9,7 +9,7 @@ export default function ThemeToggle(): ReactElement {
     <button
       aria-label="Toggle Dark Mode"
       type="button"
-      className="w-10 h-10 p-3 bg-gray-200 rounded-md hover:ring-2 hover:ring-gray-700 dark:bg-gray-800 focus:outline-none"
+      className="w-10 h-10 p-3 bg-gray-200 rounded-md hover:ring-2 hover:ring-gray-700 dark:bg-[#1f1f1f] focus:outline-none"
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
       {mounted && (
