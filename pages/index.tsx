@@ -22,25 +22,25 @@ export default function Home({ latestBlogData }: Props) {
         <title>{siteTitle}</title>
       </Head>
       <div className="pb-24">
-        <section className="w-full transform duration-300 my-10">
+        <section className="w-full transform duration-300 mt-10 mb-32">
           <div className="max-w-6xl">
-            <h1 className="text-3xl md:text-5xl text-smooth-black dark:text-off-white font-light">
-              Hi, I&apos;m{" "}
+            <h1 className="text-4xl md:text-7xl text-smooth-black dark:text-off-white font-light">
+              Hi, I&apos;m <br />
               <strong className="font-bold">
                 Dharshatharan
                 <br /> Jayatharan Aronan
               </strong>
             </h1>
-            <p className="text-gray-500 text-2xl md:text-2xl font-light py-5">
+            <p className="text-gray-500 text-2xl md:text-4xl font-light py-5">
               Devloper, Writer, Student
             </p>
-            <p className="text-gray-500 text-2xl md:text-2xl font-light py-5">
+            <p className="text-gray-500 text-2xl md:text-4xl font-light py-5">
               You can call me{" "}
-              <strong className="font-bold text-2xl md:text-4xl text-smooth-black dark:text-off-white">
+              <strong className="font-bold text-4xl md:text-6xl text-smooth-black dark:text-off-white">
                 dharsh
               </strong>
             </p>
-            <p className="text-gray-500 text-2xl md:text-2xl font-light py-5">
+            <p className="text-gray-500 text-2xl md:text-4xl font-light py-5">
               Welcome to my corner of the internet!
             </p>
           </div>
