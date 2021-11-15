@@ -8,6 +8,7 @@ import LinkedInIcon from "@components/icons/LinkedIn";
 import TwitterIcon from "@components/icons/Twitter";
 import GitHubIcon from "@components/icons/GitHub";
 import WebIcon from "@components/icons/Web";
+import FaceIcon from "@components/icons/Face";
 import LeftDoubleArrowIcon from "@components/icons/LeftDoubleArrow";
 import { SVGProps, useContext } from "react";
 import { GlobalNavigationContext } from "@components/Providers";
@@ -29,6 +30,11 @@ const navItems = [
     icon: <HomeIcon {...IconProps} />,
   },
   {
+    label: "About",
+    href: "/about",
+    icon: <FaceIcon {...IconProps} />,
+  },
+  {
     label: "Writing",
     href: "/blog",
     icon: <WritingIcon {...IconProps} />,
@@ -46,7 +52,7 @@ const navItems = [
   },
   {
     label: "Torch",
-    href: "https://github.com/SCESoc/code-name-candle",
+    href: "https://github.com/SCESoc/torch",
     icon: <LightIcon {...IconProps} />,
   },
   "Connect",
