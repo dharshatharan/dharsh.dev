@@ -4,7 +4,6 @@ import { siteTitle } from "./_document";
 import { getSortedBlogsData } from "@lib/blogs";
 import { GetStaticProps } from "next";
 import BlogItem from "@components/Items/BlogItem";
-import HeaderContent from "@components/HeaderContent/HeaderContent";
 import { PostData } from "@localTypes/posts";
 import { generateRssFeed } from "@scripts/generate-rss";
 import { featuredProjects } from "@lib/projects";
@@ -17,7 +16,7 @@ interface Props {
 
 export default function Home({ latestBlogData }: Props) {
   return (
-    <PageLayout headerContent={<HeaderContent />}>
+    <PageLayout title="Home">
       <Head>
         <title>{siteTitle}</title>
       </Head>

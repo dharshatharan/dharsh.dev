@@ -1,15 +1,15 @@
 import ThemeToggle from "@components/Toggle/ThemeToggle";
-import { ReactElement, ReactNode, useContext, useState } from "react";
+import { ReactNode, useContext, useState } from "react";
 import { Sidebar } from "../Sidebar/Sidebar";
 import MenuIcon from "@components/icons/Menu";
 import { IconButton } from "@components/Buttons/IconButton";
 import { GlobalNavigationContext } from "@components/Providers";
 interface Props {
-  headerContent?: ReactElement;
+  title?: string;
   children: ReactNode;
 }
 
-export default function PageLayout({ headerContent, children }: Props) {
+export default function PageLayout({ title, children }: Props) {
   const [scroll, setScroll] = useState(0);
   const { isOpen, setIsOpen } = useContext(GlobalNavigationContext);
   return (
@@ -27,20 +27,25 @@ export default function PageLayout({ headerContent, children }: Props) {
         `}
       >
         <div>
-          {!isOpen && (
-            <IconButton
-              icon={<MenuIcon height={25} width={25} className="self-center" />}
-              onClick={() => {
-                setIsOpen(true);
-              }}
-            />
-          )}
+          <div className="flex h-full items-center">
+            {!isOpen && (
+              <IconButton
+                icon={
+                  <MenuIcon height={25} width={25} className="self-center" />
+                }
+                onClick={() => {
+                  setIsOpen(true);
+                }}
+              />
+            )}
+            <span className="ml-2 text-xl font-bold self-center">{title}</span>
+          </div>
         </div>
         <ThemeToggle />
       </div>
       <div className="w-full">
         <main className="w-full flex justify-center">
-          <div className="px-5 max-w-4xl">{children}</div>
+          <div className="px-5 w-[56rem] max-w-4xl">{children}</div>
         </main>
       </div>
     </div>

@@ -2,6 +2,7 @@ import { ReactElement } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Project } from "@localTypes/project";
+import { SmartLink } from "@components/SmartLink";
 
 interface Props {
   imageLeft?: boolean;
@@ -13,7 +14,7 @@ export default function ProjectItem({
   project,
 }: Props): ReactElement {
   return (
-    <a href={project.url} target="_blank" rel="noreferrer">
+    <SmartLink href={project.url}>
       <div
         className={`rounded-xl md:rounded-2xl shadow-md hover:shadow-lg w-full p-5 md:gap-10 flex flex-col bg-gradient-to-b
 					${
@@ -37,6 +38,6 @@ export default function ProjectItem({
           <p className="text-xl">{project.description}</p>
         </div>
       </div>
-    </a>
+    </SmartLink>
   );
 }

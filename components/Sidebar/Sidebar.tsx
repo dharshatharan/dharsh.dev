@@ -42,17 +42,17 @@ const navItems = [
   "Projects",
   {
     label: "WebBook",
-    href: "https://github.com/dharshatharan/web-book",
+    href: "/project/web-book",
     icon: <WebIcon {...IconProps} />,
   },
   {
     label: "Makers Club",
-    href: "https://makers.scesoc.ca/",
+    href: "/project/makers-club",
     icon: <FireIcon {...IconProps} />,
   },
   {
     label: "Torch",
-    href: "https://github.com/SCESoc/torch",
+    href: "/project/torch",
     icon: <LightIcon {...IconProps} />,
   },
   "Connect",

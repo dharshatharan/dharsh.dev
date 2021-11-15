@@ -43,10 +43,7 @@ class MyDocument extends Document {
             href={process.env.NEXT_PUBLIC_SENTRY_DOMAIN}
             crossOrigin=""
           />
-          <meta
-            name="description"
-            content="I share things that I consider 'cool' on here"
-          />
+          <meta name="description" content="Developer, Writer, Student" />
           <meta property="og:image" content="/images/open-graph-image.png" />
           <meta name="og:title" content={siteTitle} />
           <meta name="twitter:card" content={siteTitle} />

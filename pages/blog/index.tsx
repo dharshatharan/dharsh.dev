@@ -12,13 +12,12 @@ interface Props {
 
 export default function index({ allBlogsData }: Props): ReactElement {
   return (
-    <PageLayout>
+    <PageLayout title="Writing">
       <Head>
-        <title> ✍️ My Blog</title>
+        <title>Writing</title>
       </Head>
-      <section id="Blog" className="w-full">
+      <section id="Blog" className="w-full mt-10 mb-20">
         <div id="recentBlogs" className="flex flex-col">
-          <h1 className="text-5xl font-extrabold my-5">Blog</h1>
           <div className="grid place-items-center">
             <ul className="w-full grid sm:grid-cols-2 gap-8 p-5">
               {allBlogsData.map((blogData) => (

@@ -1,34 +1,37 @@
 import { ArticleImage } from "@components/Image/ArticleImage";
 import PageLayout from "@components/Layout";
 import { SmartLink } from "@components/SmartLink";
+import CoverImage from "@images/cover-picture.png";
+import Head from "next/head";
 
 interface Props {}
 
 export default function About(props: Props) {
   return (
-    <PageLayout>
+    <PageLayout title="About">
+      <Head>
+        <title>About</title>
+      </Head>
       <section className="prose lg:prose-xl dark:prose-light mt-10 mb-20">
         <ArticleImage
-          src="/images/cover-picture.jpg"
+          src={CoverImage}
           alt="A picture of me in front of a lake"
           width={800}
           height={400}
           priority={true}
+          placeholder="blur"
           objectFit="cover"
         />
         <p>
           I am a third year Software Engineering Student from Carleton
           University living in Ottawa. I am currently doing my co-op at{" "}
           <SmartLink href="https://www.ciena.com/">Ciena</SmartLink> with the{" "}
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://www.ciena.com/products/6500"
-          >
+          <SmartLink href="https://www.ciena.com/products/6500">
             6500 DevOps Team
-          </a>
+          </SmartLink>
           . And I am also the Vice President of a Society on campus called{" "}
-          <SmartLink href="https://www.scesoc.ca/">SCESoc</SmartLink>.
+          <SmartLink href="https://www.scesoc.ca/">SCESoc</SmartLink> where I
+          organize variour workshos, events and projects to help peers.
         </p>
         <p>
           Not too long ago I worked at a startup called{" "}
