@@ -20,7 +20,7 @@ export default function PageLayout({ title, children }: Props) {
       className="relative flex flex-1 flex-col max-h-screen overflow-y-auto"
     >
       <div
-        className={`p-2 pr-3 w-full flex justify-between bg-off-white dark:bg-smooth-black backdrop-filter backdrop-blur-xl bg-opacity-70 dark:bg-opacity-80 z-20
+        className={`p-2 pr-3 w-full flex justify-between bg-off-white dark:bg-smooth-black backdrop-filter backdrop-blur-xl bg-opacity-70 dark:bg-opacity-80 firefox:bg-opacity-95 dark:firefox:bg-opacity-95 z-20
         ${
           scroll ? "shadow-sm border-b" : ""
         } sticky top-0 border-gray-200 dark:border-gray-800 transform duration-300

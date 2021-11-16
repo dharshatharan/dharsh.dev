@@ -77,36 +77,47 @@ export const Sidebar = (props: Props) => {
   const { isOpen, setIsOpen } = useContext(GlobalNavigationContext);
 
   return (
-    <nav
-      className={`w-72 min-w-[18rem] h-screen flex flex-col px-3 absolute lg:static z-30 top-0 left-0 transform duration-300 bg-[#f9f9f9] dark:bg-smooth-black border-r border-gray-200 dark:border-gray-800
+    <div className="relative">
+      <div
+        className={`absolute h-screen w-72 min-w-[18rem] text-9xl flex flex-col justify-end overflow-hidden transform duration-300
+      ${isOpen ? "" : "hidden"}`}
+      >
+        <div className="floating-blob"></div>
+      </div>
+      <nav
+        className={`w-72 min-w-[18rem] h-screen flex flex-col px-3 absolute lg:static z-30 top-0 left-0 transform duration-300 bg-[#f9f9f9] dark:bg-smooth-black border-r border-gray-200 dark:border-gray-800
       ${
         isOpen ? "translate-x-0 shadow-lg" : "-translate-x-full hidden"
-      } backdrop-filter backdrop-blur-xl bg-opacity-90 dark:bg-opacity-80
+      } backdrop-filter backdrop-blur-xl bg-opacity-90 dark:bg-opacity-80 firefox:bg-opacity-95 dark:firefox:bg-opacity-95
     `}
-    >
-      <div className="flex justify-between items-center mb-10">
-        <Link href="/">
-          <a className="h-14 w-20 flex items-center">
-            <PathAnimatedLogo />
-          </a>
-        </Link>
-        <IconButton
-          icon={<LeftDoubleArrowIcon className="text-gray-500" />}
-          onClick={() => {
-            setIsOpen(false);
-          }}
-        />
-      </div>
-      {navItems.map((item, index) => {
-        if (typeof item === "string") {
-          return (
-            <div key={item} className="mt-5 mb-3 px-3 font-bold text-gray-500">
-              {item}
-            </div>
-          );
-        }
-        return <SidebarItem key={index} {...item} />;
-      })}
-    </nav>
+      >
+        <div className="flex justify-between items-center mb-10">
+          <Link href="/">
+            <a className="h-14 w-20 flex items-center">
+              <PathAnimatedLogo />
+            </a>
+          </Link>
+          <IconButton
+            icon={<LeftDoubleArrowIcon className="text-gray-500" />}
+            onClick={() => {
+              setIsOpen(false);
+            }}
+          />
+        </div>
+        {navItems.map((item, index) => {
+          if (typeof item === "string") {
+            return (
+              <div
+                key={item}
+                className="mt-5 mb-3 px-3 font-bold text-gray-500"
+              >
+                {item}
+              </div>
+            );
+          }
+          return <SidebarItem key={index} {...item} />;
+        })}
+      </nav>
+    </div>
   );
 };

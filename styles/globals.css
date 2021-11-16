@@ -153,3 +153,24 @@ img {
 		background-position: 0% 50%;
 	}
 }
+
+.floating-blob {
+  position: absolute;
+  transform-origin: center;
+  background-color: #b86c11;
+  width: 400px;
+  height: 300px;
+  border-radius: 40rem;
+  transform: translateY(250px) translateX(0px);
+  animation: floating-blob-1-jsx-4199188613 8s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes floating-blob-1-jsx-4199188613 {
+  0% {
+  }
+
+  100% {
+    transform: translateY(0px) translateX(-300px) rotate(180deg);
+  }
+}
