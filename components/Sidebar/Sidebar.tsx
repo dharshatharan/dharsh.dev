@@ -102,6 +102,7 @@ export const Sidebar = (props: Props) => {
             onClick={() => {
               setIsOpen(false);
             }}
+            aria-label="Close Menu"
           />
         </div>
         {navItems.map((item, index) => {

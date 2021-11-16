@@ -36,6 +36,7 @@ export default function PageLayout({ title, children }: Props) {
                 onClick={() => {
                   setIsOpen(true);
                 }}
+                aria-label="Open Menu"
               />
             )}
             <span className="ml-2 text-xl font-bold self-center">{title}</span>
