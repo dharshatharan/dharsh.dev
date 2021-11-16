@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Layout from "@components/Layouts/Layout";
+import PageLayout from "@components/Layout";
 import BlogItem from "@components/Items/BlogItem";
 import { getSortedBlogsData } from "@lib/blogs";
 import { PostData } from "@localTypes/posts";
@@ -12,13 +12,12 @@ interface Props {
 
 export default function index({ allBlogsData }: Props): ReactElement {
   return (
-    <Layout>
+    <PageLayout title="Writing">
       <Head>
-        <title> ✍️ My Blog</title>
+        <title>Writing</title>
       </Head>
-      <section id="Blog" className="w-full">
+      <section id="Blog" className="w-full mt-10 mb-20">
         <div id="recentBlogs" className="flex flex-col">
-          <h1 className="text-5xl font-extrabold my-5">Blog</h1>
           <div className="grid place-items-center">
             <ul className="w-full grid sm:grid-cols-2 gap-8 p-5">
               {allBlogsData.map((blogData) => (
@@ -30,7 +29,7 @@ export default function index({ allBlogsData }: Props): ReactElement {
           </div>
         </div>
       </section>
-    </Layout>
+    </PageLayout>
   );
 }
 

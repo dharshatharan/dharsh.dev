@@ -43,10 +43,7 @@ class MyDocument extends Document {
             href={process.env.NEXT_PUBLIC_SENTRY_DOMAIN}
             crossOrigin=""
           />
-          <meta
-            name="description"
-            content="I share things that I consider 'cool' on here"
-          />
+          <meta name="description" content="Developer, Writer, Student" />
           <meta property="og:image" content="/images/open-graph-image.png" />
           <meta name="og:title" content={siteTitle} />
           <meta name="twitter:card" content={siteTitle} />
@@ -71,7 +68,7 @@ class MyDocument extends Document {
           />
           <link rel="manifest" href="/icons/favicons/site.webmanifest" />
         </Head>
-        <body className="bg-off-white dark:bg-smooth-black text-smooth-black dark:text-off-white transition duration-300">
+        <body className="bg-off-white dark:bg-[#101010] text-smooth-black dark:text-off-white transition duration-300">
           <Main />
           <NextScript />
         </body>

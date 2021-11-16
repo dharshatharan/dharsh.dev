@@ -19,6 +19,9 @@
 }
 
 @layer base {
+  html {
+    @apply max-h-screen overflow-hidden text-base antialiased;
+  }
   article p img {
     @apply block ml-auto mr-auto object-contain rounded-lg shadow-lg;
   }
@@ -130,4 +133,44 @@ img {
 
 [id] {
   scroll-margin-top: 5rem;
+}
+
+.gradient-bg {
+  background: linear-gradient(120deg, #FF00C7 0%, #51003F 100%), linear-gradient(120deg, #0030AD 0%, #00071A 100%), linear-gradient(180deg, #000346 0%, #FF0000 100%), linear-gradient(60deg, #0029FF 0%, #AA0014 100%), radial-gradient(100% 165% at 100% 100%, #FF00A8 0%, #00FF47 100%), radial-gradient(100% 150% at 0% 0%, #FFF500 0%, #51D500 100%);
+  background-blend-mode: overlay, color-dodge, overlay, overlay, difference, normal;
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.floating-blob {
+  position: absolute;
+  transform-origin: center;
+  background-color: #b86c11;
+  width: 400px;
+  height: 300px;
+  border-radius: 40rem;
+  transform: translateY(250px) translateX(0px);
+  animation: floating-blob-1-jsx-4199188613 8s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes floating-blob-1-jsx-4199188613 {
+  0% {
+  }
+
+  100% {
+    transform: translateY(0px) translateX(-300px) rotate(180deg);
+  }
 }

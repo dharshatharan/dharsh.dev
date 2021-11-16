@@ -7,6 +7,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      transitionProperty: {
+        width: "width",
+      },
       colors: {
         "teal-grey": "#1aa8ad",
         "medium-grey": "#535D5C",
