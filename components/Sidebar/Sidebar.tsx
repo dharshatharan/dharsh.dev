@@ -79,16 +79,16 @@ export const Sidebar = (props: Props) => {
   return (
     <div className="relative">
       <div
-        className={`absolute h-screen w-72 min-w-[18rem] text-9xl flex flex-col justify-end overflow-hidden transform duration-300
+        className={`absolute h-screen w-60 lg:w-72 text-9xl flex flex-col justify-end overflow-hidden transform duration-300
       ${isOpen ? "" : "hidden"}`}
       >
         <div className="floating-blob"></div>
       </div>
       <nav
-        className={`w-72 min-w-[18rem] h-screen flex flex-col px-3 absolute lg:static z-30 top-0 left-0 transform duration-300 bg-[#f9f9f9] dark:bg-smooth-black border-r border-gray-200 dark:border-gray-800
+        className={`w-60 lg:w-72 h-screen flex flex-col px-3 absolute lg:static z-30 top-0 left-0 transform duration-300 bg-[#f9f9f9] dark:bg-smooth-black border-r border-gray-200 dark:border-gray-800
       ${
         isOpen ? "translate-x-0 shadow-lg" : "-translate-x-full hidden"
-      } backdrop-filter backdrop-blur-xl bg-opacity-90 dark:bg-opacity-80 firefox:bg-opacity-95 dark:firefox:bg-opacity-95
+      } backdrop-filter backdrop-blur-xl bg-opacity-80 dark:bg-opacity-80 firefox:bg-opacity-95 dark:firefox:bg-opacity-95 overflow-y-auto
     `}
       >
         <div className="flex justify-between items-center mb-10">
