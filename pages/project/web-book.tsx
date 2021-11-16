@@ -24,18 +24,17 @@ export default function WebBook(props: Props): ReactElement {
           />
         </p>
         <p>
-          Personal Websites are not only a great way go showcase your work, but
-          also to share your thoughts and ideas and connect with people in
-          similar paths. There is so much wisdom and creativity in personal
-          websites.
+          Personal Websites are a great way to showcase your work. But, they are
+          also a great place to share thoughts and ideas while connecting with
+          people on similar paths. An incredible amount of wisdom and creativity
+          can be found on personal websites.
         </p>
         <p>
-          Recently, while I started creating my own personal website, I fell in
-          love with discovering people through their personal websites. I learn
-          so much from seeing different people and their work. It is truly
-          inspiring and exiting. Hence, I am now building a platform called
-          WebBook to help people do the same and discover people through
-          personal websites.
+          Recently, when I started building my website, I fell in love with
+          discovering people through their websites. I learn so much from seeing
+          different people and their work. It is truly inspiring and exciting.
+          It has led me to start building a platform called WebBook to help
+          people do the same and discover people through personal websites.
         </p>
         <p>
           GitHub Repository:{" "}
