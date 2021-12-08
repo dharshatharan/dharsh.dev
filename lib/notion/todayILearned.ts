@@ -8,6 +8,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeCodeTitles from "rehype-code-titles";
 import rehypePrism from "rehype-prism-plus";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import path from "path";
 
 const notion = notionClient();
 // passing notion client to the option
@@ -79,6 +80,23 @@ export async function getTodayILearnedByTag(tag: string) {
 }
 
 export async function getTodayILearnedById(id: string) {
+  if (process.platform === "win32") {
+    process.env.ESBUILD_BINARY_PATH = path.join(
+      process.cwd(),
+      "node_modules",
+      "esbuild",
+      "esbuild.exe"
+    );
+  } else {
+    process.env.ESBUILD_BINARY_PATH = path.join(
+      process.cwd(),
+      "node_modules",
+      "esbuild",
+      "bin",
+      "esbuild"
+    );
+  }
+
   const data = notion.pages.retrieve({
     page_id: id,
   });
