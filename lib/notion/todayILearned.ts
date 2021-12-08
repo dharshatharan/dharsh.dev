@@ -103,7 +103,8 @@ export async function getTodayILearnedById(id: string) {
   const mdblocks = await n2m.pageToMarkdown(id);
   const mdString = n2m.toMarkdownString(mdblocks);
 
-  const mdx = bundleMDX(mdString, {
+  const mdx = bundleMDX({
+    source: mdString,
     xdmOptions(options) {
       options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkGfm];
       options.rehypePlugins = [

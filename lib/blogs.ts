@@ -77,7 +77,8 @@ export async function getBlogData(id: string) {
   const fullPath = path.join(blogsDirectory, `${id}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
-  const { code, frontmatter } = await bundleMDX(fileContents, {
+  const { code, frontmatter } = await bundleMDX({
+    source: fileContents,
     xdmOptions(options) {
       options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkGfm];
       options.rehypePlugins = [
