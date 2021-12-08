@@ -1,5 +1,5 @@
 import ThemeToggle from "@components/Toggle/ThemeToggle";
-import { ReactNode, useContext, useState } from "react";
+import { ReactNode, useContext, useState, ReactElement } from "react";
 import { Sidebar } from "../Sidebar/Sidebar";
 import MenuIcon from "@components/icons/Menu";
 import { IconButton } from "@components/Buttons/IconButton";
@@ -7,6 +7,33 @@ import { GlobalNavigationContext } from "@components/Providers";
 interface Props {
   title?: string;
   children: ReactNode;
+}
+
+interface ListProps {
+  list: ReactElement | null;
+  children: ReactElement | null;
+  hasDetail?: boolean;
+}
+
+export function ListDetailView({
+  list,
+  children,
+  hasDetail = false,
+}: ListProps) {
+  return (
+    <div className="flex w-full">
+      {list && (
+        <div
+          className={`bg-dots ${
+            hasDetail ? "hidden md:flex" : "w-full min-h-screen"
+          }`}
+        >
+          {list}
+        </div>
+      )}
+      {children}
+    </div>
+  );
 }
 
 export default function PageLayout({ title, children }: Props) {
