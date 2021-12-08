@@ -102,7 +102,6 @@ export async function getTodayILearnedById(id: string) {
   });
   const mdblocks = await n2m.pageToMarkdown(id);
   const mdString = n2m.toMarkdownString(mdblocks);
-  console.log(mdString);
 
   const mdx = bundleMDX(mdString, {
     xdmOptions(options) {

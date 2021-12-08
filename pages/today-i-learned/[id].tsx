@@ -21,8 +21,6 @@ export default function TodayILearnt({
   todayILearnedData,
   allTodayILearnedData,
 }: Props) {
-  console.log(todayILearnedData);
-  console.log(allTodayILearnedData);
   const Component = useMemo(
     () => getMDXComponent(todayILearnedData.content),
     [todayILearnedData.content]
@@ -51,7 +49,6 @@ interface Params extends ParsedUrlQuery {
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const paths = await getAllTodayILearnedIds();
-  console.log(paths);
   return {
     paths,
     fallback: false,
@@ -63,8 +60,6 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
 }) => {
   const allTodayILearnedData = await getTodayILearned();
   const todayILearnedData = await getTodayILearnedById(params!.id as string);
-  console.log(allTodayILearnedData);
-  console.log(todayILearnedData);
   return {
     props: {
       allTodayILearnedData,
