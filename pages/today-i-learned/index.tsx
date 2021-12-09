@@ -1,21 +1,21 @@
 import PageLayout, { ListDetailView } from "@components/Layout";
 import { TodayILearnedList } from "@components/TodayILearnt/TodayILearntList";
 import { getTodayILearned } from "@lib/notion/todayILearned";
-import { todayILearned } from "@localTypes/today-i-learned";
+import { TodayILearned } from "@localTypes/today-i-learned";
 import { GetStaticProps } from "next";
 
 interface Props {
-  todayILearnedData: todayILearned[];
+  todayILearnedData: TodayILearned[];
 }
 
 export default function TodayILearnt({ todayILearnedData }: Props) {
   return (
     <ListDetailView
       list={<TodayILearnedList todayILearnedData={todayILearnedData} />}
-      hasDetail={true}
+      hasDetail={false}
     >
-      <PageLayout title="Today I Learnt">
-        <div className="bg-gray-200">Details</div>
+      <PageLayout title="Today I Learned">
+        <div>test</div>
       </PageLayout>
     </ListDetailView>
   );

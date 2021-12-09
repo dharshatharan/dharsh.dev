@@ -17,6 +17,7 @@ export default function index({ allBlogsData }: Props): ReactElement {
         <title>Writing</title>
       </Head>
       <section id="Blog" className="w-full mt-10 mb-20">
+        <h1 className="text-4xl md:text-5xl font-bold mb-5">Writing</h1>
         <div id="recentBlogs" className="flex flex-col">
           <div className="grid place-items-center">
             <ul className="w-full grid sm:grid-cols-2 gap-8 p-5">

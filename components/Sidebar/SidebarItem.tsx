@@ -1,6 +1,5 @@
-import { useRouter } from "next/router";
 import { ReactElement, SVGProps, useContext } from "react";
-import RightArrowIcon from "@components/icons/RightArrow";
+import RightArrowIcon from "@components/Icons/RightArrow";
 import { SmartLink } from "@components/SmartLink";
 import { useWindowSize } from "@components/hooks/WindowSize";
 import { GlobalNavigationContext } from "@components/Providers";
@@ -9,6 +8,7 @@ interface Props {
   href: string;
   label: string;
   icon: ReactElement;
+  isActive?: boolean;
 }
 
 const ArrowIconProps: SVGProps<SVGSVGElement> = {
@@ -17,11 +17,9 @@ const ArrowIconProps: SVGProps<SVGSVGElement> = {
   className: "flex self-center -rotate-45",
 };
 
-export const SidebarItem = ({ href, label, icon }: Props) => {
-  const router = useRouter();
+export const SidebarItem = ({ href, label, icon, isActive }: Props) => {
   const size = useWindowSize();
   const { setIsOpen } = useContext(GlobalNavigationContext);
-  const isActive = router.asPath === href;
 
   return (
     <SmartLink

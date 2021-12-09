@@ -23,13 +23,13 @@ export default function Post({ blog }: Props) {
   );
 
   return (
-    <PageLayout>
+    <PageLayout title={blog.title}>
       <Head>
         <title>{blog.title}</title>
       </Head>
       <div className="w-full flex justify-center mt-10">
         <div className="max-w-full md:max-w-3xl md:mx-10 mb-10 md:mb-20">
-          <article className="prose lg:prose-xl dark:prose-light py-5">
+          <article className="prose lg:prose-lg dark:prose-light py-5">
             <small className="flex justify-center align-middle text-teal-grey dark:text-dark-yellow my-5">
               <span>
                 <Image

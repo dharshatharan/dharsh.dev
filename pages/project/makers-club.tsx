@@ -13,18 +13,17 @@ export default function MakersClub(props: Props): ReactElement {
       <Head>
         <title>Maker Club</title>
       </Head>
-      <section className="prose md:prose-xl dark:prose-light mt-10 mb-20">
-        <p>
-          <ArticleImage
-            src={MakerImage}
-            alt="An open graph image of the makers club website"
-            width={800}
-            height={400}
-            priority={true}
-            placeholder="blur"
-            objectFit="cover"
-          />
-        </p>
+      <section className="prose md:prose-lg dark:prose-light mt-10 mb-20">
+        <h1>Makers Club</h1>
+        <ArticleImage
+          src={MakerImage}
+          alt="An open graph image of the makers club website"
+          width={800}
+          height={400}
+          priority={true}
+          placeholder="blur"
+          objectFit="cover"
+        />
         <p>
           The Makers Club is a club within{" "}
           <SmartLink href="https://www.scesoc.ca/">SCESoc</SmartLink>, the

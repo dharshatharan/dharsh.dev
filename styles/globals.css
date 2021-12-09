@@ -31,6 +31,9 @@
   article blockquote {
     @apply bg-light-grey border-teal-grey dark:text-off-white dark:bg-dark-grey rounded-lg shadow-lg;
   }
+  .bg-glass {
+    @apply transform duration-300 bg-[#f9f9f9] dark:bg-smooth-black border-r border-gray-200 dark:border-gray-800 backdrop-filter backdrop-blur-xl bg-opacity-80 dark:bg-opacity-80 firefox:bg-opacity-95 dark:firefox:bg-opacity-95;
+  }
 }
 
 @layer utilities {

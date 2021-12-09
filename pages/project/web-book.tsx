@@ -12,17 +12,16 @@ export default function WebBook(props: Props): ReactElement {
       <Head>
         <title>WebBook</title>
       </Head>
-      <section className="prose md:prose-xl dark:prose-light mt-10 mb-20">
-        <p>
-          <ArticleImage
-            src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80"
-            alt="An open graph image of the makers club website"
-            width={800}
-            height={400}
-            priority={true}
-            objectFit="cover"
-          />
-        </p>
+      <section className="prose md:prose-lg dark:prose-light mt-10 mb-20">
+        <h1>WebBook</h1>
+        <ArticleImage
+          src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80"
+          alt="An open graph image of the makers club website"
+          width={800}
+          height={400}
+          priority={true}
+          objectFit="cover"
+        />
         <p>
           Personal Websites are a great way to showcase your work. But, they are
           also a great place to share thoughts and ideas while connecting with

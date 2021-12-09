@@ -1,4 +1,4 @@
-import { todayILearned } from "@localTypes/today-i-learned";
+import { TodayILearned } from "@localTypes/today-i-learned";
 import { notionClient } from "./index";
 // @ts-ignore
 import notion2md from "notion-to-md";
@@ -18,12 +18,12 @@ const n2m = new notion2md({ notionClient: notion });
 export async function getTodayILearned() {
   const { results } = await notion.databases.query({
     database_id: "7fb47f0b600a45c29f05d7774eaf0bc7",
-    // filter: {
-    // 	property: "Landmark",
-    // 	text: {
-    // 		contains: "Bridge",
-    // 	},
-    // },
+    filter: {
+      property: "Status",
+      select: {
+        equals: "Published",
+      },
+    },
   });
   return results.map((item) => {
     const properties = item.properties;
@@ -43,7 +43,7 @@ export async function getTodayILearned() {
           ? properties.Tags.multi_select
           : [],
       url: properties.URL.type === "url" ? properties.URL.url : "",
-    } as todayILearned;
+    } as TodayILearned;
   });
 }
 
@@ -75,7 +75,7 @@ export async function getTodayILearnedByTag(tag: string) {
           ? properties.Tags.multi_select
           : [],
       url: properties.URL.type === "url" ? properties.URL.url : "",
-    } as todayILearned;
+    } as TodayILearned;
   });
 }
 
@@ -143,7 +143,7 @@ export async function getTodayILearnedById(id: string) {
           : [],
       url: data.properties.URL.type === "url" ? data.properties.URL.url : "",
       content: mdx.code,
-    } as todayILearned;
+    } as TodayILearned;
   });
 }
 

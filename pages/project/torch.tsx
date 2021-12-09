@@ -12,17 +12,16 @@ export default function Torch(props: Props): ReactElement {
       <Head>
         <title>Torch</title>
       </Head>
-      <section className="prose md:prose-xl dark:prose-light mt-10 mb-20">
-        <p>
-          <ArticleImage
-            src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=987&q=80"
-            alt="An open graph image of the makers club website"
-            width={800}
-            height={400}
-            priority={true}
-            objectFit="cover"
-          />
-        </p>
+      <section className="prose md:prose-lg dark:prose-light mt-10 mb-20">
+        <h1>Torch</h1>
+        <ArticleImage
+          src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=987&q=80"
+          alt="An open graph image of the makers club website"
+          width={800}
+          height={400}
+          priority={true}
+          objectFit="cover"
+        />
         <p>
           As an effort to help students in{" "}
           <SmartLink href="https://www.scesoc.ca/">SCESoc</SmartLink> to work on
@@ -45,23 +44,21 @@ export default function Torch(props: Props): ReactElement {
           entire world. It also encourages students to contribute to an open
           source project and learn by teaching people through written content.
         </p>
-        <p>
-          For more information about the project, visit the following links:
-          <ul>
-            <li>
-              Torch Repository -{" "}
-              <SmartLink href="https://github.com/SCESoc/torch">
-                https://github.com/SCESoc/torch
-              </SmartLink>
-            </li>
-            <li>
-              Knowledge Base Repository -{" "}
-              <SmartLink href="https://github.com/SCESoc/knowledge-base">
-                https://github.com/SCESoc/knowledge-base
-              </SmartLink>
-            </li>
-          </ul>
-        </p>
+        For more information about the project, visit the following links:
+        <ul>
+          <li>
+            Torch Repository -{" "}
+            <SmartLink href="https://github.com/SCESoc/torch">
+              https://github.com/SCESoc/torch
+            </SmartLink>
+          </li>
+          <li>
+            Knowledge Base Repository -{" "}
+            <SmartLink href="https://github.com/SCESoc/knowledge-base">
+              https://github.com/SCESoc/knowledge-base
+            </SmartLink>
+          </li>
+        </ul>
       </section>
     </PageLayout>
   );
