@@ -3,7 +3,7 @@ import Date from "@components/Formatters/Date";
 import { NotionTag } from "@components/Tags/NotionTag";
 import { TodayILearned } from "@localTypes/today-i-learned";
 import Link from "next/link";
-import MenuIcon from "@components/Icons/Menu";
+import MenuIcon from "@components/icons/Menu";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 import { GlobalNavigationContext } from "@components/Providers";
