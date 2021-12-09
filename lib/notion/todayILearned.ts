@@ -150,6 +150,12 @@ export async function getTodayILearnedById(id: string) {
 export async function getAllTodayILearnedIds() {
   const { results } = await notion.databases.query({
     database_id: "7fb47f0b600a45c29f05d7774eaf0bc7",
+    filter: {
+      property: "Status",
+      select: {
+        equals: "Published",
+      },
+    },
   });
   return results.map((item) => {
     return {
