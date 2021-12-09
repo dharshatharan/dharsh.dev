@@ -62,25 +62,21 @@ export default function PageLayout({
         } sticky top-0 border-gray-200 dark:border-gray-800 transform duration-300
         `}
       >
-        {!customLeftItem ? (
-          <div className="flex h-full items-center">
-            {!isOpen && (
-              <IconButton
-                icon={
-                  <MenuIcon height={25} width={25} className="self-center" />
-                }
-                onClick={() => {
-                  setIsOpen(true);
-                }}
-              />
-            )}
-            <span className={`mx-2 text-lg font-bold self-center line-clamp-1`}>
-              {scroll > 50 ? title : ""}
-            </span>
-          </div>
-        ) : (
-          customLeftItem
-        )}
+        <div className="flex h-full items-center">
+          {!isOpen && !customLeftItem ? (
+            <IconButton
+              icon={<MenuIcon height={25} width={25} className="self-center" />}
+              onClick={() => {
+                setIsOpen(true);
+              }}
+            />
+          ) : (
+            customLeftItem
+          )}
+          <span className={`mx-2 text-lg font-bold self-center line-clamp-1`}>
+            {scroll > 50 ? title : ""}
+          </span>
+        </div>
         <ThemeToggle />
       </div>
       <div className="w-full">
