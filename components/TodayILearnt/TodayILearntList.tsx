@@ -17,7 +17,7 @@ export function TodayILearnedList({ todayILearnedData }: ListProps) {
   const { isOpen, setIsOpen } = useContext(GlobalNavigationContext);
   return (
     <div className="relative">
-      <div className="md:w-96 h-screen flex flex-col overflow-y-auto bg-glass">
+      <div className="md:w-96 h-screen flex flex-col overflow-y-auto bg-panel">
         <div className="px-1 py-3 md:px-3 sticky flex items-center space-x-2 top-0 bg-glass border-0 z-10">
           {!isOpen && (
             <IconButton

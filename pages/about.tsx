@@ -12,7 +12,7 @@ export default function About(props: Props) {
       <Head>
         <title>About</title>
       </Head>
-      <section className="prose lg:prose-xl dark:prose-light mt-10 mb-20">
+      <section className="prose lg:prose-lg dark:prose-light mt-10 mb-20">
         <ArticleImage
           src={CoverImage}
           alt="A picture of me in front of a lake"

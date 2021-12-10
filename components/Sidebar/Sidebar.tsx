@@ -93,14 +93,8 @@ export const Sidebar = (props: Props) => {
 
   return (
     <div className="relative">
-      <div
-        className={`absolute h-screen w-60 lg:w-72 text-9xl flex flex-col justify-end overflow-hidden transform duration-300
-      ${isOpen ? "" : "hidden"}`}
-      >
-        <div className="floating-blob"></div>
-      </div>
       <nav
-        className={`w-60 lg:w-72 h-screen flex flex-col px-3 absolute lg:static z-30 top-0 left-0 bg-glass
+        className={`w-60 lg:w-72 h-screen flex flex-col px-3 absolute lg:static z-30 top-0 left-0 bg-panel
       ${isOpen ? "translate-x-0 shadow-lg" : "-translate-x-full hidden"}
     `}
       >
