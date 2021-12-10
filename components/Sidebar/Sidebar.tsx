@@ -9,7 +9,7 @@ import TwitterIcon from "@components/icons/Twitter";
 import GitHubIcon from "@components/icons/GitHub";
 import WebIcon from "@components/icons/Web";
 import FaceIcon from "@components/icons/Face";
-import GradHat from "@components/icons/GradHat";
+import GradCap from "@components/icons/GradCap";
 import LeftDoubleArrowIcon from "@components/icons/LeftDoubleArrow";
 import { SVGProps, useContext } from "react";
 import { GlobalNavigationContext } from "@components/Providers";
@@ -20,8 +20,8 @@ import { useRouter } from "next/router";
 interface Props {}
 
 const IconProps: SVGProps<SVGSVGElement> = {
-  height: "20",
-  width: "20",
+  height: "17",
+  width: "17",
   className: "flex self-center",
 };
 
@@ -51,7 +51,7 @@ export const Sidebar = (props: Props) => {
     {
       label: "TIL",
       href: "/today-i-learned",
-      icon: <GradHat {...IconProps} />,
+      icon: <GradCap {...IconProps} />,
       isActive: router.asPath.startsWith("/today-i-learned"),
     },
     "Projects",
@@ -116,7 +116,7 @@ export const Sidebar = (props: Props) => {
             return (
               <div
                 key={item}
-                className="mt-5 mb-3 px-3 font-bold text-gray-500"
+                className="mt-5 mb-3 px-3 text-sm font-bold text-gray-500"
               >
                 {item}
               </div>

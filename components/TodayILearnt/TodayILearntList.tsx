@@ -39,14 +39,14 @@ export function TodayILearnedList({ todayILearnedData }: ListProps) {
                 as={`/today-i-learned/${item.id}`}
               >
                 <a
-                  className={`flex flex-col space-y-1 p-3 hover:bg-gray-200 dark:hover:bg-[#1f1f1f] rounded-md transform duration-300 ${
-                    isActive ? "bg-gray-200 dark:bg-[#1f1f1f]" : ""
+                  className={`flex flex-col space-y-1 p-3 hover:bg-gray-200 dark:hover:bg-[#222222] rounded-md transform duration-300 ${
+                    isActive ? "bg-gray-200 dark:bg-[#222222]" : ""
                   }`}
                 >
-                  <div className="text-sm text-gray-500">
+                  <div className="text-sm text-gray-500 font-semibold">
                     <Date dateString={item.createdAt} />
                   </div>
-                  <div className="text-sm">{item.name}</div>
+                  <div className="text-sm font-semibold">{item.name}</div>
                   <div className="flex items-center space-x-2 overflow-x-auto">
                     {item.emoji && <div>{item.emoji}</div>}
                     {item.tags.map((tag) => (

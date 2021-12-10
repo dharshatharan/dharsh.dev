@@ -6,21 +6,21 @@ interface Props {
 
 export const NotionTag = ({ tag }: Props) => {
   const colors = {
-    default: "bg-gray-400",
-    gray: "bg-gray-400",
-    brown: "bg-red-400",
-    orange: "bg-red-400",
-    yellow: "bg-yellow-400",
-    green: "bg-green-400",
-    blue: "bg-blue-400",
-    purple: "bg-purple-400",
-    pink: "bg-pink-400",
-    red: "bg-red-400",
+    default: "bg-gray-500",
+    gray: "bg-gray-500",
+    brown: "bg-red-500",
+    orange: "bg-red-500",
+    yellow: "bg-yellow-500",
+    green: "bg-green-500",
+    blue: "bg-blue-500",
+    purple: "bg-purple-500",
+    pink: "bg-pink-500",
+    red: "bg-red-500",
   };
   return (
     <div
       key={tag.id}
-      className={`text-xs font-bold whitespace-nowrap text-white px-2 rounded-sm ${
+      className={`text-sm font-semibold whitespace-nowrap text-white px-1 rounded-sm ${
         colors[tag.color]
       }`}
     >
