@@ -14,8 +14,8 @@ import { TodayILearnedList } from "@components/TodayILearnt/TodayILearntList";
 import { NotionTag } from "@components/Tags/NotionTag";
 import Date from "@components/Formatters/Date";
 import { SmartLink } from "@components/SmartLink";
-import LinkIcon from "../../components/icons/Link";
-import RightArrowIcon from "../../components/icons/RightArrow";
+import LinkIcon from "@components/Icons/LinkIcon";
+import RightArrowIcon from "@components/Icons/RightArrowIcon";
 import { IconButton } from "@components/Buttons/IconButton";
 import { useWindowSize } from "@components/hooks/WindowSize";
 

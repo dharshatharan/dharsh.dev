@@ -1,7 +1,7 @@
 import { IconButton } from "../Buttons/IconButton";
 import { Bookmark } from "@localTypes/bookmark";
 import Link from "next/link";
-import MenuIcon from "../icons/Menu";
+import MenuIcon from "@components/Icons/MenuIcon";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 import { GlobalNavigationContext } from "../Providers";

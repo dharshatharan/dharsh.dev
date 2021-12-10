@@ -1,7 +1,7 @@
 import ThemeToggle from "@components/Toggle/ThemeToggle";
 import { ReactNode, useContext, useState, ReactElement } from "react";
 import { Sidebar } from "../Sidebar/Sidebar";
-import MenuIcon from "../icons/Menu";
+import MenuIcon from "@components/Icons/MenuIcon";
 import { IconButton } from "@components/Buttons/IconButton";
 import { GlobalNavigationContext } from "@components/Providers";
 interface SiteLayoutProps {

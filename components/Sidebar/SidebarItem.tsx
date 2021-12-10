@@ -1,5 +1,5 @@
 import { ReactElement, SVGProps, useContext } from "react";
-import RightArrowIcon from "@components/icons/RightArrow";
+import RightArrowIcon from "@components/Icons/RightArrowIcon";
 import { SmartLink } from "@components/SmartLink";
 import { useWindowSize } from "@components/hooks/WindowSize";
 import { GlobalNavigationContext } from "@components/Providers";
