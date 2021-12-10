@@ -15,7 +15,6 @@ export async function getBookmarks() {
   });
   return results.map((item) => {
     const properties = item.properties;
-    console.log(properties);
     return {
       id: item.id,
       emoji: item?.icon?.type === "emoji" ? item.icon.emoji : "",
@@ -63,34 +62,40 @@ export async function getBookmarkByType(type: string) {
 }
 
 export async function getBookmarkById(id: string) {
-  const data = notion.pages.retrieve({
-    page_id: id,
-  });
-  const mdblocks = await n2m.pageToMarkdown(id);
-  const mdString = n2m.toMarkdownString(mdblocks);
+  try {
+    const data = notion.pages.retrieve({
+      page_id: id,
+    });
+    const mdblocks = await n2m.pageToMarkdown(id);
+    const mdString = n2m.toMarkdownString(mdblocks);
 
-  const mdx = getBundledMDX(mdString);
+    const mdx = getBundledMDX(mdString);
 
-  return Promise.all([data, mdx]).then(([data, mdx]) => {
-    return {
-      id: data.id,
-      emoji: data?.icon?.type === "emoji" ? data.icon.emoji : "",
-      createdAt:
-        data.properties.Created.type === "created_time"
-          ? data.properties.Created.created_time
-          : "",
-      name:
-        data.properties.Name.type === "title"
-          ? data.properties.Name.title[0].plain_text
-          : "",
-      type:
-        data.properties.Type.type === "select"
-          ? data.properties.Type.select
-          : [],
-      url: data.properties.URL.type === "url" ? data.properties.URL.url : "",
-      content: mdx.code,
-    } as Bookmark;
-  });
+    console.log(mdString);
+
+    return Promise.all([data, mdx]).then(([data, mdx]) => {
+      return {
+        id: data.id,
+        emoji: data?.icon?.type === "emoji" ? data.icon.emoji : "",
+        createdAt:
+          data.properties.Created.type === "created_time"
+            ? data.properties.Created.created_time
+            : "",
+        name:
+          data.properties.Name.type === "title"
+            ? data.properties.Name.title[0].plain_text
+            : "",
+        type:
+          data.properties.Type.type === "select"
+            ? data.properties.Type.select
+            : [],
+        url: data.properties.URL.type === "url" ? data.properties.URL.url : "",
+        content: mdx.code,
+      } as Bookmark;
+    });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export async function getAllBookmarkIds() {

@@ -97,7 +97,7 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const paths = await getAllBookmarkIds();
   return {
     paths,
-    fallback: false,
+    fallback: "blocking",
   };
 };
 
@@ -106,6 +106,12 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
 }) => {
   const allBookmarkData = await getBookmarks();
   const bookmarkData = await getBookmarkById(params!.id as string);
+  if (!bookmarkData) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       allBookmarkData,

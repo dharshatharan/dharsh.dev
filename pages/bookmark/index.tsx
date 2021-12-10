@@ -8,7 +8,7 @@ interface Props {
   bookmarkData: Bookmark[];
 }
 
-export default function TodayILearnt({ bookmarkData }: Props) {
+export default function BookmarkPage({ bookmarkData }: Props) {
   return (
     <ListDetailView
       list={<BookmarkList bookmarkData={bookmarkData} />}

@@ -95,7 +95,7 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const paths = await getAllTodayILearnedIds();
   return {
     paths,
-    fallback: false,
+    fallback: "blocking",
   };
 };
 
@@ -104,6 +104,13 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
 }) => {
   const allTodayILearnedData = await getTodayILearned();
   const todayILearnedData = await getTodayILearnedById(params!.id as string);
+
+  if (!todayILearnedData) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       allTodayILearnedData,
