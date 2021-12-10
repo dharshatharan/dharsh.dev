@@ -1,11 +1,11 @@
 import Tag from "./tag";
 
-export type TodayILearned = {
+export type Bookmark = {
   id: string;
   emoji: string;
   createdAt: string;
   name: string;
-  tags: Tag[];
+  type: Tag;
   url: string | null;
   content: string;
 };

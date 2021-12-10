@@ -1,34 +1,34 @@
 import PageLayout, { ListDetailView } from "@components/Layout";
 import {
-  getAllTodayILearnedIds,
-  getTodayILearned,
-  getTodayILearnedById,
-} from "@lib/notion/todayILearned";
-import { TodayILearned } from "@localTypes/today-i-learned";
+  getAllBookmarkIds,
+  getBookmarks,
+  getBookmarkById,
+} from "@lib/notion/bookmarks";
+import { Bookmark } from "@localTypes/bookmark";
 import components from "@components/MDXComponents";
 import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
 import { useMemo } from "react";
-import { TodayILearnedList } from "@components/TodayILearnt/TodayILearntList";
+import { BookmarkList } from "@components/Bookmarks/BookmarkList";
 import { NotionTag } from "@components/Tags/NotionTag";
-import Date from "@components/Formatters/Date";
 import { SmartLink } from "@components/SmartLink";
 import LinkIcon from "@components/icons/Link";
 import RightArrowIcon from "@components/icons/RightArrow";
 import { IconButton } from "@components/Buttons/IconButton";
 import { useWindowSize } from "@components/hooks/WindowSize";
+import Image from "next/image";
 
 interface Props {
-  todayILearnedData: TodayILearned;
-  allTodayILearnedData: TodayILearned[];
+  bookmarkData: Bookmark;
+  allBookmarkData: Bookmark[];
 }
 
 const BackButton = () => {
   const size = useWindowSize();
   if (typeof window !== "undefined" && size.width && size.width < 1024) {
     return (
-      <SmartLink href="/today-i-learned">
+      <SmartLink href="/bookmark">
         <IconButton icon={<RightArrowIcon className="rotate-180" />} />
       </SmartLink>
     );
@@ -37,47 +37,49 @@ const BackButton = () => {
   }
 };
 
-export default function TodayILearnt({
-  todayILearnedData,
-  allTodayILearnedData,
-}: Props) {
+export default function TodayILearnt({ bookmarkData, allBookmarkData }: Props) {
   const Component = useMemo(
-    () => getMDXComponent(todayILearnedData.content),
-    [todayILearnedData.content]
+    () => getMDXComponent(bookmarkData.content),
+    [bookmarkData.content]
   );
+  const url = bookmarkData.url ? new URL(bookmarkData.url).hostname : null;
   return (
     <ListDetailView
-      list={<TodayILearnedList todayILearnedData={allTodayILearnedData} />}
+      list={<BookmarkList bookmarkData={allBookmarkData} />}
       hasDetail
     >
-      <PageLayout
-        title={todayILearnedData.name}
-        customLeftItem={<BackButton />}
-      >
+      <PageLayout title={bookmarkData.name} customLeftItem={<BackButton />}>
         <div className="mb-96 py-5">
-          <div className="text-7xl mb-5">{todayILearnedData.emoji}</div>
-          <div className="text-mb font-bold text-gray-500 mb-3">
-            <Date dateString={todayILearnedData.createdAt} />
-          </div>
-          <div className="flex items-center space-x-2 overflow-x-auto mb-3">
-            {todayILearnedData.tags.map((tag) => (
-              <NotionTag tag={tag} key={tag.id} />
-            ))}
+          <div className="flex items-center space-x-2 overflow-x-auto">
+            <NotionTag tag={bookmarkData.type} />
           </div>
           <h1 className="text-2xl md:text-4xl font-bold mt-10">
-            {todayILearnedData.name}
+            {bookmarkData.name}
           </h1>
+          {url && (
+            <div className="flex items-center text-gray-500 font-semibold space-x-3 overflow-x-auto mt-5">
+              <Image
+                height={32}
+                width={32}
+                src={`http://www.google.com/s2/favicons?domain=${url}&sz=32`}
+                alt="Website Favicon"
+              />
+              <SmartLink className="text-md" href={bookmarkData.url ?? ""}>
+                {url}
+              </SmartLink>
+            </div>
+          )}
           <article className="prose lg:prose-lg dark:prose-light py-5">
             <Component
               className="my-10 leading-relaxed"
               components={components}
             />
           </article>
-          {todayILearnedData.url && (
-            <SmartLink href={todayILearnedData.url}>
+          {bookmarkData.url && (
+            <SmartLink href={bookmarkData.url}>
               <div className="bg-blue-500 text-md text-off-white p-3 mb-5 w-full flex items-center justify-center space-x-2 rounded-xl">
                 <LinkIcon height="17" width="17" />
-                <div className="font-semibold">Read More</div>
+                <div className="font-semibold">Visit</div>
               </div>
             </SmartLink>
           )}
@@ -92,7 +94,7 @@ interface Params extends ParsedUrlQuery {
 }
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
-  const paths = await getAllTodayILearnedIds();
+  const paths = await getAllBookmarkIds();
   return {
     paths,
     fallback: false,
@@ -102,12 +104,12 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
 export const getStaticProps: GetStaticProps<Props, Params> = async ({
   params,
 }) => {
-  const allTodayILearnedData = await getTodayILearned();
-  const todayILearnedData = await getTodayILearnedById(params!.id as string);
+  const allBookmarkData = await getBookmarks();
+  const bookmarkData = await getBookmarkById(params!.id as string);
   return {
     props: {
-      allTodayILearnedData,
-      todayILearnedData: todayILearnedData,
+      allBookmarkData,
+      bookmarkData: bookmarkData,
     },
     revalidate: 60,
   };

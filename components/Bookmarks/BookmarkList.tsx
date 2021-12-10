@@ -1,18 +1,17 @@
 import { IconButton } from "@components/Buttons/IconButton";
-import Date from "@components/Formatters/Date";
-import { NotionTag } from "@components/Tags/NotionTag";
-import { TodayILearned } from "@localTypes/today-i-learned";
+import { Bookmark } from "@localTypes/bookmark";
 import Link from "next/link";
 import MenuIcon from "@components/icons/Menu";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 import { GlobalNavigationContext } from "@components/Providers";
+import Image from "next/image";
 
 interface ListProps {
-  todayILearnedData: TodayILearned[];
+  bookmarkData: Bookmark[];
 }
 
-export function TodayILearnedList({ todayILearnedData }: ListProps) {
+export function BookmarkList({ bookmarkData }: ListProps) {
   const router = useRouter();
   const { isOpen, setIsOpen } = useContext(GlobalNavigationContext);
   return (
@@ -27,32 +26,35 @@ export function TodayILearnedList({ todayILearnedData }: ListProps) {
               }}
             />
           )}
-          <div className="p-3 text-lg font-bold">Today I Learned</div>
+          <div className="px-3 text-lg font-bold">Bookmarks</div>
         </div>
         <div className="p-1 md:p-3 flex flex-col space-y-1">
-          {todayILearnedData.map((item) => {
-            const isActive = router.asPath === `/today-i-learned/${item.id}`;
+          {bookmarkData.map((item) => {
+            const isActive = router.asPath === `/bookmark/${item.id}`;
+            const url = item.url ? new URL(item.url).hostname : null;
             return (
               <Link
                 key={item.id}
-                href="/today-i-learned/[id]"
-                as={`/today-i-learned/${item.id}`}
+                href="/bookmark/[id]"
+                as={`/bookmark/${item.id}`}
               >
                 <a
                   className={`flex flex-col space-y-1 p-3 hover:bg-gray-200 dark:hover:bg-[#222222] rounded-md transform duration-300 ${
                     isActive ? "bg-gray-200 dark:bg-[#222222]" : ""
                   }`}
                 >
-                  <div className="text-sm text-gray-500 font-semibold">
-                    <Date dateString={item.createdAt} />
-                  </div>
                   <div className="text-sm font-semibold">{item.name}</div>
-                  <div className="flex items-center space-x-3 overflow-x-auto text-xl">
-                    {item.emoji && <div>{item.emoji}</div>}
-                    {item.tags.map((tag) => (
-                      <NotionTag tag={tag} key={tag.id} />
-                    ))}
-                  </div>
+                  {url && (
+                    <div className="flex items-center text-sm text-gray-500 font-semibold space-x-3 overflow-x-auto">
+                      <Image
+                        height={20}
+                        width={20}
+                        src={`http://www.google.com/s2/favicons?domain=${url}`}
+                        alt="Website Favicon"
+                      />
+                      <div>{url}</div>
+                    </div>
+                  )}
                 </a>
               </Link>
             );

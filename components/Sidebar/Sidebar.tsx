@@ -1,5 +1,6 @@
 import PathAnimatedLogo from "@components/Image/PathAnimatedLogo";
 import { SidebarItem } from "@components/Sidebar/SidebarItem";
+import BookmarkIcon from "@components/icons/Bookmark";
 import HomeIcon from "@components/icons/Home";
 import WritingIcon from "@components/icons/Writing";
 import LightIcon from "@components/icons/Light";
@@ -42,6 +43,7 @@ export const Sidebar = (props: Props) => {
       icon: <FaceIcon {...IconProps} />,
       isActive: router.asPath === "/about",
     },
+    "Content",
     {
       label: "Writing",
       href: "/blog",
@@ -53,6 +55,12 @@ export const Sidebar = (props: Props) => {
       href: "/today-i-learned",
       icon: <GradCap {...IconProps} />,
       isActive: router.asPath.startsWith("/today-i-learned"),
+    },
+    {
+      label: "Bookmarks",
+      href: "/bookmark",
+      icon: <BookmarkIcon {...IconProps} />,
+      isActive: router.asPath.startsWith("/bookmark"),
     },
     "Projects",
     {
