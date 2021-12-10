@@ -1,10 +1,10 @@
-import { IconButton } from "@components/Buttons/IconButton";
+import { IconButton } from "../Buttons/IconButton";
 import { Bookmark } from "@localTypes/bookmark";
 import Link from "next/link";
-import MenuIcon from "@components/icons/Menu";
+import MenuIcon from "../icons/Menu";
 import { useRouter } from "next/router";
 import { useContext } from "react";
-import { GlobalNavigationContext } from "@components/Providers";
+import { GlobalNavigationContext } from "../Providers";
 import Image from "next/image";
 
 interface ListProps {
