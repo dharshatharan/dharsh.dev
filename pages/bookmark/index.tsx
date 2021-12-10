@@ -14,7 +14,9 @@ export default function TodayILearnt({ bookmarkData }: Props) {
       list={<BookmarkList bookmarkData={bookmarkData} />}
       hasDetail={false}
     >
-      <PageLayout title="Bookmarks"></PageLayout>
+      <PageLayout title="Bookmarks">
+        <div />
+      </PageLayout>
     </ListDetailView>
   );
 }

@@ -14,7 +14,9 @@ export default function TodayILearnt({ todayILearnedData }: Props) {
       list={<TodayILearnedList todayILearnedData={todayILearnedData} />}
       hasDetail={false}
     >
-      <PageLayout title="Today I Learned"></PageLayout>
+      <PageLayout title="Today I Learned">
+        <div />
+      </PageLayout>
     </ListDetailView>
   );
 }

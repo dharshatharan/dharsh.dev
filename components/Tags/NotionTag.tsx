@@ -1,4 +1,4 @@
-import { Tag } from "@localTypes/today-i-learned";
+import { Tag } from "@localTypes/tag";
 
 interface Props {
   tag: Tag;
