@@ -21,7 +21,7 @@ export default function ProjectItem({
             imageLeft
               ? "md:flex-row md:bg-gradient-to-r"
               : "md:flex-row-reverse md:bg-gradient-to-l"
-          } from-yellow-400 via-red-500 to-pink-500`}
+          } from-[#e2a32f] to-[#e25353]`}
       >
         <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 1 }}>
           <Image
