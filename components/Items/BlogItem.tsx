@@ -2,12 +2,12 @@ import Link from "next/link";
 import { ReactElement } from "react";
 import Date from "@components/Formatters/Date";
 import Image from "next/image";
-import { PostData } from "@localTypes/posts";
+import { BlogData } from "@localTypes/blog";
 import { motion } from "framer-motion";
 
 interface Props {
   blogId: string;
-  blogData: PostData;
+  blogData: BlogData;
 }
 
 export default function BlogItem({ blogData }: Props): ReactElement {
@@ -31,7 +31,7 @@ export default function BlogItem({ blogData }: Props): ReactElement {
               {blogData.title}
             </h2>
             <div className="text-off-white text-lg group-hover:text-dark-grey dark:group-hover:text-off-white">
-              <Date dateString={blogData.date} />
+              <Date dateString={blogData.published} />
               &nbsp;&bull;&nbsp;{blogData.readTime.text}
             </div>
           </div>

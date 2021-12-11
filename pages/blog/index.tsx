@@ -1,13 +1,13 @@
 import Head from "next/head";
 import PageLayout from "@components/Layout";
 import BlogItem from "@components/Items/BlogItem";
-import { getSortedBlogsData } from "@lib/blogs";
-import { PostData } from "@localTypes/posts";
+import { getSortedBlogsData } from "@lib/notion/blogs";
+import { BlogData } from "@localTypes/blog";
 import { GetStaticProps } from "next";
 import { ReactElement } from "react";
 
 interface Props {
-  allBlogsData: PostData[];
+  allBlogsData: BlogData[];
 }
 
 export default function index({ allBlogsData }: Props): ReactElement {
@@ -35,7 +35,7 @@ export default function index({ allBlogsData }: Props): ReactElement {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allBlogsData = getSortedBlogsData();
+  const allBlogsData = await getSortedBlogsData();
   return {
     props: {
       allBlogsData,

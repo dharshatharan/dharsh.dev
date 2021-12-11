@@ -1,17 +1,17 @@
 import Head from "next/head";
 import PageLayout from "@components/Layout";
 import { siteTitle } from "./_document";
-import { getSortedBlogsData } from "@lib/blogs";
+import { getSortedBlogsData } from "@lib/notion/blogs";
 import { GetStaticProps } from "next";
 import BlogItem from "@components/Items/BlogItem";
-import { PostData } from "@localTypes/posts";
+import { BlogData } from "@localTypes/blog";
 import { generateRssFeed } from "@scripts/generate-rss";
 import { featuredProjects } from "@lib/projects";
 import ProjectItem from "@components/Items/ProjectItem";
 import Link from "next/link";
 
 interface Props {
-  latestBlogData: PostData[];
+  latestBlogData: BlogData[];
 }
 
 export default function Home({ latestBlogData }: Props) {
@@ -86,7 +86,7 @@ export default function Home({ latestBlogData }: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const latestBlogData = getSortedBlogsData(2);
+  const latestBlogData = await getSortedBlogsData(2);
   generateRssFeed();
   return {
     props: {
