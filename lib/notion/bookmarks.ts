@@ -12,6 +12,12 @@ const n2m = new notion2md({ notionClient: notion });
 export async function getBookmarks() {
   const { results } = await notion.databases.query({
     database_id: process.env.NOTION_BOOKMARKS_DATABASE ?? "",
+    filter: {
+      property: "Status",
+      select: {
+        equals: "Published",
+      },
+    },
   });
   return results.map((item) => {
     const properties = item.properties;
@@ -101,6 +107,12 @@ export async function getBookmarkById(id: string) {
 export async function getAllBookmarkIds() {
   const { results } = await notion.databases.query({
     database_id: process.env.NOTION_BOOKMARKS_DATABASE ?? "",
+    filter: {
+      property: "Status",
+      select: {
+        equals: "Published",
+      },
+    },
     page_size: 20,
   });
   return results.map((item) => {
