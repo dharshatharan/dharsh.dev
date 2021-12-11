@@ -2,8 +2,10 @@ const { fontFamily } = require("tailwindcss/defaultTheme");
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
-  mode: "jit",
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   darkMode: "class",
   theme: {
     extend: {
@@ -34,7 +36,7 @@ module.exports = {
         DEFAULT: {
           css: {
             blockquote: {
-              borderLeftColor: "#1aa8ad",
+              borderLeft: `5px solid ${theme("colors.teal-grey")}`,
             },
           },
         },
@@ -60,8 +62,7 @@ module.exports = {
               borderColor: theme("colors.gray.200"),
             },
             blockquote: {
-              color: theme("colors.gray.200"),
-              borderLeftColor: "#1aa8ad",
+              borderLeft: `5px solid ${theme("colors.teal-grey")}`,
             },
             h1: {
               color: theme("colors.white"),
@@ -100,13 +101,12 @@ module.exports = {
       }),
     },
   },
-  variants: {
-    extend: {
-      textOpacity: ["dark"],
-    },
+  corePlugins: {
+    preflight: false,
   },
   plugins: [
     require("@tailwindcss/typography"),
+    require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/line-clamp"),
     plugin(function ({ addVariant, e, postcss }) {
       addVariant("firefox", ({ container, separator }) => {

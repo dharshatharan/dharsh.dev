@@ -16,17 +16,19 @@ export default function index({ allBlogsData }: Props): ReactElement {
       <Head>
         <title>Writing</title>
       </Head>
-      <section id="Blog" className="w-full mt-10 mb-20">
-        <h1 className="text-4xl md:text-5xl font-bold mb-5">Writing</h1>
-        <div id="recentBlogs" className="flex flex-col">
-          <div className="grid place-items-center">
-            <ul className="w-full grid sm:grid-cols-2 gap-8 p-5">
-              {allBlogsData.map((blogData) => (
-                <li className="" key={blogData.id}>
-                  <BlogItem blogId={blogData.id} blogData={blogData} />
-                </li>
-              ))}
-            </ul>
+      <section id="Blog" className="w-full flex justify-center">
+        <div className="w-full max-w-6xl">
+          <h1 className="text-4xl md:text-5xl font-bold mb-5">Writing</h1>
+          <div id="recentBlogs" className="flex flex-col">
+            <div className="grid place-items-center">
+              <ul className="w-full grid md:grid-cols-2 lg:grid-cols-3 gap-8 p-5 list-none">
+                {allBlogsData.map((blogData) => (
+                  <li className="" key={blogData.id}>
+                    <BlogItem blogId={blogData.id} blogData={blogData} />
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>

@@ -14,8 +14,6 @@
   "dependencies": {
     "@notionhq/client": "^0.4.9",
     "@sentry/nextjs": "^6.16.0",
-    "@tailwindcss/line-clamp": "^0.2.2",
-    "@tailwindcss/typography": "^0.4.1",
     "date-fns": "^2.25.0",
     "esbuild": "^0.12.09",
     "fathom-client": "^3.2.0",
@@ -31,6 +29,9 @@
     "react-intersection-observer": "^8.32.2"
   },
   "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/line-clamp": "^0.3.0",
+    "@tailwindcss/typography": "^0.5.0",
     "@types/node": "^16.11.6",
     "@types/react": "^17.0.34",
     "@typescript-eslint/eslint-plugin": "^5.3.0",
@@ -47,7 +48,7 @@
     "eslint-plugin-react": "^7.26.1",
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6",
-    "postcss": "^8.3.11",
+    "postcss": "^8.4.4",
     "prettier": "2.4.1",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^6.1.0",
@@ -55,7 +56,7 @@
     "rehype-prism-plus": "^1.1.1",
     "rehype-slug": "^5.0.0",
     "remark-gfm": "^3.0.1",
-    "tailwindcss": "^2.2.19",
+    "tailwindcss": "^3.0.1",
     "typescript": "^4.4.4"
   },
   "lint-staged": {

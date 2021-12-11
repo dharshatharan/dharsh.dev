@@ -54,33 +54,35 @@ export default function TodayILearnt({
         title={todayILearnedData.name}
         customLeftItem={<BackButton />}
       >
-        <div className="mb-96 py-5">
-          <div className="text-7xl mb-5">{todayILearnedData.emoji}</div>
-          <div className="text-mb font-bold text-gray-500 mb-3">
-            <Date dateString={todayILearnedData.createdAt} />
+        <div className="mb-96 py-5 flex justify-center">
+          <div className="w-full max-w-3xl">
+            <div className="text-7xl mb-5">{todayILearnedData.emoji}</div>
+            <div className="text-mb font-bold text-gray-500 mb-3">
+              <Date dateString={todayILearnedData.createdAt} />
+            </div>
+            <div className="flex items-center space-x-2 overflow-x-auto mb-3">
+              {todayILearnedData.tags.map((tag) => (
+                <NotionTag tag={tag} key={tag.id} />
+              ))}
+            </div>
+            <h1 className="text-2xl md:text-4xl font-bold mt-10">
+              {todayILearnedData.name}
+            </h1>
+            <article className="prose lg:prose-lg dark:prose-light py-5 max-w-none">
+              <Component
+                className="my-10 leading-relaxed"
+                components={components}
+              />
+            </article>
+            {todayILearnedData.url && (
+              <SmartLink href={todayILearnedData.url}>
+                <div className="bg-blue-500 text-md text-off-white p-3 mb-5 w-full flex items-center justify-center space-x-2 rounded-xl">
+                  <LinkIcon height="17" width="17" />
+                  <div className="font-semibold">Read More</div>
+                </div>
+              </SmartLink>
+            )}
           </div>
-          <div className="flex items-center space-x-2 overflow-x-auto mb-3">
-            {todayILearnedData.tags.map((tag) => (
-              <NotionTag tag={tag} key={tag.id} />
-            ))}
-          </div>
-          <h1 className="text-2xl md:text-4xl font-bold mt-10">
-            {todayILearnedData.name}
-          </h1>
-          <article className="prose lg:prose-lg dark:prose-light py-5">
-            <Component
-              className="my-10 leading-relaxed"
-              components={components}
-            />
-          </article>
-          {todayILearnedData.url && (
-            <SmartLink href={todayILearnedData.url}>
-              <div className="bg-blue-500 text-md text-off-white p-3 mb-5 w-full flex items-center justify-center space-x-2 rounded-xl">
-                <LinkIcon height="17" width="17" />
-                <div className="font-semibold">Read More</div>
-              </div>
-            </SmartLink>
-          )}
         </div>
       </PageLayout>
     </ListDetailView>

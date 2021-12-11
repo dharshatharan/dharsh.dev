@@ -28,8 +28,8 @@ export default function Post({ blog }: Props) {
         <title>{blog.title}</title>
       </Head>
       <div className="w-full flex justify-center mt-10">
-        <div className="max-w-full md:max-w-3xl md:mx-10 mb-10 md:mb-20">
-          <article className="prose lg:prose-lg dark:prose-light py-5">
+        <div className="max-w-4xl md:mx-10 mb-10 md:mb-20">
+          <article className="prose lg:prose-lg max-w-none dark:prose-light py-5">
             <small className="flex justify-center align-middle text-teal-grey dark:text-dark-yellow my-5">
               <span>
                 <Image
@@ -56,8 +56,8 @@ export default function Post({ blog }: Props) {
             <ArticleImage
               src={blog.image}
               alt={`${blog.title} Cover`}
-              width={800}
-              height={400}
+              width={900}
+              height={500}
               priority={true}
               objectFit="cover"
             />
@@ -85,7 +85,7 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const paths = await getAllBlogIds();
   return {
     paths,
-    fallback: false,
+    fallback: "blocking",
   };
 };
 

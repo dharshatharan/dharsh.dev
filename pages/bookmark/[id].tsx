@@ -49,40 +49,42 @@ export default function TodayILearnt({ bookmarkData, allBookmarkData }: Props) {
       hasDetail
     >
       <PageLayout title={bookmarkData.name} customLeftItem={<BackButton />}>
-        <div className="mb-96 py-5">
-          <div className="flex items-center space-x-2 overflow-x-auto">
-            <NotionTag tag={bookmarkData.type} />
-          </div>
-          <h1 className="text-2xl md:text-4xl font-bold mt-10">
-            {bookmarkData.name}
-          </h1>
-          {url && (
-            <div className="flex items-center text-gray-500 font-semibold space-x-3 overflow-x-auto mt-5">
-              <Image
-                height={32}
-                width={32}
-                src={`http://www.google.com/s2/favicons?domain=${url}&sz=32`}
-                alt="Website Favicon"
-              />
-              <SmartLink className="text-md" href={bookmarkData.url ?? ""}>
-                {url}
-              </SmartLink>
+        <div className="mb-96 py-5 flex justify-center">
+          <div className="w-full max-w-3xl">
+            <div className="flex items-center space-x-2 overflow-x-auto">
+              <NotionTag tag={bookmarkData.type} />
             </div>
-          )}
-          <article className="prose lg:prose-lg dark:prose-light py-5">
-            <Component
-              className="my-10 leading-relaxed"
-              components={components}
-            />
-          </article>
-          {bookmarkData.url && (
-            <SmartLink href={bookmarkData.url}>
-              <div className="bg-blue-500 text-md text-off-white p-3 mb-5 w-full flex items-center justify-center space-x-2 rounded-xl">
-                <LinkIcon height="17" width="17" />
-                <div className="font-semibold">Visit</div>
+            <h1 className="text-2xl md:text-4xl font-bold mt-10">
+              {bookmarkData.name}
+            </h1>
+            {url && (
+              <div className="flex items-center text-gray-500 font-semibold space-x-3 overflow-x-auto mt-5">
+                <Image
+                  height={32}
+                  width={32}
+                  src={`http://www.google.com/s2/favicons?domain=${url}&sz=32`}
+                  alt="Website Favicon"
+                />
+                <SmartLink className="text-md" href={bookmarkData.url ?? ""}>
+                  {url}
+                </SmartLink>
               </div>
-            </SmartLink>
-          )}
+            )}
+            <article className="prose lg:prose-lg dark:prose-light py-5">
+              <Component
+                className="my-10 leading-relaxed"
+                components={components}
+              />
+            </article>
+            {bookmarkData.url && (
+              <SmartLink href={bookmarkData.url}>
+                <div className="bg-blue-500 text-md text-off-white p-3 mb-5 w-full flex items-center justify-center space-x-2 rounded-xl">
+                  <LinkIcon height="17" width="17" />
+                  <div className="font-semibold">Visit</div>
+                </div>
+              </SmartLink>
+            )}
+          </div>
         </div>
       </PageLayout>
     </ListDetailView>

@@ -56,7 +56,7 @@ export default function PageLayout({
       className="relative flex flex-1 flex-col max-h-screen overflow-y-auto"
     >
       <div
-        className={`p-2 pr-3 w-full flex justify-between bg-glass z-20
+        className={`p-2 pr-3 flex justify-between bg-glass z-20
         ${
           scroll ? "shadow-sm border-b" : ""
         } sticky top-0 border-gray-200 dark:border-gray-800 transform duration-300
@@ -80,9 +80,7 @@ export default function PageLayout({
         <ThemeToggle />
       </div>
       <div className="w-full">
-        <main className="w-full flex justify-center">
-          <div className="px-5 w-full max-w-3xl">{children}</div>
-        </main>
+        <main className="p-5">{children}</main>
       </div>
     </div>
   );

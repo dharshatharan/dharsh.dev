@@ -13,33 +13,35 @@ export default function MakersClub(props: Props): ReactElement {
       <Head>
         <title>Maker Club</title>
       </Head>
-      <section className="prose md:prose-lg dark:prose-light mt-10 mb-20">
-        <h1>Makers Club</h1>
-        <ArticleImage
-          src={MakerImage}
-          alt="An open graph image of the makers club website"
-          width={800}
-          height={400}
-          priority={true}
-          placeholder="blur"
-          objectFit="cover"
-        />
-        <p>
-          The Makers Club is a club within{" "}
-          <SmartLink href="https://www.scesoc.ca/">SCESoc</SmartLink>, the
-          Systems and Computer Engineering Society. It is an internal society
-          within SCESoc that comes together to work on side projects. I founded
-          this club to encourage students to work on personal projects and learn
-          new skills.
-        </p>
-        <p>
-          Visit{" "}
-          <SmartLink href="https://makers.scesoc.ca/">
-            makers.scesoc.ca
-          </SmartLink>{" "}
-          to learn more about it.
-        </p>
-      </section>
+      <div className="flex justify-center">
+        <section className="prose md:prose-lg dark:prose-light max-w-4xl mt-10 mb-20">
+          <h1>Makers Club</h1>
+          <ArticleImage
+            src={MakerImage}
+            alt="An open graph image of the makers club website"
+            width={800}
+            height={400}
+            priority={true}
+            placeholder="blur"
+            objectFit="cover"
+          />
+          <p>
+            The Makers Club is a club within{" "}
+            <SmartLink href="https://www.scesoc.ca/">SCESoc</SmartLink>, the
+            Systems and Computer Engineering Society. It is an internal society
+            within SCESoc that comes together to work on side projects. I
+            founded this club to encourage students to work on personal projects
+            and learn new skills.
+          </p>
+          <p>
+            Visit{" "}
+            <SmartLink href="https://makers.scesoc.ca/">
+              makers.scesoc.ca
+            </SmartLink>{" "}
+            to learn more about it.
+          </p>
+        </section>
+      </div>
     </PageLayout>
   );
 }

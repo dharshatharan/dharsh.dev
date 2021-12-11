@@ -20,56 +20,60 @@ export default function Home({ latestBlogData }: Props) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <div className="pb-24">
-        <section className="w-full transform duration-300 mt-10 mb-32">
-          <div className="max-w-6xl">
-            <h1 className="text-4xl md:text-7xl text-smooth-black dark:text-off-white font-light">
-              Hi, I&apos;m <br />
-              <strong className="font-bold">
-                Dharshatharan
-                <br /> Jayatharan Aronan
-              </strong>
-            </h1>
-            <p className="text-gray-500 text-2xl md:text-4xl font-light py-5">
-              Devloper, Writer, Student
-            </p>
-            <p className="text-gray-500 text-2xl md:text-4xl font-light py-5">
-              You can call me{" "}
-              <strong className="font-bold text-4xl md:text-6xl text-smooth-black dark:text-off-white">
-                dharsh
-              </strong>
-            </p>
-            <p className="text-gray-500 text-2xl md:text-4xl font-light py-5">
-              Welcome to my corner of the internet!
-            </p>
-          </div>
-        </section>
-        <section className="w-full">
-          <div id="recentBlogs" className="flex flex-col mb-24">
-            <h1 className="text-4xl md:text-4xl font-extrabold mb-5">
-              Latest Blogs
-            </h1>
-            <div className="grid place-items-center mb-5">
-              <ul className="w-full grid sm:grid-cols-2 gap-8 p-5">
-                {latestBlogData.map((blogData) => (
-                  <li className="" key={blogData.id}>
-                    <BlogItem blogId={blogData.id} blogData={blogData} />
-                  </li>
-                ))}
-              </ul>
+      <div className="flex justify-center">
+        <div className="pb-24 w-full max-w-4xl">
+          <section className="w-full transform duration-300 mt-10 mb-32">
+            <div className="max-w-6xl">
+              <h1 className="text-4xl md:text-7xl text-smooth-black dark:text-off-white font-semibold">
+                Hi, I&apos;m <br />
+                <strong className="font-bold">
+                  Dharshatharan
+                  <br /> Jayatharan Aronan
+                </strong>
+              </h1>
+              <p className="text-gray-500 text-2xl md:text-4xl font-semibold">
+                Devloper, Writer, Student
+              </p>
+              <p className="text-gray-500 text-2xl md:text-4xl font-semibold">
+                You can call me{" "}
+                <strong className="font-bold text-4xl md:text-6xl text-smooth-black dark:text-off-white">
+                  dharsh
+                </strong>
+              </p>
+              <p className="text-gray-500 text-2xl md:text-4xl font-semibold">
+                Welcome to my corner of the internet!
+              </p>
             </div>
-            <Link href="/blog">
-              <a className="text-2xl hover:underline">Read more → </a>
-            </Link>
-          </div>
-          <div id="projects" className="flex flex-col mb-24">
-            <h1 className="text-4xl md:text-4xl font-extrabold mb-5">
-              Some Projects I&apos;m Working On
-            </h1>
-            <div className="grid place-items-center">
-              <ul className="w-full p-5 space-y-10">
+          </section>
+          <section className="w-full">
+            <div id="recentBlogs" className="flex flex-col mb-12">
+              <h1 className="text-2xl md:text-4xl font-extrabold mb-5">
+                Latest Blogs
+              </h1>
+              <div className="grid place-items-center">
+                <ul className="w-full grid sm:grid-cols-2 gap-8 p-5 list-none">
+                  {latestBlogData.map((blogData) => (
+                    <li className="" key={blogData.id}>
+                      <BlogItem blogId={blogData.id} blogData={blogData} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <Link href="/blog">
+                <a className="text-2xl hover:underline">Read more → </a>
+              </Link>
+            </div>
+            <div id="projects" className="flex flex-col mb-12">
+              <h1 className="text-2xl md:text-4xl font-extrabold mb-5">
+                Some Projects I&apos;m Working On
+              </h1>
+              {/* <div className="grid place-items-center"> */}
+              <ul className="w-full p-5 grid grid-cols-2 gap-8 list-none">
                 {featuredProjects.map((projectData, index) => (
-                  <li className="" key={projectData.name}>
+                  <li
+                    className={index === 2 ? "col-span-2" : ""}
+                    key={projectData.name}
+                  >
                     <ProjectItem
                       imageLeft={index % 2 === 0}
                       project={projectData}
@@ -77,9 +81,10 @@ export default function Home({ latestBlogData }: Props) {
                   </li>
                 ))}
               </ul>
+              {/* </div> */}
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </PageLayout>
   );

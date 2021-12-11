@@ -20,22 +20,31 @@
 
 @layer base {
   html {
-    @apply max-h-screen overflow-hidden text-base antialiased;
+    @apply max-h-screen overflow-hidden text-base antialiased font-sans;
+  }
+  a {
+    @apply no-underline text-smooth-black dark:text-off-white;
   }
   article p img {
     @apply block ml-auto mr-auto object-contain rounded-lg shadow-lg;
   }
-  article pre {
-    @apply shadow-lg;
+  pre {
+    @apply shadow-lg font-mono;
   }
-  article blockquote {
-    @apply bg-light-grey border-teal-grey dark:text-off-white dark:bg-dark-grey rounded-lg shadow-lg;
+  code {
+    @apply font-mono;
+  }
+  blockquote {
+    @apply border-l-4 bg-light-grey border-teal-grey dark:text-off-white dark:bg-dark-grey rounded-lg shadow-lg;
   }
   .bg-glass {
     @apply transform duration-300 bg-[#f9f9f9] dark:bg-smooth-black border-r border-gray-200 dark:border-gray-800 backdrop-filter backdrop-blur-xl bg-opacity-80 dark:bg-opacity-80 firefox:bg-opacity-95 dark:firefox:bg-opacity-95;
   }
   .bg-panel {
     @apply transform duration-300 bg-[#f9f9f9] dark:bg-[#141414] border-r border-gray-200 dark:border-gray-800
+  }
+  .focus-ring {
+    @apply h-full focus:outline-none focus-within:outline-none transition duration-300 disabled:ring-0 hover:ring-2 focus:ring-2 focus-within:ring-2 group-hover:ring-2 group-focus:ring-2 hover:ring-teal-grey focus:ring-teal-grey focus-within:ring-teal-grey group-hover:ring-teal-grey group-focus:ring-teal-grey ring-teal-grey ring-offset-4 dark:ring-offset-gray-900 ring-offset-white;
   }
 }
 
@@ -130,6 +139,7 @@ html {
 
 body {
   line-height: 1.6;
+  margin: 0;
 }
 
 img {
