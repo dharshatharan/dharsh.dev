@@ -7,23 +7,21 @@ interface Props {
   project: Project;
 }
 
-export default function ProjectItem({
-  imageLeft = true,
-  project,
-}: Props): ReactElement {
+export default function ProjectItem({ project }: Props): ReactElement {
   return (
     <SmartLink href={project.url}>
-      <div
-        className={`focus-ring p-10 h-[35rem] rounded-lg bg-[#ececec] dark:bg-[#202020]`}
-      >
-        <div className="h-full">
-          <div className="text-9xl">😂</div>
-          <div className="h-full flex flex-col justify-around">
-            <div className="">
-              <h2 className="text-4xl font-extrabold py-3">{project.name}</h2>
-              <p className="text-xl">{project.description}</p>
-            </div>
+      <div className="focus-ring p-10 h-[35rem] rounded-lg bg-[#ececec] dark:bg-[#202020]">
+        <div className="h-full flex flex-col justify-between">
+          <div>
+            <div className="text-8xl md:text-9xl mb-16">{project.emoji}</div>
+            <h2 className="text-2xl md:text-4xl font-bold py-3 mb-3">
+              {project.name}
+            </h2>
+            <p className="text-lg md:text-xl font-semibold text-gray-500 line-clamp-6">
+              {project.description}
+            </p>
           </div>
+          <div className="hover:underline">Read more → </div>
         </div>
       </div>
     </SmartLink>

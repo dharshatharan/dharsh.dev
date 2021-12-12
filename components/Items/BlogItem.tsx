@@ -12,9 +12,9 @@ interface Props {
 export default function BlogItem({ blogData }: Props): ReactElement {
   return (
     <Link href={`/blog/${blogData.id}`} passHref>
-      <a className="block space-y-5 mb-5 group peer relative">
-        <div className="relative aspect-[3/4] flex justify-center items-center">
-          <div className="focus-ring w-full rounded-lg object-cover object-center transition duration-300">
+      <a className="space-y-5 mb-5 group">
+        <div className="aspect-[3/4] flex justify-center items-center">
+          <div className="relative focus-ring w-full rounded-lg object-cover object-center transition duration-300">
             <Image
               src={blogData.image}
               alt={blogData.title}
@@ -28,7 +28,7 @@ export default function BlogItem({ blogData }: Props): ReactElement {
           <Date dateString={blogData.published} />
           &nbsp;&bull;&nbsp;{blogData.readTime.text}
         </div>
-        <h2 className="text-3xl text-off-white font-bold">{blogData.title}</h2>
+        <h2 className="text-3xl font-bold">{blogData.title}</h2>
       </a>
     </Link>
   );

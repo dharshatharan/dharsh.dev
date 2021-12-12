@@ -3,6 +3,7 @@ import { Project } from "@localTypes/project";
 export const featuredProjects: Project[] = [
   {
     name: "WebBook",
+    emoji: "🌐",
     description:
       "A platform to discover people through their personal websites.",
     image:
@@ -11,6 +12,7 @@ export const featuredProjects: Project[] = [
   },
   {
     name: "Torch",
+    emoji: "🔦",
     description:
       "A web platform for students to create, store and spread knowledge among the community.",
     image:
@@ -19,6 +21,7 @@ export const featuredProjects: Project[] = [
   },
   {
     name: "Makers Club",
+    emoji: "🏗",
     description:
       "A club withing SCESoc that learns by making. Trying to build a community around projects to help students learn and grow skills.",
     image: "/images/makers-club-open-graph.png",

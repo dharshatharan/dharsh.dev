@@ -31,7 +31,7 @@ export default function Home({ latestBlogData }: Props) {
                   <br /> Jayatharan Aronan
                 </strong>
               </h1>
-              <p className="text-gray-500 text-2xl md:text-4xl font-semibold">
+              <p className="text-gray-500 text-2xl md:text-4xl font-extrabold">
                 Devloper, Writer, Student
               </p>
               <p className="text-gray-500 text-2xl md:text-4xl font-semibold">
@@ -46,7 +46,7 @@ export default function Home({ latestBlogData }: Props) {
             </div>
           </section>
           <section className="w-full">
-            <div id="recentBlogs" className="flex flex-col mb-12">
+            <div id="recentBlogs" className="flex flex-col mb-24">
               <h1 className="text-2xl md:text-4xl font-extrabold mb-5">
                 Latest Blogs
               </h1>
@@ -63,25 +63,22 @@ export default function Home({ latestBlogData }: Props) {
                 <a className="text-2xl hover:underline">Read more → </a>
               </Link>
             </div>
-            <div id="projects" className="flex flex-col mb-12">
+            <div id="projects" className="flex flex-col mb-24">
               <h1 className="text-2xl md:text-4xl font-extrabold mb-5">
                 Some Projects I&apos;m Working On
               </h1>
-              {/* <div className="grid place-items-center"> */}
-              <ul className="w-full p-5 grid grid-cols-2 gap-8 list-none">
-                {featuredProjects.map((projectData, index) => (
-                  <li
-                    className={index === 2 ? "col-span-2" : ""}
-                    key={projectData.name}
-                  >
-                    <ProjectItem
-                      imageLeft={index % 2 === 0}
-                      project={projectData}
-                    />
-                  </li>
-                ))}
-              </ul>
-              {/* </div> */}
+              <div className="grid place-items-center">
+                <ul className="w-full p-5 grid grid-cols-auto gap-8 list-none">
+                  {featuredProjects.map((projectData, index) => (
+                    <li
+                      className={index === 2 ? "md:col-span-2" : ""}
+                      key={projectData.name}
+                    >
+                      <ProjectItem project={projectData} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </section>
         </div>
@@ -98,5 +95,6 @@ export const getStaticProps: GetStaticProps = async () => {
       latestBlogData,
       featuredProjects,
     },
+    revalidate: 60,
   };
 };
