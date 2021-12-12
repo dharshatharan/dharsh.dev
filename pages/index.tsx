@@ -21,27 +21,27 @@ export default function Home({ latestBlogData }: Props) {
         <title>{siteTitle}</title>
       </Head>
       <div className="flex justify-center">
-        <div className="pb-24 w-full max-w-4xl">
-          <section className="w-full transform duration-300 mt-10 mb-32">
+        <div className="pb-24 w-full max-w-5xl">
+          <section className="w-full flex transform duration-300 mt-10 mb-32">
             <div className="max-w-6xl">
-              <h1 className="text-4xl md:text-7xl text-smooth-black dark:text-off-white font-semibold">
+              <h1 className="text-4xl md:text-7xl text-smooth-black dark:text-off-white font-light mb-4">
                 Hi, I&apos;m <br />
                 <strong className="font-bold">
                   Dharshatharan
                   <br /> Jayatharan Aronan
                 </strong>
               </h1>
-              <p className="text-gray-500 text-2xl md:text-4xl font-extrabold">
-                Devloper, Writer, Student
+              <p className="text-gray-500 text-2xl md:text-4xl font-bold mb-4">
+                Developer, Writer, Student
               </p>
-              <p className="text-gray-500 text-2xl md:text-4xl font-semibold">
+              <p className="text-gray-500 text-2xl md:text-4xl font-bold mb-4">
                 You can call me{" "}
                 <strong className="font-bold text-4xl md:text-6xl text-smooth-black dark:text-off-white">
                   dharsh
                 </strong>
               </p>
-              <p className="text-gray-500 text-2xl md:text-4xl font-semibold">
-                Welcome to my corner of the internet!
+              <p className="text-gray-500 text-2xl md:text-4xl font-bold">
+                Welcome to my corner of the Internet!
               </p>
             </div>
           </section>
@@ -51,7 +51,7 @@ export default function Home({ latestBlogData }: Props) {
                 Latest Blogs
               </h1>
               <div className="grid place-items-center">
-                <ul className="w-full grid sm:grid-cols-2 gap-8 p-5 list-none">
+                <ul className="w-full grid sm:grid-cols-2 gap-x-8 gap-y-24 p-5 list-none">
                   {latestBlogData.map((blogData) => (
                     <li className="" key={blogData.id}>
                       <BlogItem blogId={blogData.id} blogData={blogData} />

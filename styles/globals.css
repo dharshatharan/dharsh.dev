@@ -19,6 +19,9 @@
 }
 
 @layer base {
+  * {
+    @apply selection:bg-smooth-black dark:selection:bg-off-white selection:text-off-white dark:selection:text-smooth-black;
+  }
   html {
     @apply max-h-screen overflow-hidden text-base antialiased font-sans;
   }
