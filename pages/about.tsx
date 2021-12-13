@@ -2,16 +2,14 @@ import { ArticleImage } from "@components/Image/ArticleImage";
 import PageLayout from "@components/Layout";
 import { SmartLink } from "@components/SmartLink";
 import CoverImage from "@images/cover-picture.png";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 interface Props {}
 
 export default function About(props: Props) {
   return (
     <PageLayout title="About">
-      <Head>
-        <title>About</title>
-      </Head>
+      <NextSeo title="About" />
       <div className="flex justify-center">
         <div className="w-full max-w-4xl">
           <section className="prose lg:prose-lg dark:prose-light max-w-none mt-10 mb-20">

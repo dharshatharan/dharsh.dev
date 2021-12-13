@@ -3,6 +3,7 @@ import { TodayILearnedList } from "@components/TodayILearnt/TodayILearntList";
 import { getTodayILearned } from "@lib/notion/todayILearned";
 import { TodayILearned } from "@localTypes/today-i-learned";
 import { GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 
 interface Props {
   todayILearnedData: TodayILearned[];
@@ -15,6 +16,10 @@ export default function TodayILearnt({ todayILearnedData }: Props) {
       hasDetail={false}
     >
       <PageLayout title="Today I Learned">
+        <NextSeo
+          title="Today I Learned"
+          description="Writing and Sharing Things I Learn Everyday"
+        />
         <div />
       </PageLayout>
     </ListDetailView>

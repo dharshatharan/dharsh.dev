@@ -1,6 +1,4 @@
-import Head from "next/head";
 import PageLayout from "@components/Layout";
-import { siteTitle } from "./_document";
 import { getSortedBlogsData } from "@lib/notion/blogs";
 import { GetStaticProps } from "next";
 import BlogItem from "@components/Items/BlogItem";
@@ -17,9 +15,6 @@ interface Props {
 export default function Home({ latestBlogData }: Props) {
   return (
     <PageLayout title="Home">
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
       <div className="flex justify-center">
         <div className="pb-24 w-full max-w-5xl">
           <section className="w-full flex transform duration-300 mt-10 mb-32">
@@ -31,7 +26,7 @@ export default function Home({ latestBlogData }: Props) {
                   <br /> Jayatharan Aronan
                 </strong>
               </h1>
-              <p className="text-gray-500 text-2xl md:text-4xl font-bold mb-4">
+              <p className="text-gray-500 text-2xl md:text-5xl font-bold mb-4">
                 Developer, Writer, Student
               </p>
               <p className="text-gray-500 text-2xl md:text-4xl font-bold mb-4">

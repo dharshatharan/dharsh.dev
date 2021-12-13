@@ -3,6 +3,7 @@ import PageLayout, { ListDetailView } from "@components/Layout";
 import { getBookmarks } from "@lib/notion/bookmarks";
 import { Bookmark } from "@localTypes/bookmark";
 import { GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 
 interface Props {
   bookmarkData: Bookmark[];
@@ -15,6 +16,10 @@ export default function BookmarkPage({ bookmarkData }: Props) {
       hasDetail={false}
     >
       <PageLayout title="Bookmarks">
+        <NextSeo
+          title="Bookmarks"
+          description="Curating interesting things I come across"
+        />
         <div />
       </PageLayout>
     </ListDetailView>

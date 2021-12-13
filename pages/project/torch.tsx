@@ -1,7 +1,7 @@
 import { ArticleImage } from "@components/Image/ArticleImage";
 import PageLayout from "@components/Layout";
 import { SmartLink } from "@components/SmartLink";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import { ReactElement } from "react";
 
 interface Props {}
@@ -9,9 +9,7 @@ interface Props {}
 export default function Torch(props: Props): ReactElement {
   return (
     <PageLayout title="Torch">
-      <Head>
-        <title>Torch</title>
-      </Head>
+      <NextSeo title="Torch" description="A Platform to Share Knowledge" />
       <div className="flex justify-center">
         <section className="prose md:prose-lg dark:prose-light max-w-4xl mt-10 mb-20">
           <h1>Torch</h1>

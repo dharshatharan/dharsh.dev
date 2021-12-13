@@ -3,16 +3,17 @@ import PageLayout from "@components/Layout";
 import { SmartLink } from "@components/SmartLink";
 import { ReactElement } from "react";
 import MakerImage from "@images/makers-club-open-graph.png";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 interface Props {}
 
 export default function MakersClub(props: Props): ReactElement {
   return (
     <PageLayout title="Makers Club">
-      <Head>
-        <title>Maker Club</title>
-      </Head>
+      <NextSeo
+        title="Makers Club"
+        description="A Club for Makers at Caleton University"
+      />
       <div className="flex justify-center">
         <section className="prose md:prose-lg dark:prose-light max-w-4xl mt-10 mb-20">
           <h1>Makers Club</h1>

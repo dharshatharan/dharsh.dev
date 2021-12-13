@@ -18,6 +18,7 @@ import LinkIcon from "@components/Icons/LinkIcon";
 import RightArrowIcon from "@components/Icons/RightArrowIcon";
 import { IconButton } from "@components/Buttons/IconButton";
 import { useWindowSize } from "@components/hooks/WindowSize";
+import { NextSeo } from "next-seo";
 
 interface Props {
   todayILearnedData: TodayILearned;
@@ -54,6 +55,10 @@ export default function TodayILearnt({
         title={todayILearnedData.name}
         customLeftItem={<BackButton />}
       >
+        <NextSeo
+          title={todayILearnedData.emoji}
+          description={todayILearnedData.name}
+        />
         <div className="mb-96 py-5 flex justify-center">
           <div className="w-full max-w-3xl">
             <div className="text-7xl mb-5">{todayILearnedData.emoji}</div>

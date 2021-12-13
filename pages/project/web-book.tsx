@@ -1,7 +1,7 @@
 import { ArticleImage } from "@components/Image/ArticleImage";
 import PageLayout from "@components/Layout";
 import { SmartLink } from "@components/SmartLink";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import { ReactElement } from "react";
 
 interface Props {}
@@ -9,9 +9,10 @@ interface Props {}
 export default function WebBook(props: Props): ReactElement {
   return (
     <PageLayout title="WebBook">
-      <Head>
-        <title>WebBook</title>
-      </Head>
+      <NextSeo
+        title="WebBook"
+        description="A Place to Discover People Through Their Personal Websites"
+      />
       <div className="flex justify-center">
         <section className="prose md:prose-lg dark:prose-light max-w-4xl mt-10 mb-20">
           <h1>WebBook</h1>

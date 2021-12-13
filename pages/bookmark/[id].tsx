@@ -18,6 +18,7 @@ import RightArrowIcon from "@components/Icons/RightArrowIcon";
 import { IconButton } from "@components/Buttons/IconButton";
 import { useWindowSize } from "@components/hooks/WindowSize";
 import Image from "next/image";
+import { NextSeo } from "next-seo";
 
 interface Props {
   bookmarkData: Bookmark;
@@ -49,6 +50,10 @@ export default function TodayILearnt({ bookmarkData, allBookmarkData }: Props) {
       hasDetail
     >
       <PageLayout title={bookmarkData.name} customLeftItem={<BackButton />}>
+        <NextSeo
+          title={bookmarkData.name}
+          description={bookmarkData.url ?? ""}
+        />
         <div className="mb-96 py-5 flex justify-center">
           <div className="w-full max-w-3xl">
             <div className="flex items-center space-x-2 overflow-x-auto">

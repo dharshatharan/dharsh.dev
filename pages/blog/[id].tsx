@@ -1,6 +1,5 @@
 import PageLayout from "@components/Layout";
 import { getAllBlogIds, getBlogData } from "@lib/notion/blogs";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Date from "@components/Formatters/Date";
@@ -11,6 +10,7 @@ import { BlogData } from "@localTypes/blog";
 import { useMemo } from "react";
 import { getMDXComponent } from "mdx-bundler/client";
 import { ArticleImage } from "@components/Image/ArticleImage";
+import { NextSeo } from "next-seo";
 
 interface Props {
   blog: BlogData;
@@ -24,9 +24,7 @@ export default function Post({ blog }: Props) {
 
   return (
     <PageLayout title={blog.title}>
-      <Head>
-        <title>{blog.title}</title>
-      </Head>
+      <NextSeo title={blog.title} description={blog.description} />
       <div className="w-full flex justify-center mt-10">
         <div className="max-w-4xl md:mx-10 mb-10 md:mb-20">
           <article className="prose lg:prose-lg max-w-none dark:prose-light py-5">
