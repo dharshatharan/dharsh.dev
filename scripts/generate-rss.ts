@@ -1,6 +1,6 @@
 import fs from "fs";
 import { Feed } from "feed";
-import { getSortedBlogsData } from "@lib/blogs";
+import { getSortedBlogsData } from "@lib/notion/blogs";
 
 export async function generateRssFeed(): Promise<void> {
   const posts = await getSortedBlogsData();
@@ -41,7 +41,7 @@ export async function generateRssFeed(): Promise<void> {
       // content: post.summary,
       author: [author],
       contributor: [author],
-      date: new Date(post.date),
+      date: new Date(post.published),
     });
   });
 

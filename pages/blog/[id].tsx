@@ -1,35 +1,33 @@
 import PageLayout from "@components/Layout";
-import { getAllBlogIds, getBlogData } from "@lib/blogs";
-import Head from "next/head";
+import { getAllBlogIds, getBlogData } from "@lib/notion/blogs";
 import Image from "next/image";
 import Link from "next/link";
 import Date from "@components/Formatters/Date";
 import components from "@components/MDXComponents";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { ParsedUrlQuery } from "querystring";
-import { PostData } from "@localTypes/posts";
+import { BlogData } from "@localTypes/blog";
 import { useMemo } from "react";
 import { getMDXComponent } from "mdx-bundler/client";
 import { ArticleImage } from "@components/Image/ArticleImage";
+import { NextSeo } from "next-seo";
 
 interface Props {
-  blog: PostData;
+  blog: BlogData;
 }
 
 export default function Post({ blog }: Props) {
   const Component = useMemo(
-    () => getMDXComponent(blog.contentHtml),
+    () => getMDXComponent(blog.contentHtml!),
     [blog.contentHtml]
   );
 
   return (
-    <PageLayout>
-      <Head>
-        <title>{blog.title}</title>
-      </Head>
+    <PageLayout title={blog.title}>
+      <NextSeo title={blog.title} description={blog.description} />
       <div className="w-full flex justify-center mt-10">
-        <div className="max-w-full md:max-w-3xl md:mx-10 mb-10 md:mb-20">
-          <article className="prose lg:prose-xl dark:prose-light py-5">
+        <div className="max-w-4xl md:mx-10 mb-10 md:mb-20">
+          <article className="prose lg:prose-lg max-w-none dark:prose-light py-5">
             <small className="flex justify-center align-middle text-teal-grey dark:text-dark-yellow my-5">
               <span>
                 <Image
@@ -42,7 +40,7 @@ export default function Post({ blog }: Props) {
               </span>
               <span>&nbsp;Dharsh</span>
               <span>&nbsp;&bull;&nbsp;</span>
-              <Date dateString={blog.date} />
+              <Date dateString={blog.published} />
               <span>&nbsp;&bull;&nbsp;</span>
               <span>{blog.readTime.text}</span>
             </small>
@@ -56,8 +54,8 @@ export default function Post({ blog }: Props) {
             <ArticleImage
               src={blog.image}
               alt={`${blog.title} Cover`}
-              width={800}
-              height={400}
+              width={900}
+              height={500}
               priority={true}
               objectFit="cover"
             />
@@ -82,10 +80,10 @@ interface Params extends ParsedUrlQuery {
 }
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
-  const paths = getAllBlogIds();
+  const paths = await getAllBlogIds();
   return {
     paths,
-    fallback: false,
+    fallback: "blocking",
   };
 };
 
@@ -93,9 +91,17 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
   params,
 }) => {
   const blogData = await getBlogData(params!.id as string);
+
+  if (!blogData || !blogData.contentHtml) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       blog: blogData,
     },
+    revalidate: 60,
   };
 };

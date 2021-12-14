@@ -7,8 +7,10 @@ const { withSentryConfig } = require("@sentry/nextjs");
 
 const moduleExports = {
   images: {
-    domains: ["images.unsplash.com"],
+    domains: ["images.unsplash.com", "www.google.com"],
   },
+  // TODO remove fixing sentry crashing issue
+  outputFileTracing: false,
 };
 
 const SentryWebpackPluginOptions = {

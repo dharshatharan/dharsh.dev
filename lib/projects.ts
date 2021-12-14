@@ -3,6 +3,7 @@ import { Project } from "@localTypes/project";
 export const featuredProjects: Project[] = [
   {
     name: "WebBook",
+    emoji: "🌐",
     description:
       "A platform to discover people through their personal websites.",
     image:
@@ -10,18 +11,20 @@ export const featuredProjects: Project[] = [
     url: "/project/web-book",
   },
   {
-    name: "Makers Club",
-    description:
-      "A club withing SCESoc that learns by making. Trying to build a community around projects to help students learn and grow skills.",
-    image: "/images/makers-club-open-graph.png",
-    url: "/project/makers-club",
-  },
-  {
     name: "Torch",
+    emoji: "🔦",
     description:
       "A web platform for students to create, store and spread knowledge among the community.",
     image:
       "https://images.unsplash.com/photo-1532012197267-da84d127e765?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=987&q=80",
     url: "/project/torch",
+  },
+  {
+    name: "Makers Club",
+    emoji: "🏗",
+    description:
+      "A club withing SCESoc that learns by making. Trying to build a community around projects to help students learn and grow skills.",
+    image: "/images/makers-club-open-graph.png",
+    url: "/project/makers-club",
   },
 ];

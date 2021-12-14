@@ -3,18 +3,20 @@ import PageLayout from "@components/Layout";
 import { SmartLink } from "@components/SmartLink";
 import { ReactElement } from "react";
 import MakerImage from "@images/makers-club-open-graph.png";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 interface Props {}
 
 export default function MakersClub(props: Props): ReactElement {
   return (
     <PageLayout title="Makers Club">
-      <Head>
-        <title>Maker Club</title>
-      </Head>
-      <section className="prose md:prose-xl dark:prose-light mt-10 mb-20">
-        <p>
+      <NextSeo
+        title="Makers Club"
+        description="A Club for Makers at Caleton University"
+      />
+      <div className="flex justify-center">
+        <section className="prose md:prose-lg dark:prose-light max-w-4xl mt-10 mb-20">
+          <h1>Makers Club</h1>
           <ArticleImage
             src={MakerImage}
             alt="An open graph image of the makers club website"
@@ -24,23 +26,23 @@ export default function MakersClub(props: Props): ReactElement {
             placeholder="blur"
             objectFit="cover"
           />
-        </p>
-        <p>
-          The Makers Club is a club within{" "}
-          <SmartLink href="https://www.scesoc.ca/">SCESoc</SmartLink>, the
-          Systems and Computer Engineering Society. It is an internal society
-          within SCESoc that comes together to work on side projects. I founded
-          this club to encourage students to work on personal projects and learn
-          new skills.
-        </p>
-        <p>
-          Visit{" "}
-          <SmartLink href="https://makers.scesoc.ca/">
-            makers.scesoc.ca
-          </SmartLink>{" "}
-          to learn more about it.
-        </p>
-      </section>
+          <p>
+            The Makers Club is a club within{" "}
+            <SmartLink href="https://www.scesoc.ca/">SCESoc</SmartLink>, the
+            Systems and Computer Engineering Society. It is an internal society
+            within SCESoc that comes together to work on side projects. I
+            founded this club to encourage students to work on personal projects
+            and learn new skills.
+          </p>
+          <p>
+            Visit{" "}
+            <SmartLink href="https://makers.scesoc.ca/">
+              makers.scesoc.ca
+            </SmartLink>{" "}
+            to learn more about it.
+          </p>
+        </section>
+      </div>
     </PageLayout>
   );
 }

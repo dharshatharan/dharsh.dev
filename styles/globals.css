@@ -19,17 +19,35 @@
 }
 
 @layer base {
+  * {
+    @apply selection:bg-smooth-black dark:selection:bg-off-white selection:text-off-white dark:selection:text-smooth-black;
+  }
   html {
-    @apply max-h-screen overflow-hidden text-base antialiased;
+    @apply max-h-screen overflow-hidden text-base antialiased font-sans;
+  }
+  a {
+    @apply no-underline text-smooth-black dark:text-off-white;
   }
   article p img {
     @apply block ml-auto mr-auto object-contain rounded-lg shadow-lg;
   }
-  article pre {
-    @apply shadow-lg;
+  pre {
+    @apply shadow-lg font-mono;
   }
-  article blockquote {
-    @apply bg-light-grey border-teal-grey dark:text-off-white dark:bg-dark-grey rounded-lg shadow-lg;
+  code {
+    @apply font-mono;
+  }
+  blockquote {
+    @apply border-l-4 bg-light-grey border-teal-grey dark:text-off-white dark:bg-dark-grey rounded-lg shadow-lg;
+  }
+  .bg-glass {
+    @apply transform duration-300 bg-[#f9f9f9] dark:bg-smooth-black border-r border-gray-200 dark:border-gray-800 backdrop-filter backdrop-blur-xl bg-opacity-80 dark:bg-opacity-80 firefox:bg-opacity-95 dark:firefox:bg-opacity-95;
+  }
+  .bg-panel {
+    @apply transform duration-300 bg-[#f9f9f9] dark:bg-[#141414] border-r border-gray-200 dark:border-gray-800
+  }
+  .focus-ring {
+    @apply h-full focus:outline-none focus-within:outline-none transition duration-300 disabled:ring-0 hover:ring-2 focus:ring-2 focus-within:ring-2 group-hover:ring-2 group-focus:ring-2 hover:ring-teal-grey focus:ring-teal-grey focus-within:ring-teal-grey group-hover:ring-teal-grey group-focus:ring-teal-grey ring-teal-grey ring-offset-4 dark:ring-offset-gray-900 ring-offset-white;
   }
 }
 
@@ -124,6 +142,7 @@ html {
 
 body {
   line-height: 1.6;
+  margin: 0;
 }
 
 img {
@@ -133,44 +152,4 @@ img {
 
 [id] {
   scroll-margin-top: 5rem;
-}
-
-.gradient-bg {
-  background: linear-gradient(120deg, #FF00C7 0%, #51003F 100%), linear-gradient(120deg, #0030AD 0%, #00071A 100%), linear-gradient(180deg, #000346 0%, #FF0000 100%), linear-gradient(60deg, #0029FF 0%, #AA0014 100%), radial-gradient(100% 165% at 100% 100%, #FF00A8 0%, #00FF47 100%), radial-gradient(100% 150% at 0% 0%, #FFF500 0%, #51D500 100%);
-  background-blend-mode: overlay, color-dodge, overlay, overlay, difference, normal;
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
-.floating-blob {
-  position: absolute;
-  transform-origin: center;
-  background-color: #b86c11;
-  width: 400px;
-  height: 300px;
-  border-radius: 40rem;
-  transform: translateY(250px) translateX(0px);
-  animation: floating-blob-1-jsx-4199188613 8s ease-in-out infinite alternate;
-  z-index: -1;
-}
-
-@keyframes floating-blob-1-jsx-4199188613 {
-  0% {
-  }
-
-  100% {
-    transform: translateY(0px) translateX(-300px) rotate(180deg);
-  }
 }

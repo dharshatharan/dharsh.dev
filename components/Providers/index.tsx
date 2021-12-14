@@ -4,6 +4,8 @@ import { useAnalytics } from "@lib/analytics";
 import { NextPageContext } from "next";
 import { useWindowSize } from "@components/hooks/WindowSize";
 
+import { SEO } from "./SEO";
+
 interface Props {
   children?: any;
   pageProps: NextPageContext;
@@ -39,6 +41,8 @@ export function Providers({ children, pageProps }: Props) {
 
   return (
     <>
+      <SEO />
+
       <ThemeProvider attribute="class">
         <GlobalNavigationContext.Provider value={state}>
           {children}

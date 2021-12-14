@@ -22,6 +22,9 @@
       "@components/*": [
         "components/*"
       ],
+      "@config/*": [
+        "config/*"
+      ],
       "@localTypes/*": [
         "types/*"
       ],
