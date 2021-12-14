@@ -69,6 +69,7 @@ export default function PageLayout({
               onClick={() => {
                 setIsOpen(true);
               }}
+              aria-label="Open Menu"
             />
           ) : (
             customLeftItem
