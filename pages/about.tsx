@@ -24,13 +24,8 @@ export default function About(props: Props) {
             />
             <p>
               I am a third-year Software Engineering Student from Carleton
-              University living in Ottawa. I am currently doing my co-op at{" "}
-              <SmartLink href="https://www.ciena.com/">Ciena</SmartLink> with
-              the{" "}
-              <SmartLink href="https://www.ciena.com/products/6500">
-                6500 DevOps Team
-              </SmartLink>
-              . And I am also the Vice President of a Society on campus called{" "}
+              University living in Ottawa. I am also the Vice President of a
+              Society on campus called{" "}
               <SmartLink href="https://www.scesoc.ca/">SCESoc</SmartLink>, where
               I organize various workshops, events and projects to help peers.
             </p>
