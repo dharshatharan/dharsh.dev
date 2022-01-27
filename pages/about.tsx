@@ -23,9 +23,11 @@ export default function About(props: Props) {
               objectFit="cover"
             />
             <p>
-              I am a third-year Software Engineering Student from Carleton
-              University living in Ottawa. I am also the Vice President of a
-              Society on campus called{" "}
+              I am a forth-year Software Engineering Student from Carleton
+              University living in Ottawa. I&apos;m currently working as a
+              DevOps Co-op at{" "}
+              <SmartLink href="https://www.kinaxis.com/">Kinaxis</SmartLink>. I
+              am also the Vice President of a Society on campus called{" "}
               <SmartLink href="https://www.scesoc.ca/">SCESoc</SmartLink>, where
               I organize various workshops, events and projects to help peers.
             </p>
@@ -34,15 +36,10 @@ export default function About(props: Props) {
               <SmartLink href="https://www.lisnclips.app/">LISN</SmartLink>.
               Now, I am working on a few side projects. I am working on a
               knowledge-sharing platform for students in SCESoc called,{" "}
-              <SmartLink href="https://github.com/SCESoc/torch">
-                Torch
+              <SmartLink href="https://wiki.scesoc.ca/knowledge-base/">
+                Knowledge Base
               </SmartLink>
-              . Torch is a web application that surfaces open-source knowledge
-              created by students in SCESoc in our{" "}
-              <SmartLink href="https://github.com/SCESoc/knowledge-base">
-                Knowledge Base repository
-              </SmartLink>
-              . These efforts help encourage students to work on side projects,
+              . This effort helps encourage students to work on side projects,
               learn new skills, share knowledge and contribute to the community
               through the{" "}
               <SmartLink href="https://makers.scesoc.ca/">

@@ -76,10 +76,9 @@ export const Sidebar = (props: Props) => {
       isActive: router.asPath === "/project/makers-club",
     },
     {
-      label: "Torch",
-      href: "/project/torch",
+      label: "Knowledge Base",
+      href: "https://wiki.scesoc.ca/knowledge-base/",
       icon: <LightIcon {...IconProps} />,
-      isActive: router.asPath === "/project/torch",
     },
     "Connect",
     {
