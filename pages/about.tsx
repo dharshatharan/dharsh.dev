@@ -58,7 +58,7 @@ export default function About(props: Props) {
               interesting place. I find philosophy very interesting and love
               exploring new ideas and concepts. I am always down to meet new
               people, so feel free to reach out to me at{" "}
-              <a href="mailto:me@dharsh.dev">me@dharsh.dev</a> if you have any
+              <a href="mailto:djayatharanaronan@gmail.com">djayatharanaronan@gmail.com</a> if you have any
               questions or want to connect!
             </p>
           </section>
