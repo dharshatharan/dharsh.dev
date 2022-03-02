@@ -25,8 +25,8 @@ export default function Post({ blog }: Props) {
   return (
     <PageLayout title={blog.title}>
       <NextSeo title={blog.title} description={blog.description} />
-      <div className="w-full flex justify-center mt-10">
-        <div className="max-w-4xl md:mx-10 mb-10 md:mb-20">
+      <div className="flex justify-center md:mt-10">
+        <div className="w-full max-w-4xl md:mx-10 mb-10 md:mb-20">
           <article className="prose lg:prose-lg max-w-none dark:prose-light py-5">
             <small className="flex justify-center align-middle text-teal-grey dark:text-dark-yellow my-5">
               <span>
