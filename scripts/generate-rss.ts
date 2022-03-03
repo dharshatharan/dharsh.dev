@@ -8,7 +8,7 @@ export async function generateRssFeed(): Promise<void> {
   const date = new Date();
   const author = {
     name: "Dharshatharan Jayathtaran Aronan",
-    email: "me@dharsh.dev",
+    email: "djayatharanaronan@gmail.com",
     link: siteURL,
   };
 
