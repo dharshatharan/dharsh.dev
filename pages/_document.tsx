@@ -67,6 +67,13 @@ class MyDocument extends Document {
             href="/icons/favicons/favicon-16x16.png"
           />
           <link rel="manifest" href="/icons/favicons/site.webmanifest" />
+          <script
+            async
+            defer
+            data-domains="dharsh.dev"
+            data-website-id="f26a1dbe-84ce-430a-8520-712367f92cf9"
+            src="https://analytics.dharsh.dev/umami.js"
+          ></script>
         </Head>
         <body className="bg-off-white dark:bg-[#101010] text-smooth-black dark:text-off-white transition duration-300">
           <Main />
