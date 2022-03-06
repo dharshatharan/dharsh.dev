@@ -70,7 +70,7 @@ class MyDocument extends Document {
           <script
             async
             defer
-            data-domains="dharsh.dev"
+            data-domains="www.dharsh.dev"
             data-website-id="f26a1dbe-84ce-430a-8520-712367f92cf9"
             src="https://analytics.dharsh.dev/umami.js"
           ></script>
