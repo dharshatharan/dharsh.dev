@@ -48,7 +48,7 @@ export async function getTodayILearnedByTag(tag: string) {
     database_id: process.env.NOTION_TODAY_I_LEARNED_DATABASE ?? "",
     filter: {
       property: "Tags",
-      text: {
+      rich_text: {
         contains: tag,
       },
     },

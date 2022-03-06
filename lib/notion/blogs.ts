@@ -20,7 +20,7 @@ export async function getSortedBlogsData(limit?: number) {
         },
         {
           property: "ID",
-          text: {
+          rich_text: {
             is_not_empty: true,
           },
         },
@@ -89,7 +89,7 @@ export async function getAllBlogIds() {
         },
         {
           property: "ID",
-          text: {
+          rich_text: {
             is_not_empty: true,
           },
         },
@@ -128,7 +128,7 @@ export async function getBlogData(id: string) {
         and: [
           {
             property: "ID",
-            text: {
+            rich_text: {
               equals: id,
             },
           },

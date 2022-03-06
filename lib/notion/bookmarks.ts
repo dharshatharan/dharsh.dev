@@ -45,7 +45,7 @@ export async function getBookmarkByType(type: string): Promise<Bookmark[]> {
     database_id: process.env.NOTION_BOOKMARKS_DATABASE ?? "",
     filter: {
       property: "Type",
-      text: {
+      rich_text: {
         equals: type,
       },
     },
