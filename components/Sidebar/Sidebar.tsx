@@ -112,7 +112,13 @@ export const Sidebar = (props: Props) => {
             </a>
           </Link>
           <IconButton
-            icon={<LeftDoubleArrowIcon className="text-gray-500" />}
+            icon={
+              <LeftDoubleArrowIcon
+                height={25}
+                width={25}
+                className="text-gray-500"
+              />
+            }
             onClick={() => {
               setIsOpen(false);
             }}

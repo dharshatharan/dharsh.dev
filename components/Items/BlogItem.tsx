@@ -13,8 +13,8 @@ export default function BlogItem({ blogData }: Props): ReactElement {
   return (
     <Link href={`/blog/${blogData.id}`} passHref>
       <a className="space-y-5 mb-5 group">
-        <div className="aspect-[3/4] flex justify-center items-center">
-          <div className="relative focus-ring w-full rounded-lg object-cover object-center transition duration-300">
+        <div className="flex justify-center items-center">
+          <div className="relative aspect-h-4 aspect-w-3 focus-ring w-full rounded-lg object-cover object-center transition duration-300">
             <Image
               src={blogData.image}
               alt={blogData.title}
