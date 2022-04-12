@@ -23,7 +23,7 @@ export default function About(props: Props) {
               objectFit="cover"
             />
             <p>
-              I am a forth-year Software Engineering Student from Carleton
+              I am a fourth-year Software Engineering Student from Carleton
               University living in Ottawa. I&apos;m currently working as a
               DevOps Co-op at{" "}
               <SmartLink href="https://www.kinaxis.com/">Kinaxis</SmartLink>. I
