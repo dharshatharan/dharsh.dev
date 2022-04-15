@@ -26,7 +26,7 @@ export function getBundledMDX(source: string) {
 
   return bundleMDX({
     source: source,
-    xdmOptions(options) {
+    mdxOptions(options) {
       options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkGfm];
       options.rehypePlugins = [
         ...(options?.rehypePlugins ?? []),
