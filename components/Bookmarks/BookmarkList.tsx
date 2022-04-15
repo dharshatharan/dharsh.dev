@@ -1,11 +1,10 @@
 import { IconButton } from "../Buttons/IconButton";
 import { Bookmark } from "@localTypes/bookmark";
-import Link from "next/link";
 import MenuIcon from "@components/Icons/MenuIcon";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 import { GlobalNavigationContext } from "../Providers";
-import Image from "next/image";
+import { BookmarkListItem } from "./BookmarkListItem";
 
 interface ListProps {
   bookmarkData: Bookmark[];
@@ -33,30 +32,12 @@ export function BookmarkList({ bookmarkData }: ListProps) {
             const isActive = router.asPath === `/bookmark/${item.id}`;
             const url = item.url ? new URL(item.url).hostname : null;
             return (
-              <Link
+              <BookmarkListItem
                 key={item.id}
-                href="/bookmark/[id]"
-                as={`/bookmark/${item.id}`}
-              >
-                <a
-                  className={`flex flex-col space-y-1 p-3 hover:bg-gray-200 dark:hover:bg-[#222222] rounded-md transform duration-300 ${
-                    isActive ? "bg-gray-200 dark:bg-[#222222]" : ""
-                  }`}
-                >
-                  <div className="text-sm font-semibold">{item.name}</div>
-                  {url && (
-                    <div className="flex items-center text-sm text-gray-500 font-semibold space-x-3 overflow-x-auto">
-                      <Image
-                        height={20}
-                        width={20}
-                        src={`http://www.google.com/s2/favicons?domain=${url}`}
-                        alt="Website Favicon"
-                      />
-                      <div>{url}</div>
-                    </div>
-                  )}
-                </a>
-              </Link>
+                item={item}
+                isActive={isActive}
+                url={url}
+              />
             );
           })}
         </div>

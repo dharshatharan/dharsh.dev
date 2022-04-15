@@ -17,26 +17,24 @@ export default function Home({ latestBlogData }: Props) {
     <PageLayout title="Home">
       <div className="flex justify-center">
         <div className="pb-24 w-full max-w-5xl">
-          <section className="w-full flex transform duration-300 mt-10 mb-32">
+          <section className="w-full flex transform duration-300 mt-10 mb-16 font-['Inter']">
             <div className="max-w-6xl">
               <h1 className="text-4xl md:text-7xl text-smooth-black dark:text-off-white font-light mb-4">
                 Hi, I&apos;m <br />
-                <strong className="font-bold">
+                <strong className="font-black">
                   Dharshatharan
                   <br /> Jayatharan Aronan
                 </strong>
               </h1>
-              <p className="text-gray-500 text-2xl md:text-5xl font-bold mb-4">
-                Developer, Writer, Student
+              <p className="text-gray-500 text-lg md:text-2xl font-extrabold mb-4">
+                DEVELOPER, WRITER, STUDENT
               </p>
-              <p className="text-gray-500 text-2xl md:text-4xl font-bold mb-4">
+              <p className="text-xl md:text-3xl mb-4">
                 You can call me{" "}
-                <strong className="font-bold text-4xl md:text-6xl text-smooth-black dark:text-off-white">
-                  dharsh
+                <strong className="text-smooth-black dark:text-off-white">
+                  Dharsh
                 </strong>
-              </p>
-              <p className="text-gray-500 text-2xl md:text-4xl font-bold">
-                Welcome to my corner of the Internet!
+                .&nbsp;Welcome to my corner of the Internet!
               </p>
             </div>
           </section>
@@ -55,7 +53,7 @@ export default function Home({ latestBlogData }: Props) {
                 </ul>
               </div>
               <Link href="/blog">
-                <a className="text-2xl hover:underline">Read more → </a>
+                <a className="text-xl hover:underline">Read more → </a>
               </Link>
             </div>
             <div id="projects" className="flex flex-col mb-24">

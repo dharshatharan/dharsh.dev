@@ -27,10 +27,10 @@ export const SidebarItem = ({ href, label, icon, isActive }: Props) => {
       onClick={() => {
         size.width && size.width < 1024 && setIsOpen(false);
       }}
-      className={`py-2 px-3 mb-1 text-sm hover:bg-gray-200 dark:hover:bg-[#222222] rounded-lg flex align-middle justify-between transform duration-300 font-semibold
+      className={`py-2 px-3 mb-1 text-sm hover:bg-gray-200 dark:hover:bg-[#222222] rounded-lg flex align-middle justify-between transform duration-300 font-bold
             ${
               isActive
-                ? " font-bold text-smooth-black dark:text-off-white bg-gray-200 dark:bg-[#222222]"
+                ? " font-extrabold text-smooth-black dark:text-off-white bg-gray-200 dark:bg-[#222222]"
                 : " text-gray-700 dark:text-gray-200"
             }`}
     >

@@ -46,8 +46,8 @@ export function TodayILearnedList({ todayILearnedData }: ListProps) {
                   <div className="text-sm text-gray-500 font-semibold">
                     <Date dateString={item.createdAt} />
                   </div>
-                  <div className="text-sm font-semibold">{item.name}</div>
-                  <div className="flex items-center space-x-3 overflow-x-auto text-xl">
+                  <div className="text-sm font-bold">{item.name}</div>
+                  <div className="flex items-center space-x-3 overflow-x-auto overflow-y-hidden text-xl">
                     {item.emoji && <div>{item.emoji}</div>}
                     {item.tags.map((tag) => (
                       <NotionTag tag={tag} key={tag.id} />

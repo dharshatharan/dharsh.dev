@@ -8,18 +8,18 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link
-            rel="preload"
-            href="/fonts/iAWriterQuattroV.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
+            rel="stylesheet"
+            href="https://use.typekit.net/fkt1fzm.css"
+          ></link>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin=""
           />
           <link
-            rel="preload"
-            href="/fonts/iAWriterQuattroV-Italic.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
           />
           {process.env.NODE_ENV === "production" && (
             <link

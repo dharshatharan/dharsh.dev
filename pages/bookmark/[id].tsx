@@ -17,8 +17,8 @@ import LinkIcon from "@components/Icons/LinkIcon";
 import RightArrowIcon from "@components/Icons/RightArrowIcon";
 import { IconButton } from "@components/Buttons/IconButton";
 import { useWindowSize } from "@components/hooks/WindowSize";
-import Image from "next/image";
 import { NextSeo } from "next-seo";
+import { FaviconImage } from "@components/Image/FaviconImage";
 
 interface Props {
   bookmarkData: Bookmark;
@@ -64,11 +64,12 @@ export default function TodayILearnt({ bookmarkData, allBookmarkData }: Props) {
             </h1>
             {url && (
               <div className="flex items-center text-gray-500 font-semibold space-x-3 overflow-x-auto mt-5">
-                <Image
+                <FaviconImage
+                  src={url}
                   height={32}
                   width={32}
-                  src={`http://www.google.com/s2/favicons?domain=${url}&sz=32`}
-                  alt="Website Favicon"
+                  alt={`Website Favicon: ${url}`}
+                  className="rounded"
                 />
                 <SmartLink className="text-md" href={bookmarkData.url ?? ""}>
                   {url}

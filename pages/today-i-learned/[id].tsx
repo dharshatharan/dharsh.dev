@@ -65,7 +65,7 @@ export default function TodayILearnt({
             <div className="text-mb font-bold text-gray-500 mb-3">
               <Date dateString={todayILearnedData.createdAt} />
             </div>
-            <div className="flex items-center space-x-2 overflow-x-auto mb-3">
+            <div className="flex items-center space-x-2 flex-wrap mb-3">
               {todayILearnedData.tags.map((tag) => (
                 <NotionTag tag={tag} key={tag.id} />
               ))}

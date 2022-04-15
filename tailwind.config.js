@@ -24,7 +24,7 @@ module.exports = {
         "code-block": "#161B22",
       },
       fontFamily: {
-        sans: ["iA Writer Quattro V", ...fontFamily.sans],
+        sans: ["proxima-soft", ...fontFamily.sans],
       },
       stroke: (theme) => ({
         "dark-yellow": theme("#E9AE8C"),

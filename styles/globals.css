@@ -2,28 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "iA Writer Quattro V";
-  font-style: normal;
-  font-weight: 400 700;
-  font-display: optional;
-  src: url(/fonts/iAWriterQuattroV.woff2) format("woff2");
-}
-
-@font-face {
-  font-family: "iA Writer Quattro V";
-  font-style: italic;
-  font-weight: 400 700;
-  font-display: optional;
-  src: url(/fonts/iAWriterQuattroV-Italic.woff2) format("woff2");
-}
-
 @layer base {
   * {
     @apply selection:bg-smooth-black dark:selection:bg-off-white selection:text-off-white dark:selection:text-smooth-black;
   }
   html {
     @apply max-h-screen overflow-hidden text-base antialiased font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-['Inter'];
   }
   a {
     @apply no-underline text-smooth-black dark:text-off-white;
