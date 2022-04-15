@@ -84,11 +84,8 @@ export async function getBookmarkById(id: string) {
 
     const mdx = getBundledMDX(mdString);
 
-    console.log(mdString);
-
     return Promise.all([data, mdx]).then(([data, mdx]) => {
       if ("properties" in data) {
-        console.log(data.properties.Name.title[0].plain_text);
         return {
           id: data.id,
           emoji: data?.icon?.type === "emoji" ? data.icon.emoji : "",
