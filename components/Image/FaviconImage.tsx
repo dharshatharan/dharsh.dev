@@ -2,17 +2,13 @@ import { useEffect, useState } from "react";
 import Image, { ImageProps } from "next/image";
 import LinkIcon from "@components/Icons/LinkIcon";
 
-interface FaviconImageProps extends ImageProps {
-  height: string | number | undefined;
-  width: string | number | undefined;
-}
 export const FaviconImage = ({
   src,
   height,
   width,
   alt,
   ...imageProps
-}: FaviconImageProps) => {
+}: ImageProps) => {
   const [isVisible, setIsVisible] = useState(true);
   useEffect(() => {
     setIsVisible(true);
@@ -26,6 +22,7 @@ export const FaviconImage = ({
         setIsVisible(false);
       }}
       alt={alt}
+      {...imageProps}
     />
   ) : (
     <span className="flex h-6 w-6 items-center justify-center">
