@@ -65,9 +65,7 @@ export default function Post({ blog }: Props) {
             />
           </article>
           <div className="text-teal-grey hover:underline text-md md:text-xl">
-            <Link href="/blog">
-              <a>← Read More</a>
-            </Link>
+            <Link href="/blog">← Read More</Link>
           </div>
         </div>
       </div>

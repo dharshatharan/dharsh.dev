@@ -37,8 +37,9 @@ export function TodayILearnedList({ todayILearnedData }: ListProps) {
                 key={item.id}
                 href="/today-i-learned/[id]"
                 as={`/today-i-learned/${item.id}`}
+                passHref
               >
-                <a
+                <div
                   className={`flex flex-col space-y-1 p-3 hover:bg-gray-200 dark:hover:bg-[#222222] rounded-md transform duration-300 ${
                     isActive ? "bg-gray-200 dark:bg-[#222222]" : ""
                   }`}
@@ -53,7 +54,7 @@ export function TodayILearnedList({ todayILearnedData }: ListProps) {
                       <NotionTag tag={tag} key={tag.id} />
                     ))}
                   </div>
-                </a>
+                </div>
               </Link>
             );
           })}

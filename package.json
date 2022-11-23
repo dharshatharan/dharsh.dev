@@ -8,8 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "lint.fix": "next lint --fix",
-    "prettier": "prettier --write --ignore-unknown",
-    "prepare": "husky install"
+    "prettier": "prettier --write --ignore-unknown .",
+    "prepare": "husky install",
+    "type-check": "tsc --noemit"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.2",
@@ -63,8 +64,7 @@
   },
   "lint-staged": {
     "**/*.(ts|js)?(x)": [
-      "eslint --fix",
-      "prettier --write --ignore-unknown"
+      "npm run lint.fix"
     ]
   }
 }
