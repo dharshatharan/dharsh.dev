@@ -20,11 +20,8 @@ export default function MakersClub(props: Props): ReactElement {
           <ArticleImage
             src={MakerImage}
             alt="An open graph image of the makers club website"
-            width={800}
-            height={400}
             priority={true}
             placeholder="blur"
-            objectFit="cover"
           />
           <p>
             The Makers Club is a club within{" "}

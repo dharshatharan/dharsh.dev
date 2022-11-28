@@ -16,11 +16,8 @@ export default function About(props: Props) {
             <ArticleImage
               src={CoverImage}
               alt="A picture of me in front of a lake"
-              width={800}
-              height={400}
               priority={true}
               placeholder="blur"
-              objectFit="cover"
             />
             <p>
               I am a fourth-year Software Engineering Student from Carleton

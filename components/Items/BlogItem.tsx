@@ -19,8 +19,7 @@ export default function BlogItem({ blogData }: Props): ReactElement {
               src={blogData.image}
               alt={blogData.title}
               layout="fill"
-              objectFit="cover"
-              className="relative rounded-lg"
+              className="relative rounded-lg object-cover"
             />
           </div>
         </div>

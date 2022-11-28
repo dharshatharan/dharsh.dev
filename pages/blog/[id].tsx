@@ -28,21 +28,20 @@ export default function Post({ blog }: Props) {
       <div className="flex justify-center md:mt-10">
         <div className="w-full max-w-4xl md:mx-10 mb-10 md:mb-20">
           <article className="prose lg:prose-lg max-w-none dark:prose-light py-5">
-            <small className="flex justify-center align-middle text-teal-grey dark:text-dark-yellow my-5">
+            <small className="flex justify-center align-middle text-teal-grey dark:text-dark-yellow my-5 not-prose">
+              <Image
+                src="/images/profile-square.png"
+                alt="Author, Dharsh"
+                width={28}
+                height={28}
+                className="rounded-full mx-1"
+              />
               <span>
-                <Image
-                  src="/images/profile-square.png"
-                  alt="Author, Dharsh"
-                  width={28}
-                  height={28}
-                  className="rounded-full"
-                />
+                &nbsp;Dharsh &nbsp;&bull;&nbsp;
+                <Date dateString={blog.published} />
+                &nbsp;&bull;&nbsp;
+                {blog.readTime.text}
               </span>
-              <span>&nbsp;Dharsh</span>
-              <span>&nbsp;&bull;&nbsp;</span>
-              <Date dateString={blog.published} />
-              <span>&nbsp;&bull;&nbsp;</span>
-              <span>{blog.readTime.text}</span>
             </small>
             <h1 className="text-center">
               <div className="mb-4">{blog.title}</div>
@@ -54,10 +53,7 @@ export default function Post({ blog }: Props) {
             <ArticleImage
               src={blog.image}
               alt={`${blog.title} Cover`}
-              width={900}
-              height={500}
               priority={true}
-              objectFit="cover"
             />
             <Component
               className="my-10 leading-relaxed"
