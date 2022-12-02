@@ -52,8 +52,8 @@ export default function Home({ latestBlogData }: Props) {
                   ))}
                 </ul>
               </div>
-              <Link href="/blog">
-                <a className="text-xl hover:underline">Read more → </a>
+              <Link href="/blog" passHref>
+                <div className="text-xl hover:underline">Read more → </div>
               </Link>
             </div>
             <div id="projects" className="flex flex-col mb-24">

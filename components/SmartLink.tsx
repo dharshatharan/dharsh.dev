@@ -10,8 +10,8 @@ export const SmartLink = (
 
   if (isInternalLink) {
     return (
-      <Link href={encodeURI(href ?? "")}>
-        <a {...props}>{props.children}</a>
+      <Link passHref href={encodeURI(href ?? "")}>
+        <div className={props.className}>{props.children}</div>
       </Link>
     );
   }

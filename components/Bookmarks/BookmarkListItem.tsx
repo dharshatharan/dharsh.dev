@@ -10,8 +10,13 @@ type Props = {
 
 export const BookmarkListItem = ({ item, isActive, url }: Props) => {
   return (
-    <Link key={item.id} href="/bookmark/[id]" as={`/bookmark/${item.id}`}>
-      <a
+    <Link
+      passHref
+      key={item.id}
+      href="/bookmark/[id]"
+      as={`/bookmark/${item.id}`}
+    >
+      <div
         className={`flex flex-col space-y-1 p-3 hover:bg-gray-200 dark:hover:bg-[#222222] rounded-md transform duration-300 ${
           isActive ? "bg-gray-200 dark:bg-[#222222]" : ""
         }`}
@@ -29,7 +34,7 @@ export const BookmarkListItem = ({ item, isActive, url }: Props) => {
             <div>{url}</div>
           </div>
         )}
-      </a>
+      </div>
     </Link>
   );
 };
