@@ -123,7 +123,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
   return {
     props: {
       allBookmarkData,
-      bookmarkData: bookmarkData,
+      bookmarkData,
     },
     revalidate: 60,
   };

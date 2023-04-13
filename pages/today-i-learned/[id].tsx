@@ -121,7 +121,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
   return {
     props: {
       allTodayILearnedData,
-      todayILearnedData: todayILearnedData,
+      todayILearnedData,
     },
     revalidate: 60,
   };
