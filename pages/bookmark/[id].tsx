@@ -16,7 +16,7 @@ import { IconButton } from "@components/Buttons/IconButton";
 import { useWindowSize } from "@components/hooks/WindowSize";
 import { NextSeo } from "next-seo";
 import { FaviconImage } from "@components/Image/FaviconImage";
-import { useMdxComponent } from "hooks/useMdxComponent";
+import { useMdxComponent } from "@hooks/useMdxComponent";
 
 interface Props {
   bookmarkData: Bookmark;

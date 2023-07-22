@@ -16,7 +16,7 @@ import RightArrowIcon from "@components/Icons/RightArrowIcon";
 import { IconButton } from "@components/Buttons/IconButton";
 import { useWindowSize } from "@components/hooks/WindowSize";
 import { NextSeo } from "next-seo";
-import { useMdxComponent } from "hooks/useMdxComponent";
+import { useMdxComponent } from "@hooks/useMdxComponent";
 
 interface Props {
   todayILearnedData: TodayILearned;

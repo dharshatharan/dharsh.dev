@@ -8,7 +8,7 @@ import { ParsedUrlQuery } from "querystring";
 import { BlogData } from "@localTypes/blog";
 import { ArticleImage } from "@components/Image/ArticleImage";
 import { NextSeo } from "next-seo";
-import { useMdxComponent } from "hooks/useMdxComponent";
+import { useMdxComponent } from "@hooks/useMdxComponent";
 
 interface Props {
   blog: BlogData;
