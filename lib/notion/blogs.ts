@@ -40,7 +40,7 @@ export async function getSortedBlogsData(limit?: number) {
       results.map(async (item) => {
         const mdblocks = await n2m.pageToMarkdown(item.id);
         const mdString = n2m.toMarkdownString(mdblocks);
-        if ("properties" in item) {
+        if (item.object === "page" && "properties" in item) {
           const properties = item.properties;
           return {
             id:
@@ -67,7 +67,7 @@ export async function getSortedBlogsData(limit?: number) {
               properties.Description.type === "rich_text"
                 ? properties.Description.rich_text[0].plain_text
                 : "",
-            readTime: readingTime(mdString),
+            readTime: readingTime(mdString.parent),
           } as BlogData;
         }
         return null;
@@ -105,7 +105,7 @@ export async function getAllBlogIds() {
   });
   return results
     .map((item) => {
-      if ("properties" in item) {
+      if (item.object === "page" && "properties" in item) {
         return {
           params: {
             id:
@@ -146,9 +146,9 @@ export async function getBlogData(id: string) {
     const mdString = n2m.toMarkdownString(mdblocks);
 
     const item = results[0];
-    const mdx = await getBundledMDX(mdString);
+    const mdx = await getBundledMDX(mdString.parent);
 
-    if ("properties" in item && "cover" in item) {
+    if (item.object === "page" && "properties" in item && "cover" in item) {
       const properties = item.properties;
       return {
         id:
@@ -175,7 +175,7 @@ export async function getBlogData(id: string) {
           properties.Description.type === "rich_text"
             ? properties.Description.rich_text[0].plain_text
             : "",
-        readTime: readingTime(mdString),
+        readTime: readingTime(mdString.parent),
         contentHtml: mdx.code,
       } as BlogData;
     }

@@ -5,11 +5,8 @@ import {
   getBookmarkById,
 } from "@lib/notion/bookmarks";
 import { Bookmark } from "@localTypes/bookmark";
-import components from "@components/MDXComponents";
-import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
-import { useMemo } from "react";
 import { BookmarkList } from "@components/Bookmarks/BookmarkList";
 import { NotionTag } from "@components/Tags/NotionTag";
 import { SmartLink } from "@components/SmartLink";
@@ -19,6 +16,7 @@ import { IconButton } from "@components/Buttons/IconButton";
 import { useWindowSize } from "@components/hooks/WindowSize";
 import { NextSeo } from "next-seo";
 import { FaviconImage } from "@components/Image/FaviconImage";
+import { useMdxComponent } from "hooks/useMdxComponent";
 
 interface Props {
   bookmarkData: Bookmark;
@@ -39,10 +37,7 @@ const BackButton = () => {
 };
 
 export default function TodayILearnt({ bookmarkData, allBookmarkData }: Props) {
-  const Component = useMemo(
-    () => getMDXComponent(bookmarkData.content),
-    [bookmarkData.content]
-  );
+  const Component = useMdxComponent(bookmarkData.content!);
   const url = bookmarkData.url ? new URL(bookmarkData.url).hostname : null;
   return (
     <ListDetailView
@@ -77,10 +72,7 @@ export default function TodayILearnt({ bookmarkData, allBookmarkData }: Props) {
               </div>
             )}
             <article className="prose lg:prose-lg dark:prose-light py-5">
-              <Component
-                className="my-10 leading-relaxed"
-                components={components}
-              />
+              <Component className="my-10 leading-relaxed" />
             </article>
             {bookmarkData.url && (
               <SmartLink href={bookmarkData.url}>

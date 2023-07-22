@@ -18,7 +18,7 @@ export async function getBookmarks() {
   });
   return results
     .map((item) => {
-      if ("properties" in item) {
+      if (item.object === "page" && "properties" in item) {
         const properties = item.properties;
         return {
           id: item.id,
@@ -52,7 +52,7 @@ export async function getBookmarkByType(type: string): Promise<Bookmark[]> {
   });
   return results
     .map((item) => {
-      if ("properties" in item) {
+      if (item.object === "page" && "properties" in item) {
         const properties = item.properties;
         return {
           id: item.id,
@@ -82,7 +82,7 @@ export async function getBookmarkById(id: string) {
     const mdblocks = await n2m.pageToMarkdown(id);
     const mdString = n2m.toMarkdownString(mdblocks);
 
-    const mdx = getBundledMDX(mdString);
+    const mdx = getBundledMDX(mdString.parent);
 
     return Promise.all([data, mdx]).then(([data, mdx]) => {
       if ("properties" in data) {

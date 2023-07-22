@@ -3,24 +3,19 @@ import { getAllBlogIds, getBlogData } from "@lib/notion/blogs";
 import Image from "next/image";
 import Link from "next/link";
 import Date from "@components/Formatters/Date";
-import components from "@components/MDXComponents";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { ParsedUrlQuery } from "querystring";
 import { BlogData } from "@localTypes/blog";
-import { useMemo } from "react";
-import { getMDXComponent } from "mdx-bundler/client";
 import { ArticleImage } from "@components/Image/ArticleImage";
 import { NextSeo } from "next-seo";
+import { useMdxComponent } from "hooks/useMdxComponent";
 
 interface Props {
   blog: BlogData;
 }
 
 export default function Post({ blog }: Props) {
-  const Component = useMemo(
-    () => getMDXComponent(blog.contentHtml!),
-    [blog.contentHtml]
-  );
+  const Component = useMdxComponent(blog.contentHtml!);
 
   return (
     <PageLayout title={blog.title}>
@@ -55,10 +50,7 @@ export default function Post({ blog }: Props) {
               alt={`${blog.title} Cover`}
               priority={true}
             />
-            <Component
-              className="my-10 leading-relaxed"
-              components={components}
-            />
+            <Component className="my-10 leading-relaxed" />
           </article>
           <div className="text-teal-grey hover:underline text-md md:text-xl">
             <Link href="/blog">← Read More</Link>

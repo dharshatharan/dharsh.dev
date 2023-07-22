@@ -5,11 +5,8 @@ import {
   getTodayILearnedById,
 } from "@lib/notion/todayILearned";
 import { TodayILearned } from "@localTypes/today-i-learned";
-import components from "@components/MDXComponents";
-import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
-import { useMemo } from "react";
 import { TodayILearnedList } from "@components/TodayILearnt/TodayILearntList";
 import { NotionTag } from "@components/Tags/NotionTag";
 import Date from "@components/Formatters/Date";
@@ -19,6 +16,7 @@ import RightArrowIcon from "@components/Icons/RightArrowIcon";
 import { IconButton } from "@components/Buttons/IconButton";
 import { useWindowSize } from "@components/hooks/WindowSize";
 import { NextSeo } from "next-seo";
+import { useMdxComponent } from "hooks/useMdxComponent";
 
 interface Props {
   todayILearnedData: TodayILearned;
@@ -42,10 +40,7 @@ export default function TodayILearnt({
   todayILearnedData,
   allTodayILearnedData,
 }: Props) {
-  const Component = useMemo(
-    () => getMDXComponent(todayILearnedData.content),
-    [todayILearnedData.content]
-  );
+  const Component = useMdxComponent(todayILearnedData.content!);
   return (
     <ListDetailView
       list={<TodayILearnedList todayILearnedData={allTodayILearnedData} />}
@@ -74,10 +69,7 @@ export default function TodayILearnt({
               {todayILearnedData.name}
             </h1>
             <article className="prose lg:prose-lg dark:prose-light py-5 max-w-none">
-              <Component
-                className="my-10 leading-relaxed"
-                components={components}
-              />
+              <Component className="my-10 leading-relaxed" />
             </article>
             {todayILearnedData.url && (
               <SmartLink href={todayILearnedData.url}>
