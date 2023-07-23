@@ -2,11 +2,13 @@ import { TodayILearned } from "@localTypes/today-i-learned";
 import { notionClient } from "./index";
 import { NotionToMarkdown } from "notion-to-md";
 import { getBundledMDX } from "@lib/mdx";
+import { avoidRateLimit } from "@utils/avoidRateLimit";
 
 const notion = notionClient();
 const n2m = new NotionToMarkdown({ notionClient: notion });
 
 export async function getTodayILearned() {
+  await avoidRateLimit();
   const { results } = await notion.databases.query({
     database_id: process.env.NOTION_TODAY_I_LEARNED_DATABASE ?? "",
     filter: {
@@ -44,6 +46,7 @@ export async function getTodayILearned() {
 }
 
 export async function getTodayILearnedByTag(tag: string) {
+  await avoidRateLimit();
   const { results } = await notion.databases.query({
     database_id: process.env.NOTION_TODAY_I_LEARNED_DATABASE ?? "",
     filter: {
@@ -82,13 +85,14 @@ export async function getTodayILearnedByTag(tag: string) {
 
 export async function getTodayILearnedById(id: string) {
   try {
+    await avoidRateLimit();
     const data = notion.pages.retrieve({
       page_id: id,
     });
     const mdblocks = await n2m.pageToMarkdown(id);
     const mdString = n2m.toMarkdownString(mdblocks);
 
-    const mdx = getBundledMDX(mdString.parent);
+    const mdx = getBundledMDX(mdString.parent ?? "");
 
     return Promise.all([data, mdx]).then(([data, mdx]) => {
       if ("properties" in data) {
@@ -119,6 +123,7 @@ export async function getTodayILearnedById(id: string) {
 }
 
 export async function getAllTodayILearnedIds() {
+  await avoidRateLimit();
   const { results } = await notion.databases.query({
     database_id: process.env.NOTION_TODAY_I_LEARNED_DATABASE ?? "",
     filter: {

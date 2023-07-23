@@ -3,11 +3,13 @@ import { notionClient } from ".";
 import { NotionToMarkdown } from "notion-to-md";
 import { BlogData } from "@localTypes/blog";
 import { getBundledMDX } from "@lib/mdx";
+import { avoidRateLimit } from "@utils/avoidRateLimit";
 
 const notion = notionClient();
 const n2m = new NotionToMarkdown({ notionClient: notion });
 
 export async function getSortedBlogsData(limit?: number) {
+  await avoidRateLimit();
   const { results } = await notion.databases.query({
     database_id: process.env.NOTION_WRITING_DATABASE ?? "",
     filter: {
@@ -77,6 +79,7 @@ export async function getSortedBlogsData(limit?: number) {
 }
 
 export async function getAllBlogIds() {
+  await avoidRateLimit();
   const { results } = await notion.databases.query({
     database_id: process.env.NOTION_WRITING_DATABASE ?? "",
     filter: {
@@ -122,6 +125,7 @@ export async function getAllBlogIds() {
 
 export async function getBlogData(id: string) {
   try {
+    await avoidRateLimit();
     const { results } = await notion.databases.query({
       database_id: process.env.NOTION_WRITING_DATABASE ?? "",
       filter: {
@@ -146,7 +150,7 @@ export async function getBlogData(id: string) {
     const mdString = n2m.toMarkdownString(mdblocks);
 
     const item = results[0];
-    const mdx = await getBundledMDX(mdString.parent);
+    const mdx = await getBundledMDX(mdString.parent ?? "");
 
     if (item.object === "page" && "properties" in item && "cover" in item) {
       const properties = item.properties;

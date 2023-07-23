@@ -2,11 +2,13 @@ import { notionClient } from "./index";
 import { NotionToMarkdown } from "notion-to-md";
 import { getBundledMDX } from "@lib/mdx";
 import { Bookmark } from "@localTypes/bookmark";
+import { avoidRateLimit } from "@utils/avoidRateLimit";
 
 const notion = notionClient();
 const n2m = new NotionToMarkdown({ notionClient: notion });
 
 export async function getBookmarks() {
+  await avoidRateLimit();
   const { results } = await notion.databases.query({
     database_id: process.env.NOTION_BOOKMARKS_DATABASE ?? "",
     filter: {
@@ -41,6 +43,7 @@ export async function getBookmarks() {
 }
 
 export async function getBookmarkByType(type: string): Promise<Bookmark[]> {
+  await avoidRateLimit();
   const { results } = await notion.databases.query({
     database_id: process.env.NOTION_BOOKMARKS_DATABASE ?? "",
     filter: {
@@ -76,13 +79,14 @@ export async function getBookmarkByType(type: string): Promise<Bookmark[]> {
 
 export async function getBookmarkById(id: string) {
   try {
+    await avoidRateLimit();
     const data = notion.pages.retrieve({
       page_id: id,
     });
     const mdblocks = await n2m.pageToMarkdown(id);
     const mdString = n2m.toMarkdownString(mdblocks);
 
-    const mdx = getBundledMDX(mdString.parent);
+    const mdx = getBundledMDX(mdString.parent ?? "");
 
     return Promise.all([data, mdx]).then(([data, mdx]) => {
       if ("properties" in data) {
@@ -113,6 +117,7 @@ export async function getBookmarkById(id: string) {
 }
 
 export async function getAllBookmarkIds() {
+  await avoidRateLimit();
   const { results } = await notion.databases.query({
     database_id: process.env.NOTION_BOOKMARKS_DATABASE ?? "",
     filter: {
