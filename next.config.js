@@ -9,8 +9,6 @@ const moduleExports = {
   images: {
     domains: ["images.unsplash.com", "www.google.com"],
   },
-  // TODO remove fixing sentry crashing issue
-  outputFileTracing: false,
 };
 
 const SentryWebpackPluginOptions = {
@@ -19,6 +17,7 @@ const SentryWebpackPluginOptions = {
   // recommended:
   //   release, url, org, project, authToken, configFile, stripPrefix,
   //   urlPrefix, include, ignore
+  hideSourceMaps: true,
 
   silent: true, // Suppresses all logs
   // For all available options, see:
