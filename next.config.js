@@ -9,6 +9,7 @@ const moduleExports = {
   images: {
     domains: ["images.unsplash.com", "www.google.com"],
   },
+  output: "standalone",
 };
 
 const SentryWebpackPluginOptions = {
