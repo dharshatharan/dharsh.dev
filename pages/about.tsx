@@ -1,5 +1,6 @@
 import { ArticleImage } from "@components/Image/ArticleImage";
 import PageLayout from "@components/Layout";
+import { SmartLink } from "@components/SmartLink";
 import CoverImage from "@images/cover-picture.png";
 import { NextSeo } from "next-seo";
 
@@ -19,8 +20,18 @@ export default function About(props: Props) {
               placeholder="blur"
             />
             <p>
-              I am a fourth-year Software Engineering Student from Carleton
-              University living in Ottawa.
+              I am a recent Software Engineering Graduate from Carleton
+              University living in Ottawa, Canada. I currently work at{" "}
+              <SmartLink href="https://component.fi/">Component.fi</SmartLink>{" "}
+              as a Software Engineer. Component is a DeFi startup that aims to
+              create asset management solutions for fund managers in VCs and
+              Headge Funds. I lead infrastructure and DevOps efforts at
+              Component aside from developing fullstack features. Previously
+              I&apos;ve worked with{" "}
+              <SmartLink href="https://www.moveworks.com/">Moveworks</SmartLink>
+              , <SmartLink href="https://www.kinaxis.com/">Kinaxis</SmartLink>{" "}
+              and <SmartLink href="https://www.ciena.com/">Ciena</SmartLink> in
+              their DevOps teams.
             </p>
             <p>
               On this site, I share things I am working on as well as my
