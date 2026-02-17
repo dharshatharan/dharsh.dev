@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { withSentry } from "@sentry/nextjs";
 import { getTodayILearnedById } from "@lib/notion/todayILearned";
 
 const preview = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -28,4 +27,4 @@ const preview = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 };
 
-export default withSentry(preview);
+export default preview;

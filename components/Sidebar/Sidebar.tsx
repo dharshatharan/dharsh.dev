@@ -106,7 +106,7 @@ export const Sidebar = (props: Props) => {
     `}
       >
         <div className="flex justify-between items-center mb-10">
-          <Link passHref href="/">
+          <Link href="/">
             <div className="h-14 w-20 flex items-center">
               <PathAnimatedLogo />
             </div>

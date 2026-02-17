@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, type Transition } from "motion/react";
 import { useTheme } from "next-themes";
 import { ReactElement, useEffect, useState } from "react";
 
@@ -20,9 +20,12 @@ const fillIcon = {
   },
 };
 
-const transition = {
-  default: { duration: 2, ease: "easeInOut" },
-  fill: { duration: 2, ease: [1, 0, 0.8, 1] },
+const transition: Transition = {
+  default: { duration: 2, ease: "easeInOut" as const },
+  fill: {
+    duration: 2,
+    ease: [1, 0, 0.8, 1] as [number, number, number, number],
+  },
 };
 
 export default function PathAnimatedLogo(): ReactElement {

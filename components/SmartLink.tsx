@@ -3,7 +3,7 @@ import { ClassAttributes, AnchorHTMLAttributes } from "react";
 
 export const SmartLink = (
   props: ClassAttributes<HTMLAnchorElement> &
-    AnchorHTMLAttributes<HTMLAnchorElement>
+    AnchorHTMLAttributes<HTMLAnchorElement>,
 ) => {
   const href = props.href;
   const isInternalLink = href && (href.startsWith("/") || href.startsWith("#"));

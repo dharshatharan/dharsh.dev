@@ -1,6 +1,26 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-teal-grey: #1aa8ad;
+  --color-medium-grey: #535d5c;
+  --color-off-white: #fbfbfb;
+  --color-light-grey: #f5f5f5;
+  --color-dark-grey: #101010;
+  --color-pale-yellow: #fedbb1;
+  --color-dark-yellow: #e9ae8c;
+  --color-smooth-black: #151515;
+  --color-code-block: #161b22;
+
+  --font-sans:
+    "proxima-soft", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --transition-property-width: width;
+}
+
+@custom-variant firefox (@supports (-moz-appearance: none));
 
 @layer base {
   * {
@@ -33,7 +53,7 @@
     @apply border-l-4 bg-light-grey border-teal-grey dark:text-off-white dark:bg-dark-grey rounded-lg shadow-lg;
   }
   .bg-glass {
-    @apply transform duration-300 bg-[#f9f9f9] dark:bg-smooth-black border-r border-gray-200 dark:border-gray-800 backdrop-filter backdrop-blur-xl bg-opacity-80 dark:bg-opacity-80 firefox:bg-opacity-95 dark:firefox:bg-opacity-95;
+    @apply transform duration-300 bg-[#f9f9f9]/80 dark:bg-smooth-black/80 border-r border-gray-200 dark:border-gray-800 backdrop-blur-xl firefox:bg-[#f9f9f9]/95 dark:firefox:bg-smooth-black/95;
   }
   .bg-panel {
     @apply transform duration-300 bg-[#f9f9f9] dark:bg-[#141414] border-r border-gray-200 dark:border-gray-800;
@@ -49,6 +69,23 @@
   }
 }
 
+/* Prose dark mode customization */
+.dark .prose {
+  blockquote {
+    border-left: 5px solid var(--color-teal-grey);
+  }
+}
+
+.prose blockquote {
+  border-left: 5px solid var(--color-teal-grey);
+}
+
+.prose pre {
+  color: theme(colors.gray.200);
+  background-color: #161b22;
+}
+
+/* Syntax highlighting tokens */
 .token.comment,
 .token.prolog,
 .token.doctype,

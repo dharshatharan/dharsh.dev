@@ -53,8 +53,8 @@ export async function getSortedBlogsData(limit?: number) {
               item.cover && item.cover.type === "file"
                 ? item.cover.file.url
                 : item.cover && item.cover.type === "external"
-                ? item.cover.external.url
-                : null,
+                  ? item.cover.external.url
+                  : null,
             published:
               properties.Published.type === "date"
                 ? properties.Published.date?.start
@@ -73,7 +73,7 @@ export async function getSortedBlogsData(limit?: number) {
           } as BlogData;
         }
         return null;
-      })
+      }),
     )
   ).filter((item) => item !== null) as BlogData[];
 }
@@ -163,8 +163,8 @@ export async function getBlogData(id: string) {
           item.cover && item.cover.type === "file"
             ? item.cover.file.url
             : item.cover && item.cover.type === "external"
-            ? item.cover.external.url
-            : null,
+              ? item.cover.external.url
+              : null,
         published:
           properties.Published.type === "date"
             ? properties.Published.date?.start

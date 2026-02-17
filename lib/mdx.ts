@@ -12,7 +12,7 @@ export function getBundledMDX(source: string) {
       process.cwd(),
       "node_modules",
       "esbuild",
-      "esbuild.exe"
+      "esbuild.exe",
     );
   } else {
     process.env.ESBUILD_BINARY_PATH = path.join(
@@ -20,7 +20,7 @@ export function getBundledMDX(source: string) {
       "node_modules",
       "esbuild",
       "bin",
-      "esbuild"
+      "esbuild",
     );
   }
 
